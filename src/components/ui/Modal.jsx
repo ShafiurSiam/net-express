@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 
 const Modal = ({ isOpen, onClose, title, children }) => {
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -51,7 +53,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
               <button
                 type="button"
                 onClick={onClose}
-                aria-label="বন্ধ করুন"
+                aria-label={t("modal.close")}
                 className="rounded-full p-1.5 text-text-secondary transition-colors hover:bg-surface hover:text-primary-red"
               >
                 <X size={20} />

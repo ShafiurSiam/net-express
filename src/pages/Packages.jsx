@@ -6,24 +6,26 @@ import PackageCard from "../components/cards/PackageCard.jsx";
 import CTASection from "../sections/home/CTASection.jsx";
 import { packages, packageCategories } from "../data/packages.js";
 import { useConnectionRequest } from "../context/ConnectionRequestContext.jsx";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 const Packages = () => {
   const [activeCategory, setActiveCategory] = useState("home");
   const { openRequest } = useConnectionRequest();
+  const { language, t } = useLanguage();
 
   const filtered = packages.filter((pkg) => pkg.category === activeCategory);
 
   return (
     <>
       <SEO
-        title="ইন্টারনেট প্যাকেজ"
-        description="Net Express এর সকল ইন্টারনেট প্যাকেজ ও মূল্য তালিকা — বাসা ও ব্যবসার জন্য।"
+        title={t("seo.packages.title")}
+        description={t("seo.packages.description")}
         path="/packages"
       />
       <PageHeader
-        eyebrow="প্যাকেজ"
-        title="ইন্টারনেট প্যাকেজ ও মূল্য তালিকা"
-        subtitle="প্রয়োজন অনুযায়ী বেছে নিন সবচেয়ে উপযুক্ত প্যাকেজ।"
+        eyebrow={t("pageHeader.packages.eyebrow")}
+        title={t("pageHeader.packages.title")}
+        subtitle={t("pageHeader.packages.subtitle")}
       />
 
       <section className="py-14 sm:py-20">
@@ -40,7 +42,7 @@ const Packages = () => {
                     : "text-text-secondary hover:text-primary-red"
                 }`}
               >
-                {cat.label}
+                {cat.label[language]}
               </button>
             ))}
           </div>

@@ -5,11 +5,13 @@ import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";
 import Button from "../../components/common/Button.jsx";
 import AnimatedSection from "../../components/common/AnimatedSection.jsx";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 import coverageMap from "../../assets/images/coverage/coverage-map.svg";
 
 const CoverageSection = () => {
   const [area, setArea] = useState("");
   const [result, setResult] = useState(null);
+  const { t } = useLanguage();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,15 +25,15 @@ const CoverageSection = () => {
     <section className="py-20 sm:py-28">
       <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
         <AnimatedSection>
-          <img src={coverageMap} alt="কভারেজ এলাকার বিমূর্ত মানচিত্র" className="w-full" loading="lazy" />
+          <img src={coverageMap} alt={t("home.coverageSection.imageAlt")} className="w-full" loading="lazy" />
         </AnimatedSection>
 
         <div className="flex flex-col gap-6">
           <SectionTitle
             align="left"
-            eyebrow="কভারেজ এলাকা"
-            title="আপনার এলাকায় কি আমাদের সংযোগ রয়েছে?"
-            subtitle="আপনার এলাকার নাম লিখে দ্রুত যাচাই করুন।"
+            eyebrow={t("home.coverageSection.eyebrow")}
+            title={t("home.coverageSection.title")}
+            subtitle={t("home.coverageSection.subtitle")}
           />
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
@@ -41,23 +43,22 @@ const CoverageSection = () => {
                 type="text"
                 value={area}
                 onChange={(e) => setArea(e.target.value)}
-                placeholder="এলাকার নাম লিখুন, যেমনঃ মিরপুর"
+                placeholder={t("home.coverageSection.placeholder")}
                 className="w-full rounded-xl border border-border bg-white py-3.5 pl-11 pr-4 text-text-primary outline-none transition-colors focus:border-primary-red"
               />
             </label>
             <Button type="submit" icon={Search} iconPosition="left">
-              কভারেজ দেখুন
+              {t("home.coverageSection.button")}
             </Button>
           </form>
 
           {result && (
             <AnimatedSection className="rounded-xl border border-primary-red/20 bg-primary-red/5 p-4 text-sm text-text-primary">
-              <strong>{result}</strong> এলাকায় সংযোগ সম্পর্কে জানতে আমাদের প্রতিনিধি শীঘ্রই আপনার
-              সাথে যোগাযোগ করবেন। বিস্তারিত তালিকার জন্য{" "}
+              <strong>{result}</strong> {t("home.coverageSection.resultSuffix")}{" "}
               <Link to="/coverage" className="font-semibold text-primary-red underline">
-                কভারেজ পেজ
+                {t("home.coverageSection.coveragePageLink")}
               </Link>{" "}
-              দেখুন।
+              {t("home.coverageSection.resultTail")}
             </AnimatedSection>
           )}
         </div>

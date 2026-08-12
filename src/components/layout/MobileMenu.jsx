@@ -4,9 +4,11 @@ import { NavLink, Link } from "react-router-dom";
 import { X, Wallet, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Button from "../common/Button.jsx";
+import LanguageSwitch from "../ui/LanguageSwitch.jsx";
 import { navLinks } from "../../data/navigation.js";
 import { ftpLinks } from "../../data/ftpLinks.js";
 import { company } from "../../config/company.js";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 import logo from "../../assets/logo/logo.svg";
 
 /** Accordion-style "FTP" section for the mobile menu — expands inline instead of hovering. */
@@ -64,6 +66,7 @@ const MobileFtpAccordion = ({ onNavigate }) => {
 
 const MobileMenu = ({ isOpen, onClose }) => {
   const shouldReduceMotion = useReducedMotion();
+  const { language, t } = useLanguage();
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -91,21 +94,23 @@ const MobileMenu = ({ isOpen, onClose }) => {
             exit={{ x: shouldReduceMotion ? 0 : "100%" }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.32, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="mb-8 flex items-center justify-between">
+            <div className="mb-6 flex items-center justify-between">
               <Link to="/" onClick={onClose}>
                 <img src={logo} alt={company.name} className="h-8 w-auto" />
               </Link>
               <button
                 type="button"
                 onClick={onClose}
-                aria-label="মেনু বন্ধ করুন"
+                aria-label={t("nav.closeMenu")}
                 className="rounded-full p-2 text-text-primary hover:bg-surface"
               >
                 <X size={22} />
               </button>
             </div>
 
-            <nav className="flex flex-col gap-1" aria-label="মোবাইল মেনু">
+            <LanguageSwitch className="mb-6 self-start" />
+
+            <nav className="flex flex-col gap-1" aria-label={t("nav.mobileNav")}>
               {navLinks.map((link) => (
                 <Fragment key={link.path}>
                   <NavLink
@@ -117,7 +122,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
                       }`
                     }
                   >
-                    {link.label}
+                    {link.label[language]}
                   </NavLink>
                   {link.path === "/coverage" && <MobileFtpAccordion onNavigate={onClose} />}
                 </Fragment>
@@ -125,7 +130,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
             </nav>
 
             <Button to="/payment" onClick={onClose} className="mt-8 w-full" icon={Wallet} iconPosition="left">
-              বিল পরিশোধ
+              {t("common.payBill")}
             </Button>
           </motion.div>
         </>

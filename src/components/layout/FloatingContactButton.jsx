@@ -1,6 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { floatingContact } from "../../config/social.js";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 
 /**
  * Fixed bottom-right WhatsApp/Messenger button shown on every page.
@@ -8,7 +9,8 @@ import { floatingContact } from "../../config/social.js";
  */
 const FloatingContactButton = () => {
   const shouldReduceMotion = useReducedMotion();
-  const label = floatingContact.type === "whatsapp" ? "WhatsApp এ যোগাযোগ করুন" : "Messenger এ যোগাযোগ করুন";
+  const { t } = useLanguage();
+  const label = t(floatingContact.type === "whatsapp" ? "floatingContact.whatsapp" : "floatingContact.messenger");
 
   return (
     <motion.a

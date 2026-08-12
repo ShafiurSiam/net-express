@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useCallback, useMemo } from "react";
 import Modal from "../components/ui/Modal.jsx";
 import ConnectionRequestForm from "../components/ui/ConnectionRequestForm.jsx";
+import { useLanguage } from "./LanguageContext.jsx";
 
 const ConnectionRequestContext = createContext(null);
 
@@ -11,6 +12,7 @@ const ConnectionRequestContext = createContext(null);
 export const ConnectionRequestProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [packageId, setPackageId] = useState("");
+  const { t } = useLanguage();
 
   const openRequest = useCallback((initialPackageId = "") => {
     setPackageId(initialPackageId);
@@ -24,7 +26,7 @@ export const ConnectionRequestProvider = ({ children }) => {
   return (
     <ConnectionRequestContext.Provider value={value}>
       {children}
-      <Modal isOpen={isOpen} onClose={closeRequest} title="নতুন সংযোগের জন্য আবেদন করুন">
+      <Modal isOpen={isOpen} onClose={closeRequest} title={t("modal.connectionRequestTitle")}>
         <ConnectionRequestForm initialPackageId={packageId} onSubmitted={() => {}} />
       </Modal>
     </ConnectionRequestContext.Provider>

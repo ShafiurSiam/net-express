@@ -1,28 +1,28 @@
 // Primary navigation links shown in the Navbar and mobile menu.
 // Add/remove/reorder entries here — no component changes needed.
 export const navLinks = [
-  { label: "হোম", path: "/" },
-  { label: "আমাদের সম্পর্কে", path: "/about" },
-  { label: "প্যাকেজ", path: "/packages" },
-  { label: "অফার", path: "/offers" },
-  { label: "কভারেজ", path: "/coverage" },
-  { label: "সহায়তা", path: "/support" },
-  { label: "যোগাযোগ", path: "/contact" },
+  { label: { bn: "হোম", en: "Home" }, path: "/" },
+  { label: { bn: "আমাদের সম্পর্কে", en: "About" }, path: "/about" },
+  { label: { bn: "প্যাকেজ", en: "Packages" }, path: "/packages" },
+  { label: { bn: "অফার", en: "Offers" }, path: "/offers" },
+  { label: { bn: "কভারেজ", en: "Coverage" }, path: "/coverage" },
+  { label: { bn: "সহায়তা", en: "Support" }, path: "/support" },
+  { label: { bn: "যোগাযোগ", en: "Contact" }, path: "/contact" },
 ];
 
 export const footerLinks = {
   quickLinks: [
-    { label: "হোম", path: "/" },
-    { label: "আমাদের সম্পর্কে", path: "/about" },
-    { label: "প্যাকেজ", path: "/packages" },
-    { label: "অফার", path: "/offers" },
-    { label: "কভারেজ", path: "/coverage" },
+    { label: { bn: "হোম", en: "Home" }, path: "/" },
+    { label: { bn: "আমাদের সম্পর্কে", en: "About" }, path: "/about" },
+    { label: { bn: "প্যাকেজ", en: "Packages" }, path: "/packages" },
+    { label: { bn: "অফার", en: "Offers" }, path: "/offers" },
+    { label: { bn: "কভারেজ", en: "Coverage" }, path: "/coverage" },
   ],
   support: [
-    { label: "যোগাযোগ", path: "/contact" },
-    { label: "সচরাচর জিজ্ঞাসা", path: "/support" },
-    { label: "বিল পরিশোধ", path: "/payment" },
-    { label: "শর্তাবলী", path: "/terms" },
-    { label: "গোপনীয়তা নীতি", path: "/privacy" },
+    { label: { bn: "যোগাযোগ", en: "Contact" }, path: "/contact" },
+    { label: { bn: "সচরাচর জিজ্ঞাসা", en: "FAQ" }, path: "/support" },
+    { label: { bn: "বিল পরিশোধ", en: "Pay Bill" }, path: "/payment" },
+    { label: { bn: "শর্তাবলী", en: "Terms" }, path: "/terms" },
+    { label: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" }, path: "/privacy" },
   ],
 };

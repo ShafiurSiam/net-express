@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView, useReducedMotion } from "framer-motion";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 
 /**
  * Animates 0 → value once the element scrolls into view.
@@ -9,6 +10,7 @@ const CountUp = ({ value, duration = 1.6, className = "" }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.6 });
   const shouldReduceMotion = useReducedMotion();
+  const { language } = useLanguage();
   const [display, setDisplay] = useState(shouldReduceMotion ? value : 0);
 
   useEffect(() => {
@@ -34,7 +36,7 @@ const CountUp = ({ value, duration = 1.6, className = "" }) => {
 
   return (
     <span ref={ref} className={className}>
-      {display.toLocaleString("bn-BD")}
+      {display.toLocaleString(language === "bn" ? "bn-BD" : "en-US")}
     </span>
   );
 };

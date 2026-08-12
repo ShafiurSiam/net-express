@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 
 /**
- * items: [{ id, question, answer }]
+ * items: [{ id, question: {bn,en}, answer: {bn,en} }]
  */
 const Accordion = ({ items }) => {
   const [openId, setOpenId] = useState(items[0]?.id ?? null);
   const shouldReduceMotion = useReducedMotion();
+  const { language } = useLanguage();
 
   return (
     <div className="flex flex-col gap-3">
@@ -24,7 +26,7 @@ const Accordion = ({ items }) => {
               aria-expanded={isOpen}
               className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
             >
-              <span className="font-semibold text-text-primary">{item.question}</span>
+              <span className="font-semibold text-text-primary">{item.question[language]}</span>
               <ChevronDown
                 size={20}
                 className={`shrink-0 text-primary-red transition-transform duration-300 ${
@@ -40,7 +42,7 @@ const Accordion = ({ items }) => {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: shouldReduceMotion ? 0 : 0.3, ease: "easeInOut" }}
                 >
-                  <p className="px-6 pb-5 text-text-secondary">{item.answer}</p>
+                  <p className="px-6 pb-5 text-text-secondary">{item.answer[language]}</p>
                 </motion.div>
               )}
             </AnimatePresence>

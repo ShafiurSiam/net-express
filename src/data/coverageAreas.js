@@ -1,6 +1,16 @@
 // Sample coverage-area list for the frontend demo checker on /coverage.
 // Replace with a real coverage API response once the backend is ready.
 export const coverageAreas = [
-  "ধানমন্ডি", "মিরপুর", "উত্তরা", "গুলশান", "বনানী", "মোহাম্মদপুর",
-  "বাড্ডা", "খিলগাঁও", "যাত্রাবাড়ী", "মালিবাগ", "রামপুরা", "শ্যামলী",
+  { bn: "ধানমন্ডি", en: "Dhanmondi" },
+  { bn: "মিরপুর", en: "Mirpur" },
+  { bn: "উত্তরা", en: "Uttara" },
+  { bn: "গুলশান", en: "Gulshan" },
+  { bn: "বনানী", en: "Banani" },
+  { bn: "মোহাম্মদপুর", en: "Mohammadpur" },
+  { bn: "বাড্ডা", en: "Badda" },
+  { bn: "খিলগাঁও", en: "Khilgaon" },
+  { bn: "যাত্রাবাড়ী", en: "Jatrabari" },
+  { bn: "মালিবাগ", en: "Malibagh" },
+  { bn: "রামপুরা", en: "Rampura" },
+  { bn: "শ্যামলী", en: "Shyamoli" },
 ];

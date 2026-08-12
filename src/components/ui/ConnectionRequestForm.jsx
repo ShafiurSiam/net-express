@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import Button from "../common/Button.jsx";
 import { packages } from "../../data/packages.js";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 
 const emptyForm = {
   name: "",
@@ -19,6 +20,7 @@ const emptyForm = {
 const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
   const [form, setForm] = useState({ ...emptyForm, packageId: initialPackageId });
   const [submitted, setSubmitted] = useState(false);
+  const { language, t } = useLanguage();
 
   const handleChange = (field) => (e) => {
     setForm((prev) => ({ ...prev, [field]: e.target.value }));
@@ -28,7 +30,7 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
     e.preventDefault();
 
     // TODO(backend): POST `form` to the connection-request API once it exists.
-    console.log("সংযোগ অনুরোধ:", form);
+    console.log("Connection request:", form);
 
     setSubmitted(true);
     onSubmitted?.(form);
@@ -38,10 +40,8 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
     return (
       <div className="flex flex-col items-center gap-3 py-8 text-center">
         <CheckCircle2 size={48} className="text-primary-red" />
-        <h4 className="text-lg font-bold text-text-primary">অনুরোধ গ্রহণ করা হয়েছে</h4>
-        <p className="text-sm text-text-secondary">
-          ধন্যবাদ! আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।
-        </p>
+        <h4 className="text-lg font-bold text-text-primary">{t("connectionForm.successTitle")}</h4>
+        <p className="text-sm text-text-secondary">{t("connectionForm.successBody")}</p>
         <Button
           variant="secondary"
           size="sm"
@@ -50,7 +50,7 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
             setSubmitted(false);
           }}
         >
-          নতুন অনুরোধ করুন
+          {t("connectionForm.newRequest")}
         </Button>
       </div>
     );
@@ -58,59 +58,63 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <Field label="নাম">
+      <Field label={t("connectionForm.nameLabel")}>
         <input
           type="text"
           value={form.name}
           onChange={handleChange("name")}
-          placeholder="আপনার নাম লিখুন"
+          placeholder={t("connectionForm.namePlaceholder")}
           className={inputClass}
         />
       </Field>
 
-      <Field label="মোবাইল নম্বর">
+      <Field label={t("connectionForm.mobileLabel")}>
         <input
           type="tel"
           value={form.mobile}
           onChange={handleChange("mobile")}
-          placeholder="০১XXXXXXXXX"
+          placeholder={t("connectionForm.mobilePlaceholder")}
           className={inputClass}
         />
       </Field>
 
-      <Field label="এলাকা / থানা">
+      <Field label={t("connectionForm.areaLabel")}>
         <input
           type="text"
           value={form.area}
           onChange={handleChange("area")}
-          placeholder="যেমনঃ ধানমন্ডি, ঢাকা"
+          placeholder={t("connectionForm.areaPlaceholder")}
           className={inputClass}
         />
       </Field>
 
-      <Field label="সম্পূর্ণ ঠিকানা">
+      <Field label={t("connectionForm.addressLabel")}>
         <textarea
           value={form.address}
           onChange={handleChange("address")}
-          placeholder="বাসা/হোল্ডিং নম্বর, রোড, এলাকা"
+          placeholder={t("connectionForm.addressPlaceholder")}
           rows={3}
           className={inputClass}
         />
       </Field>
 
-      <Field label="পছন্দের প্যাকেজ">
+      <Field label={t("connectionForm.packageLabel")}>
         <select value={form.packageId} onChange={handleChange("packageId")} className={inputClass}>
-          <option value="">প্যাকেজ নির্বাচন করুন</option>
+          <option value="">{t("connectionForm.selectPackage")}</option>
           {packages.map((pkg) => (
             <option key={pkg.id} value={pkg.id}>
-              {pkg.name} — ৳{pkg.price}/{pkg.period}
+              {t("connectionForm.packageOption", {
+                name: pkg.name[language],
+                price: pkg.price[language],
+                period: pkg.period[language],
+              })}
             </option>
           ))}
         </select>
       </Field>
 
       <Button type="submit" className="mt-2 w-full">
-        অনুরোধ পাঠান
+        {t("connectionForm.submit")}
       </Button>
     </form>
   );

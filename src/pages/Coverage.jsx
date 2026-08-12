@@ -7,10 +7,12 @@ import Button from "../components/common/Button.jsx";
 import AnimatedSection from "../components/common/AnimatedSection.jsx";
 import CTASection from "../sections/home/CTASection.jsx";
 import { coverageAreas } from "../data/coverageAreas.js";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 const Coverage = () => {
   const [area, setArea] = useState("");
   const [result, setResult] = useState(null);
+  const { language, t } = useLanguage();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,21 +20,21 @@ const Coverage = () => {
     if (!query) return;
 
     // TODO(backend): replace with a real coverage-lookup API call.
-    const isCovered = coverageAreas.some((a) => a.includes(query) || query.includes(a));
+    const isCovered = coverageAreas.some((a) => a[language].includes(query) || query.includes(a[language]));
     setResult({ query, isCovered });
   };
 
   return (
     <>
       <SEO
-        title="কভারেজ এলাকা"
-        description="আপনার এলাকায় Net Express এর সংযোগ রয়েছে কিনা যাচাই করুন।"
+        title={t("seo.coverage.title")}
+        description={t("seo.coverage.description")}
         path="/coverage"
       />
       <PageHeader
-        eyebrow="কভারেজ"
-        title="আপনার এলাকায় কি সংযোগ পাওয়া যাবে?"
-        subtitle="এলাকার নাম লিখে যাচাই করুন, অথবা নিচের তালিকায় খুঁজুন।"
+        eyebrow={t("pageHeader.coverage.eyebrow")}
+        title={t("pageHeader.coverage.title")}
+        subtitle={t("pageHeader.coverage.subtitle")}
       />
 
       <section className="py-14 sm:py-20">
@@ -45,12 +47,12 @@ const Coverage = () => {
                   type="text"
                   value={area}
                   onChange={(e) => setArea(e.target.value)}
-                  placeholder="এলাকার নাম লিখুন"
+                  placeholder={t("coverage.placeholder")}
                   className="w-full rounded-xl border border-border bg-white py-3.5 pl-11 pr-4 text-text-primary outline-none transition-colors focus:border-primary-red"
                 />
               </label>
               <Button type="submit" icon={Search} iconPosition="left">
-                যাচাই করুন
+                {t("coverage.verify")}
               </Button>
             </form>
 
@@ -68,37 +70,26 @@ const Coverage = () => {
                   <Info size={20} className="mt-0.5 shrink-0 text-text-secondary" />
                 )}
                 <span>
-                  {result.isCovered ? (
-                    <>
-                      <strong>{result.query}</strong> এলাকায় আমাদের সংযোগ উপলব্ধ। এখনই আবেদন করুন
-                      অথবা আমাদের হটলাইনে যোগাযোগ করুন।
-                    </>
-                  ) : (
-                    <>
-                      <strong>{result.query}</strong> এলাকাটি এই মুহূর্তে তালিকায় নেই। তবে আমরা
-                      দ্রুত সম্প্রসারণ করছি — সরাসরি যোগাযোগ করুন বিস্তারিত জানতে।
-                    </>
-                  )}
+                  <strong>{result.query}</strong>{" "}
+                  {t(result.isCovered ? "coverage.resultCoveredSuffix" : "coverage.resultNotCoveredSuffix")}
                 </span>
               </AnimatedSection>
             )}
           </AnimatedSection>
 
           <AnimatedSection className="flex flex-col gap-5">
-            <h2 className="text-center text-xl font-bold text-text-primary">বর্তমান কভারেজ এলাকা (নমুনা)</h2>
+            <h2 className="text-center text-xl font-bold text-text-primary">{t("coverage.sampleHeading")}</h2>
             <div className="flex flex-wrap justify-center gap-3">
               {coverageAreas.map((a) => (
                 <span
-                  key={a}
+                  key={a.en}
                   className="rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-text-secondary"
                 >
-                  {a}
+                  {a[language]}
                 </span>
               ))}
             </div>
-            <p className="text-center text-xs text-text-secondary">
-              * এটি একটি ডেমো তালিকা। প্রকৃত কভারেজ তথ্যের জন্য পরবর্তীতে সরাসরি API সংযুক্ত করা হবে।
-            </p>
+            <p className="text-center text-xs text-text-secondary">{t("coverage.disclaimer")}</p>
           </AnimatedSection>
         </Container>
       </section>

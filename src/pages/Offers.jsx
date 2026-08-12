@@ -4,16 +4,23 @@ import Container from "../components/common/Container.jsx";
 import OfferCard from "../components/cards/OfferCard.jsx";
 import CTASection from "../sections/home/CTASection.jsx";
 import { offers } from "../data/offers.js";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 const Offers = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       <SEO
-        title="বিশেষ অফার"
-        description="Net Express এর চলমান সকল বিশেষ অফার ও প্রমোশন দেখুন।"
+        title={t("seo.offers.title")}
+        description={t("seo.offers.description")}
         path="/offers"
       />
-      <PageHeader eyebrow="অফার" title="চলমান বিশেষ অফারসমূহ" subtitle="সীমিত সময়ের জন্য উপলব্ধ চমৎকার সব সুবিধা।" />
+      <PageHeader
+        eyebrow={t("pageHeader.offers.eyebrow")}
+        title={t("pageHeader.offers.title")}
+        subtitle={t("pageHeader.offers.subtitle")}
+      />
 
       <section className="py-14 sm:py-20">
         <Container className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

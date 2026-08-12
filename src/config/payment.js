@@ -3,9 +3,9 @@
 export const paymentConfig = {
   url: import.meta.env.VITE_PAYMENT_URL || "https://example.com/payment",
   methods: [
-    { id: "bkash", label: "বিকাশ", color: "#E2136E" },
-    { id: "nagad", label: "নগদ", color: "#F6921E" },
-    { id: "rocket", label: "রকেট", color: "#8C3494" },
-    { id: "card", label: "কার্ড / ব্যাংক ট্রান্সফার", color: "#6B0F1A" },
+    { id: "bkash", label: { bn: "বিকাশ", en: "bKash" }, color: "#E2136E" },
+    { id: "nagad", label: { bn: "নগদ", en: "Nagad" }, color: "#F6921E" },
+    { id: "rocket", label: { bn: "রকেট", en: "Rocket" }, color: "#8C3494" },
+    { id: "card", label: { bn: "কার্ড / ব্যাংক ট্রান্সফার", en: "Card / Bank Transfer" }, color: "#6B0F1A" },
   ],
 };

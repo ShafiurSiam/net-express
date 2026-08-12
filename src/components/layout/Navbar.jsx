@@ -5,14 +5,17 @@ import Container from "../common/Container.jsx";
 import Button from "../common/Button.jsx";
 import MobileMenu from "./MobileMenu.jsx";
 import NavDropdown from "../ui/NavDropdown.jsx";
+import LanguageSwitch from "../ui/LanguageSwitch.jsx";
 import { navLinks } from "../../data/navigation.js";
 import { ftpLinks } from "../../data/ftpLinks.js";
 import { company } from "../../config/company.js";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 import logo from "../../assets/logo/logo.svg";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { language, t } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -35,7 +38,7 @@ const Navbar = () => {
             <img src={logo} alt={company.name} className="h-9 w-auto sm:h-10" />
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="প্রধান মেনু">
+          <nav className="hidden items-center gap-1 lg:flex" aria-label={t("nav.mainNav")}>
             {navLinks.map((link) => (
               <Fragment key={link.path}>
                 <NavLink
@@ -52,7 +55,7 @@ const Navbar = () => {
                 >
                   {({ isActive }) => (
                     <>
-                      {link.label}
+                      {link.label[language]}
                       {isActive && (
                         <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-primary-red" />
                       )}
@@ -74,16 +77,17 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden items-center gap-3 lg:flex">
+            <LanguageSwitch />
             <Button to="/payment" size="sm" icon={Wallet} iconPosition="left">
-              বিল পরিশোধ
+              {t("common.payBill")}
             </Button>
           </div>
 
           <button
             type="button"
             onClick={() => setMobileOpen(true)}
-            aria-label="মেনু খুলুন"
+            aria-label={t("nav.openMenu")}
             className="rounded-lg p-2 text-text-primary lg:hidden"
           >
             <Menu size={26} />

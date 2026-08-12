@@ -6,6 +6,7 @@ import FloatingContactButton from "./components/layout/FloatingContactButton.jsx
 import ScrollToTop from "./components/common/ScrollToTop.jsx";
 import PageLoader from "./components/common/PageLoader.jsx";
 import { ConnectionRequestProvider } from "./context/ConnectionRequestContext.jsx";
+import { LanguageProvider } from "./context/LanguageContext.jsx";
 
 const Home = lazy(() => import("./pages/Home.jsx"));
 const About = lazy(() => import("./pages/About.jsx"));
@@ -22,30 +23,32 @@ const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
 function App() {
   return (
-    <ConnectionRequestProvider>
-      <ScrollToTop />
-      <Navbar />
-      <main>
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/packages" element={<Packages />} />
-            <Route path="/offers" element={<Offers />} />
-            <Route path="/coverage" element={<Coverage />} />
-            <Route path="/payment" element={<Payment />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/support" element={<Support />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/speed-test" element={<SpeedTest />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </main>
-      <Footer />
-      <FloatingContactButton />
-    </ConnectionRequestProvider>
+    <LanguageProvider>
+      <ConnectionRequestProvider>
+        <ScrollToTop />
+        <Navbar />
+        <main>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/packages" element={<Packages />} />
+              <Route path="/offers" element={<Offers />} />
+              <Route path="/coverage" element={<Coverage />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/support" element={<Support />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/speed-test" element={<SpeedTest />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </main>
+        <Footer />
+        <FloatingContactButton />
+      </ConnectionRequestProvider>
+    </LanguageProvider>
   );
 }
 

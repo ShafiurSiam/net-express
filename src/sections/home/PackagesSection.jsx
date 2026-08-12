@@ -5,18 +5,20 @@ import Button from "../../components/common/Button.jsx";
 import PackageCard from "../../components/cards/PackageCard.jsx";
 import { packages } from "../../data/packages.js";
 import { useConnectionRequest } from "../../context/ConnectionRequestContext.jsx";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 
 const PackagesSection = () => {
   const { openRequest } = useConnectionRequest();
+  const { t } = useLanguage();
   const homePackages = packages.filter((pkg) => pkg.category === "home");
 
   return (
     <section className="py-20 sm:py-28">
       <Container className="flex flex-col gap-12">
         <SectionTitle
-          eyebrow="ইন্টারনেট প্যাকেজ"
-          title="বাসার জন্য উপযুক্ত ইন্টারনেট প্যাকেজ বেছে নিন"
-          subtitle="প্রয়োজন অনুযায়ী গতি বেছে নিন — কোনো লুকানো খরচ নেই, শুধু নিরবচ্ছিন্ন সংযোগ।"
+          eyebrow={t("home.packagesSection.eyebrow")}
+          title={t("home.packagesSection.title")}
+          subtitle={t("home.packagesSection.subtitle")}
         />
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -27,7 +29,7 @@ const PackagesSection = () => {
 
         <div className="flex justify-center">
           <Button to="/packages" variant="secondary" icon={ArrowRight}>
-            সকল প্যাকেজ ও বিজনেস প্ল্যান দেখুন
+            {t("home.packagesSection.viewAll")}
           </Button>
         </div>
       </Container>

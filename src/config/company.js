@@ -1,19 +1,23 @@
 // Central source of truth for company identity & contact details.
 // Edit values here to update them everywhere across the site (navbar, footer, contact page, meta tags).
+// Human-readable fields are { bn, en }; numeric fields stay plain and are
+// formatted with formatNumber(value, language) at render time.
 export const company = {
   name: "Net Express",
   nameBangla: "নেট এক্সপ্রেস",
-  tagline: "আপনার গতির সাথী",
-  shortDescription:
-    "একটি আধুনিক, নির্ভরযোগ্য ও প্রযুক্তিনির্ভর বাংলাদেশের ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান।",
-  phone: "[ফোন নম্বর লিখুন]",
+  tagline: { bn: "আপনার গতির সাথী", en: "Your Speed Companion" },
+  shortDescription: {
+    bn: "একটি আধুনিক, নির্ভরযোগ্য ও প্রযুক্তিনির্ভর বাংলাদেশের ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান।",
+    en: "A modern, reliable, and technology-driven internet service provider in Bangladesh.",
+  },
+  phone: { bn: "[ফোন নম্বর লিখুন]", en: "[Enter phone number]" },
   phoneRaw: "01XXXXXXXXX",
   hotline: "16XXX",
   email: "info@netexpress.example.com",
   supportEmail: "support@netexpress.example.com",
-  address: "[অফিসের ঠিকানা লিখুন], ঢাকা, বাংলাদেশ",
-  btrcLicense: "[BTRC লাইসেন্স নম্বর]",
-  workingHours: "সকাল ৯টা - রাত ১০টা (সব দিন)",
-  foundedYear: "২০২৬",
-  copyrightYear: "২০২৬",
+  address: { bn: "[অফিসের ঠিকানা লিখুন], ঢাকা, বাংলাদেশ", en: "[Enter office address], Dhaka, Bangladesh" },
+  btrcLicense: { bn: "[BTRC লাইসেন্স নম্বর]", en: "[BTRC License Number]" },
+  workingHours: { bn: "সকাল ৯টা - রাত ১০টা (সব দিন)", en: "9:00 AM - 10:00 PM (all days)" },
+  foundedYear: 2026,
+  copyrightYear: 2026,
 };

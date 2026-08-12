@@ -3,6 +3,7 @@ import { ArrowRight, Wifi } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import Button from "../../components/common/Button.jsx";
 import { useConnectionRequest } from "../../context/ConnectionRequestContext.jsx";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 import heroArt from "../../assets/images/home/hero.svg";
 
 const container = {
@@ -18,6 +19,7 @@ const item = (shouldReduceMotion) => ({
 const HeroSection = () => {
   const { openRequest } = useConnectionRequest();
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useLanguage();
   const fx = item(shouldReduceMotion);
 
   return (
@@ -33,33 +35,32 @@ const HeroSection = () => {
             variants={fx}
             className="inline-flex items-center gap-2 rounded-full bg-primary-red/10 px-4 py-1.5 text-sm font-semibold text-primary-red"
           >
-            <Wifi size={16} /> বাংলাদেশের বিশ্বস্ত ইন্টারনেট সেবা
+            <Wifi size={16} /> {t("hero.eyebrow")}
           </motion.span>
 
           <motion.h1 variants={fx} className="text-4xl font-extrabold leading-[1.15] text-text-primary sm:text-5xl lg:text-6xl">
-            আপনার গতির <span className="text-primary-red">সাথী</span>,<br /> নেট এক্সপ্রেস
+            {t("hero.titleLead")} <span className="text-primary-red">{t("hero.titleHighlight")}</span>,<br /> {t("hero.titleTail")}
           </motion.h1>
 
           <motion.p variants={fx} className="max-w-lg text-lg text-text-secondary">
-            দ্রুত, নির্ভরযোগ্য ও নিরবচ্ছিন্ন ব্রডব্যান্ড ইন্টারনেট সংযোগ — আপনার বাসা কিংবা
-            ব্যবসার প্রয়োজনে, সাশ্রয়ী মূল্যে।
+            {t("hero.subtitle")}
           </motion.p>
 
           <motion.div variants={fx} className="flex flex-wrap items-center gap-4 pt-2">
             <Button to="/packages" size="lg" icon={ArrowRight}>
-              প্যাকেজ দেখুন
+              {t("hero.ctaPrimary")}
             </Button>
             <Button variant="secondary" size="lg" onClick={() => openRequest()}>
-              এখনই সংযোগ নিন
+              {t("hero.ctaSecondary")}
             </Button>
           </motion.div>
 
           <motion.div variants={fx} className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4 text-sm text-text-secondary">
-            <span>২৪/৭ কাস্টমার সাপোর্ট</span>
+            <span>{t("hero.trustSupport")}</span>
             <span className="h-1 w-1 rounded-full bg-border" />
-            <span>৯৯%+ নেটওয়ার্ক আপটাইম</span>
+            <span>{t("hero.trustUptime")}</span>
             <span className="h-1 w-1 rounded-full bg-border" />
-            <span>ফ্রি ইনস্টলেশন</span>
+            <span>{t("hero.trustInstall")}</span>
           </motion.div>
         </motion.div>
 
@@ -71,7 +72,7 @@ const HeroSection = () => {
         >
           <img
             src={heroArt}
-            alt="নেটওয়ার্ক সংযোগের বিমূর্ত চিত্র"
+            alt={t("hero.imageAlt")}
             className={`w-full ${shouldReduceMotion ? "" : "animate-float-slow"}`}
           />
         </motion.div>

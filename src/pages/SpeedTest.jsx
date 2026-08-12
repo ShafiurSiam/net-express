@@ -6,6 +6,8 @@ import PageHeader from "../components/common/PageHeader.jsx";
 import Container from "../components/common/Container.jsx";
 import Button from "../components/common/Button.jsx";
 import AnimatedSection from "../components/common/AnimatedSection.jsx";
+import { useLanguage } from "../context/LanguageContext.jsx";
+import { formatNumber } from "../i18n/numerals.js";
 
 const RADIUS = 90;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
@@ -16,6 +18,7 @@ const DEMO_RESULT = { download: 42, upload: 18, ping: 12 };
 const SpeedTest = () => {
   const [status, setStatus] = useState("idle"); // idle | testing | done
   const shouldReduceMotion = useReducedMotion();
+  const { language, t } = useLanguage();
 
   const runTest = () => {
     setStatus("testing");
@@ -27,8 +30,8 @@ const SpeedTest = () => {
 
   return (
     <>
-      <SEO title="স্পিড টেস্ট" description="আপনার ইন্টারনেট সংযোগের গতি যাচাই করুন (ডেমো)।" path="/speed-test" />
-      <PageHeader eyebrow="স্পিড টেস্ট" title="ইন্টারনেট স্পিড টেস্ট" subtitle="আপনার সংযোগের ডাউনলোড, আপলোড ও পিং গতি যাচাই করুন।" />
+      <SEO title={t("seo.speedTest.title")} description={t("seo.speedTest.description")} path="/speed-test" />
+      <PageHeader eyebrow={t("pageHeader.speedTest.eyebrow")} title={t("pageHeader.speedTest.title")} subtitle={t("pageHeader.speedTest.subtitle")} />
 
       <section className="py-14 sm:py-20">
         <Container className="flex flex-col items-center gap-10">
@@ -53,28 +56,28 @@ const SpeedTest = () => {
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-1">
                 <Gauge size={28} className="text-primary-red" />
                 <span className="text-3xl font-extrabold text-text-primary">
-                  {status === "done" ? DEMO_RESULT.download : status === "testing" ? "..." : "০"}
+                  {status === "done" ? formatNumber(DEMO_RESULT.download, language) : status === "testing" ? "..." : formatNumber(0, language)}
                 </span>
                 <span className="text-sm text-text-secondary">Mbps</span>
               </div>
             </div>
 
             <Button size="lg" onClick={runTest} disabled={status === "testing"}>
-              {status === "testing" ? "পরীক্ষা চলছে..." : "টেস্ট শুরু করুন"}
+              {status === "testing" ? t("speedTest.testing") : t("speedTest.start")}
             </Button>
           </AnimatedSection>
 
           {status === "done" && (
             <AnimatedSection className="grid w-full max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3">
-              <ResultTile icon={Download} label="ডাউনলোড" value={`${DEMO_RESULT.download} Mbps`} />
-              <ResultTile icon={Upload} label="আপলোড" value={`${DEMO_RESULT.upload} Mbps`} />
-              <ResultTile icon={Timer} label="পিং" value={`${DEMO_RESULT.ping} ms`} />
+              <ResultTile icon={Download} label={t("speedTest.download")} value={`${formatNumber(DEMO_RESULT.download, language)} Mbps`} />
+              <ResultTile icon={Upload} label={t("speedTest.upload")} value={`${formatNumber(DEMO_RESULT.upload, language)} Mbps`} />
+              <ResultTile icon={Timer} label={t("speedTest.ping")} value={`${formatNumber(DEMO_RESULT.ping, language)} ms`} />
             </AnimatedSection>
           )}
 
           <p className="flex max-w-lg items-start gap-2 text-center text-xs text-text-secondary">
             <Info size={14} className="mt-0.5 shrink-0" />
-            এটি একটি ডেমো ইন্টারফেস — প্রকৃত স্পিড পরিমাপ ভবিষ্যতে ব্যাকএন্ড ইন্টিগ্রেশনের মাধ্যমে যুক্ত করা হবে।
+            {t("speedTest.disclaimer")}
           </p>
         </Container>
       </section>

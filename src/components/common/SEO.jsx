@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { site } from "../../config/site.js";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 
 const setMeta = (attr, key, content) => {
   let el = document.head.querySelector(`meta[${attr}="${key}"]`);
@@ -16,9 +17,11 @@ const setMeta = (attr, key, content) => {
  * tags on mount. Avoids pulling in react-helmet for a handful of tags.
  */
 const SEO = ({ title, description, path = "" }) => {
+  const { language } = useLanguage();
+
   useEffect(() => {
-    const fullTitle = title ? `${title} | ${site.titleSuffix}` : site.defaultTitle;
-    const desc = description || site.defaultDescription;
+    const fullTitle = title ? `${title} | ${site.titleSuffix}` : site.defaultTitle[language];
+    const desc = description || site.defaultDescription[language];
     const url = `${site.url}${path}`;
 
     document.title = fullTitle;
@@ -28,11 +31,11 @@ const SEO = ({ title, description, path = "" }) => {
     setMeta("property", "og:image", `${site.url}${site.ogImage}`);
     setMeta("property", "og:url", url);
     setMeta("property", "og:type", "website");
-    setMeta("property", "og:locale", site.locale);
+    setMeta("property", "og:locale", site.locale[language]);
     setMeta("name", "twitter:card", "summary_large_image");
     setMeta("name", "twitter:title", fullTitle);
     setMeta("name", "twitter:description", desc);
-  }, [title, description, path]);
+  }, [title, description, path, language]);
 
   return null;
 };

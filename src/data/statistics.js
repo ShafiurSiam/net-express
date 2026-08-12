@@ -1,9 +1,11 @@
 // Trust/statistics section values.
 // IMPORTANT: These are clearly-marked PLACEHOLDER figures — replace with real
 // company data once available. Do not present these as verified facts.
+// `value`/`suffix` are stored as plain Arabic-numeral text and formatted via
+// formatNumber(value, language) at render time; only `label` needs {bn, en}.
 export const statistics = [
-  { id: "customers", value: 1000, suffix: "+", label: "সন্তুষ্ট গ্রাহক", placeholder: true },
-  { id: "uptime", value: 99, suffix: "%+", label: "নেটওয়ার্ক আপটাইম", placeholder: true },
-  { id: "support", value: 24, suffix: "/৭", label: "কাস্টমার সাপোর্ট", placeholder: true },
-  { id: "experience", value: 10, suffix: "+", label: "বছরের অভিজ্ঞতা", placeholder: true },
+  { id: "customers", value: 1000, suffix: "+", label: { bn: "সন্তুষ্ট গ্রাহক", en: "Happy Customers" }, placeholder: true },
+  { id: "uptime", value: 99, suffix: "%+", label: { bn: "নেটওয়ার্ক আপটাইম", en: "Network Uptime" }, placeholder: true },
+  { id: "support", value: 24, suffix: "/7", label: { bn: "কাস্টমার সাপোর্ট", en: "Customer Support" }, placeholder: true },
+  { id: "experience", value: 10, suffix: "+", label: { bn: "বছরের অভিজ্ঞতা", en: "Years of Experience" }, placeholder: true },
 ];
