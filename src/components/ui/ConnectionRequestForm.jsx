@@ -104,7 +104,7 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
           {packages.map((pkg) => (
             <option key={pkg.id} value={pkg.id}>
               {t("connectionForm.packageOption", {
-                name: pkg.name[language],
+                name: `${pkg.name[language]} (${pkg.speed[language]})`,
                 price: pkg.price[language],
                 period: pkg.period[language],
               })}

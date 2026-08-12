@@ -71,6 +71,7 @@ export const translations = {
     businessPackage: { bn: "বিজনেস প্যাকেজ", en: "Business Package" },
     internetSpeed: { bn: "ইন্টারনেট স্পিড", en: "Internet Speed" },
     getConnected: { bn: "সংযোগ নিন", en: "Get Connected" },
+    whatsNew: { bn: "নতুন কী", en: "What's New" },
   },
 
   offerCard: {

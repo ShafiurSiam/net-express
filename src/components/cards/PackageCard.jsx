@@ -1,4 +1,4 @@
-import { Check, Zap } from "lucide-react";
+import { Check, Sparkles, Zap } from "lucide-react";
 import Button from "../common/Button.jsx";
 import Badge from "../common/Badge.jsx";
 import AnimatedSection from "../common/AnimatedSection.jsx";
@@ -26,7 +26,7 @@ const PackageCard = ({ pkg, onSelect, delay = 0 }) => {
           </Badge>
         )}
 
-        {pkg.staticIp && (
+        {!pkg.popular && pkg.category === "business" && (
           <Badge tone="dark" className="absolute -top-3 left-1/2 -translate-x-1/2">
             {t("packageCard.businessPackage")}
           </Badge>
@@ -37,12 +37,32 @@ const PackageCard = ({ pkg, onSelect, delay = 0 }) => {
           <span className="text-sm font-semibold text-text-secondary">{t("packageCard.internetSpeed")}</span>
         </div>
 
-        <h3 className="mt-2 text-2xl font-bold text-text-primary">{pkg.name[language]}</h3>
+        <div className="mt-2 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-text-primary">{pkg.name[language]}</h3>
+          {pkg.tag && (
+            <Badge tone="outline" className="normal-case">
+              {pkg.tag[language]}
+            </Badge>
+          )}
+        </div>
 
-        <div className="mt-4 flex items-end gap-1">
+        <p className="mt-1 text-lg font-semibold text-text-secondary">{pkg.speed[language]}</p>
+
+        <div className="mt-3 flex items-end gap-1">
           <span className="text-4xl font-extrabold text-text-primary">৳{pkg.price[language]}</span>
           <span className="pb-1 text-text-secondary">/ {pkg.period[language]}</span>
         </div>
+        {pkg.vatNote && <span className="text-xs text-text-secondary">{pkg.vatNote[language]}</span>}
+
+        {pkg.whatsNew && (
+          <div className="mt-4 flex items-start gap-2 rounded-xl border border-primary-red/30 bg-primary-red/5 px-3.5 py-3">
+            <Sparkles size={16} className="mt-0.5 shrink-0 text-primary-red" />
+            <p className="text-sm text-text-primary">
+              <span className="font-bold text-primary-red">{t("packageCard.whatsNew")}: </span>
+              {pkg.whatsNew[language]}
+            </p>
+          </div>
+        )}
 
         <ul className="mt-6 flex flex-1 flex-col gap-3">
           {pkg.features[language].map((feature) => (
