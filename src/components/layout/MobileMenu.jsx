@@ -1,12 +1,66 @@
-import { useEffect } from "react";
+import { Fragment, useEffect, useId, useState } from "react";
 import { createPortal } from "react-dom";
 import { NavLink, Link } from "react-router-dom";
-import { X, Wallet } from "lucide-react";
+import { X, Wallet, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Button from "../common/Button.jsx";
 import { navLinks } from "../../data/navigation.js";
+import { ftpLinks } from "../../data/ftpLinks.js";
 import { company } from "../../config/company.js";
 import logo from "../../assets/logo/logo.svg";
+
+/** Accordion-style "FTP" section for the mobile menu — expands inline instead of hovering. */
+const MobileFtpAccordion = ({ onNavigate }) => {
+  const [open, setOpen] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+  const panelId = useId();
+
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={panelId}
+        className="flex w-full items-center justify-between gap-2 rounded-xl px-4 py-3 text-left text-base font-medium text-text-primary transition-colors hover:bg-surface"
+      >
+        FTP
+        <ChevronDown
+          size={18}
+          aria-hidden="true"
+          className={`shrink-0 text-text-secondary transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            id={panelId}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.25, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="flex flex-col gap-1 py-1 pl-4">
+              {ftpLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onNavigate}
+                  className="rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary transition-colors hover:bg-surface hover:text-primary-red"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const MobileMenu = ({ isOpen, onClose }) => {
   const shouldReduceMotion = useReducedMotion();
@@ -53,18 +107,20 @@ const MobileMenu = ({ isOpen, onClose }) => {
 
             <nav className="flex flex-col gap-1" aria-label="মোবাইল মেনু">
               {navLinks.map((link) => (
-                <NavLink
-                  key={link.path}
-                  to={link.path}
-                  onClick={onClose}
-                  className={({ isActive }) =>
-                    `rounded-xl px-4 py-3 text-base font-medium transition-colors ${
-                      isActive ? "bg-primary-red/10 text-primary-red" : "text-text-primary hover:bg-surface"
-                    }`
-                  }
-                >
-                  {link.label}
-                </NavLink>
+                <Fragment key={link.path}>
+                  <NavLink
+                    to={link.path}
+                    onClick={onClose}
+                    className={({ isActive }) =>
+                      `rounded-xl px-4 py-3 text-base font-medium transition-colors ${
+                        isActive ? "bg-primary-red/10 text-primary-red" : "text-text-primary hover:bg-surface"
+                      }`
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
+                  {link.path === "/coverage" && <MobileFtpAccordion onNavigate={onClose} />}
+                </Fragment>
               ))}
             </nav>
 

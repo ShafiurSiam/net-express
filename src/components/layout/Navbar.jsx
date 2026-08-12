@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, Wallet } from "lucide-react";
 import Container from "../common/Container.jsx";
 import Button from "../common/Button.jsx";
 import MobileMenu from "./MobileMenu.jsx";
+import NavDropdown from "../ui/NavDropdown.jsx";
 import { navLinks } from "../../data/navigation.js";
+import { ftpLinks } from "../../data/ftpLinks.js";
 import { company } from "../../config/company.js";
 import logo from "../../assets/logo/logo.svg";
 
@@ -35,28 +37,40 @@ const Navbar = () => {
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label="প্রধান মেনু">
             {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  `relative rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                    isActive
-                      ? "text-primary-red"
-                      : scrolled
+              <Fragment key={link.path}>
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `relative rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                      isActive
+                        ? "text-primary-red"
+                        : scrolled
+                          ? "text-text-primary hover:text-primary-red"
+                          : "text-text-primary/90 hover:text-primary-red"
+                    }`
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      {link.label}
+                      {isActive && (
+                        <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-primary-red" />
+                      )}
+                    </>
+                  )}
+                </NavLink>
+                {link.path === "/coverage" && (
+                  <NavDropdown
+                    label="FTP"
+                    items={ftpLinks}
+                    triggerClassName={
+                      scrolled
                         ? "text-text-primary hover:text-primary-red"
                         : "text-text-primary/90 hover:text-primary-red"
-                  }`
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    {link.label}
-                    {isActive && (
-                      <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-primary-red" />
-                    )}
-                  </>
+                    }
+                  />
                 )}
-              </NavLink>
+              </Fragment>
             ))}
           </nav>
 
