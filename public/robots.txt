@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://netexpress.example.com/sitemap.xml

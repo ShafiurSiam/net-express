@@ -1,0 +1,16 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#18181B"/>
+  <defs>
+    <radialGradient id="og-glow" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#C8102E" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#C8102E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#og-glow)"/>
+  <rect x="90" y="235" width="90" height="90" rx="24" fill="#C8102E"/>
+  <circle cx="118" cy="298" r="6" fill="#FFFFFF"/>
+  <path d="M118 285c11 0 20 9 20 20" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M118 268c26 0 47 21 47 47" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <text x="215" y="305" font-family="'Poppins','Segoe UI',Arial,sans-serif" font-size="56" font-weight="700" fill="#FFFFFF">Net<tspan fill="#FF5C7A">Express</tspan></text>
+  <text x="90" y="400" font-family="'Poppins','Segoe UI',Arial,sans-serif" font-size="28" fill="#D4D4D8">বাংলাদেশের নির্ভরযোগ্য ইন্টারনেট সেবা</text>
+</svg>

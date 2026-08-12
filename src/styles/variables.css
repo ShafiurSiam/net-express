@@ -1,0 +1,28 @@
+/*
+  Centralized design tokens. Change a value here and it updates everywhere,
+  since every component uses the generated Tailwind utilities (bg-primary-red,
+  text-text-secondary, border-border, font-bangla, ...) instead of raw hex codes.
+*/
+@theme {
+  /* Brand */
+  --color-primary-red: #c8102e;
+  --color-primary-red-dark: #8c001f;
+  --color-primary-red-light: #ff5c7a;
+
+  /* Neutrals */
+  --color-charcoal: #17151a;
+  --color-background: #ffffff;
+  --color-surface: #faf8f8;
+  --color-surface-dark: #201c20;
+  --color-text-primary: #1c1917;
+  --color-text-secondary: #57534e;
+  --color-border: #e7e2e1;
+
+  /* Typography */
+  --font-bangla: "Hind Siliguri", "Noto Sans Bengali", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Hind Siliguri", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px rgba(23, 21, 26, 0.04), 0 8px 24px -8px rgba(23, 21, 26, 0.10);
+  --shadow-card-hover: 0 4px 8px rgba(23, 21, 26, 0.06), 0 16px 40px -12px rgba(200, 16, 46, 0.22);
+}

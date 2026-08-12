@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://netexpress.example.com/</loc></url>
+  <url><loc>https://netexpress.example.com/about</loc></url>
+  <url><loc>https://netexpress.example.com/packages</loc></url>
+  <url><loc>https://netexpress.example.com/offers</loc></url>
+  <url><loc>https://netexpress.example.com/coverage</loc></url>
+  <url><loc>https://netexpress.example.com/payment</loc></url>
+  <url><loc>https://netexpress.example.com/contact</loc></url>
+  <url><loc>https://netexpress.example.com/support</loc></url>
+  <url><loc>https://netexpress.example.com/speed-test</loc></url>
+  <url><loc>https://netexpress.example.com/terms</loc></url>
+  <url><loc>https://netexpress.example.com/privacy</loc></url>
+</urlset>

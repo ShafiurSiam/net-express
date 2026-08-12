@@ -1,0 +1,19 @@
+<svg width="480" height="320" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="১ মাস ফ্রি অফার">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8C001F"/>
+      <stop offset="100%" stop-color="#C8102E"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" rx="20" fill="url(#bg2)"/>
+  <circle cx="420" cy="280" r="110" fill="#FFFFFF" opacity="0.06"/>
+  <circle cx="40" cy="30" r="80" fill="#FFFFFF" opacity="0.06"/>
+  <g transform="translate(170,80)" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="18" width="140" height="120" rx="12"/>
+    <line x1="0" y1="55" x2="140" y2="55"/>
+    <line x1="35" y1="0" x2="35" y2="36"/>
+    <line x1="105" y1="0" x2="105" y2="36"/>
+  </g>
+  <text x="240" y="105" text-anchor="middle" font-family="'Poppins','Segoe UI',Arial,sans-serif" font-size="34" font-weight="800" fill="#FFFFFF">+1</text>
+  <text x="240" y="270" text-anchor="middle" font-family="'Poppins','Segoe UI',Arial,sans-serif" font-size="26" font-weight="700" fill="#FFFFFF">Net Express</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg width="720" height="560" viewBox="0 0 720 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="কভারেজ এলাকার বিমূর্ত মানচিত্র">
+  <defs>
+    <linearGradient id="mapBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FCEBEE"/>
+      <stop offset="100%" stop-color="#FFF5F6"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="560" rx="24" fill="url(#mapBg)"/>
+  <g stroke="#C8102E" stroke-opacity="0.15" stroke-width="1">
+    <line x1="0" y1="80" x2="720" y2="80"/>
+    <line x1="0" y1="180" x2="720" y2="180"/>
+    <line x1="0" y1="280" x2="720" y2="280"/>
+    <line x1="0" y1="380" x2="720" y2="380"/>
+    <line x1="0" y1="480" x2="720" y2="480"/>
+    <line x1="120" y1="0" x2="120" y2="560"/>
+    <line x1="240" y1="0" x2="240" y2="560"/>
+    <line x1="360" y1="0" x2="360" y2="560"/>
+    <line x1="480" y1="0" x2="480" y2="560"/>
+    <line x1="600" y1="0" x2="600" y2="560"/>
+  </g>
+  <path d="M260 90c60-20 140-10 180 30 50 50 40 120 10 170-40 65-40 130-100 150-70 24-150-10-180-70-30-58-10-120 10-170 15-38 40-90 80-110z"
+        fill="#C8102E" opacity="0.12" stroke="#C8102E" stroke-width="2" stroke-opacity="0.4"/>
+  <g fill="#C8102E">
+    <circle cx="330" cy="180" r="9"/>
+    <circle cx="400" cy="230" r="7"/>
+    <circle cx="300" cy="280" r="8"/>
+    <circle cx="380" cy="330" r="6"/>
+    <circle cx="330" cy="380" r="9"/>
+    <circle cx="270" cy="230" r="6"/>
+  </g>
+  <g fill="none" stroke="#C8102E" stroke-width="2" opacity="0.5">
+    <circle cx="330" cy="180" r="18"/>
+    <circle cx="330" cy="380" r="18"/>
+  </g>
+</svg>
