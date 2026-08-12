@@ -2,7 +2,10 @@ import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import Button from "../common/Button.jsx";
 import { packages } from "../../data/packages.js";
+import { smePlans } from "../../data/smePlans.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
+
+const negotiableSmePlans = smePlans.plans.filter((plan) => plan.ctaType === "negotiable");
 
 const emptyForm = {
   name: "",
@@ -101,15 +104,24 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
       <Field label={t("connectionForm.packageLabel")}>
         <select value={form.packageId} onChange={handleChange("packageId")} className={inputClass}>
           <option value="">{t("connectionForm.selectPackage")}</option>
-          {packages.map((pkg) => (
-            <option key={pkg.id} value={pkg.id}>
-              {t("connectionForm.packageOption", {
-                name: `${pkg.name[language]} (${pkg.speed[language]})`,
-                price: pkg.price[language],
-                period: pkg.period[language],
-              })}
-            </option>
-          ))}
+          <optgroup label={t("connectionForm.homePackagesGroup")}>
+            {packages.map((pkg) => (
+              <option key={pkg.id} value={pkg.id}>
+                {t("connectionForm.packageOption", {
+                  name: `${pkg.name[language]} (${pkg.speed[language]})`,
+                  price: pkg.price[language],
+                  period: pkg.period[language],
+                })}
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label={t("connectionForm.smePlansGroup")}>
+            {negotiableSmePlans.map((plan) => (
+              <option key={plan.id} value={plan.id}>
+                {t("connectionForm.smePlanOption", { name: plan.name, speed: plan.speed })}
+              </option>
+            ))}
+          </optgroup>
         </select>
       </Field>
 

@@ -1,8 +1,22 @@
-import { Check, Sparkles } from "lucide-react";
+import { CheckCircle2, Clock, Globe, Server, Sparkles, Video, Wifi, Zap, PlayCircle } from "lucide-react";
 import Button from "../common/Button.jsx";
 import Badge from "../common/Badge.jsx";
 import AnimatedSection from "../common/AnimatedSection.jsx";
 import { useLanguage } from "../../context/LanguageContext.jsx";
+
+// Picks an icon matching what a feature line is about, based on its (stable) English text —
+// keeps the icon choice independent of which language is currently displayed.
+const getFeatureIcon = (featureEn) => {
+  const text = featureEn.toLowerCase();
+  if (text.includes("ftp")) return Server;
+  if (text.includes("bdix") || text.includes("cdn")) return Wifi;
+  if (text.includes("video calling")) return Video;
+  if (text.includes("streaming")) return PlayCircle;
+  if (text.includes("real ip") || text.includes("ipv6") || text.includes("public ip")) return Globe;
+  if (text.includes("uncapped") || text.includes("upload speed") || text.includes("gaming")) return Zap;
+  if (text.includes("support")) return Clock;
+  return CheckCircle2;
+};
 
 /**
  * pkg: entry from src/data/packages.js
@@ -23,12 +37,6 @@ const PackageCard = ({ pkg, onSelect, delay = 0 }) => {
         {pkg.popular && (
           <Badge tone="red" className="absolute -top-3 left-1/2 -translate-x-1/2">
             {t("packageCard.mostPopular")}
-          </Badge>
-        )}
-
-        {!pkg.popular && pkg.category === "business" && (
-          <Badge tone="dark" className="absolute -top-3 left-1/2 -translate-x-1/2">
-            {t("packageCard.businessPackage")}
           </Badge>
         )}
 
@@ -60,12 +68,15 @@ const PackageCard = ({ pkg, onSelect, delay = 0 }) => {
         )}
 
         <ul className="mt-6 flex flex-1 flex-col gap-3">
-          {pkg.features[language].map((feature) => (
-            <li key={feature} className="flex items-start gap-2.5 text-sm text-text-secondary">
-              <Check size={18} className="mt-0.5 shrink-0 text-primary-red" />
-              <span>{feature}</span>
-            </li>
-          ))}
+          {pkg.features[language].map((feature, i) => {
+            const Icon = getFeatureIcon(pkg.features.en[i]);
+            return (
+              <li key={feature} className="flex items-start gap-2.5 text-sm text-text-secondary">
+                <Icon size={18} className="mt-0.5 shrink-0 text-primary-red" />
+                <span>{feature}</span>
+              </li>
+            );
+          })}
         </ul>
 
         <Button

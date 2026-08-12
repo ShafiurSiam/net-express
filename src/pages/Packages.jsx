@@ -3,6 +3,7 @@ import PageHeader from "../components/common/PageHeader.jsx";
 import Container from "../components/common/Container.jsx";
 import SectionTitle from "../components/common/SectionTitle.jsx";
 import PackageCard from "../components/cards/PackageCard.jsx";
+import SMECorporateSection from "../sections/packages/SMECorporateSection.jsx";
 import CTASection from "../sections/home/CTASection.jsx";
 import { packages, packageCategories } from "../data/packages.js";
 import { useConnectionRequest } from "../context/ConnectionRequestContext.jsx";
@@ -40,6 +41,8 @@ const Packages = () => {
               </div>
             );
           })}
+
+          <SMECorporateSection />
         </Container>
       </section>
 

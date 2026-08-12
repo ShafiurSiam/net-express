@@ -60,6 +60,9 @@ export const translations = {
     packageLabel: { bn: "পছন্দের প্যাকেজ", en: "Preferred Package" },
     selectPackage: { bn: "প্যাকেজ নির্বাচন করুন", en: "Select a package" },
     packageOption: { bn: "{name} — ৳{price}/{period}", en: "{name} — ৳{price}/{period}" },
+    homePackagesGroup: { bn: "ইন্টারনেট প্যাকেজ", en: "Internet Packages" },
+    smePlansGroup: { bn: "SME ও কর্পোরেট প্ল্যান", en: "SME & Corporate Plans" },
+    smePlanOption: { bn: "{name} ({speed}) — আলোচনা সাপেক্ষে মূল্য", en: "{name} ({speed}) — Negotiable pricing" },
     submit: { bn: "অনুরোধ পাঠান", en: "Send Request" },
     successTitle: { bn: "অনুরোধ গ্রহণ করা হয়েছে", en: "Request Received" },
     successBody: { bn: "ধন্যবাদ! আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।", en: "Thank you! Our representative will contact you shortly." },
@@ -68,7 +71,6 @@ export const translations = {
 
   packageCard: {
     mostPopular: { bn: "সবচেয়ে জনপ্রিয়", en: "Most Popular" },
-    businessPackage: { bn: "বিজনেস প্যাকেজ", en: "Business Package" },
     getConnected: { bn: "সংযোগ নিন", en: "Get Connected" },
     whatsNew: { bn: "নতুন কী", en: "What's New" },
   },
