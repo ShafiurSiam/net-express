@@ -55,10 +55,7 @@ export const packages = [
     price: { bn: toBanglaDigits(630), en: "630" },
     period: { bn: "মাস", en: "month" },
     vatNote: { bn: "(৫% ভ্যাটসহ)", en: "(VAT 5% included)" },
-    whatsNew: {
-      bn: "আনলিমিটেড FUP — অনলাইন ক্লাস, রিলস আর গ্রুপ স্টাডির জন্য পারফেক্ট",
-      en: "Unlimited FUP — perfect for online classes, reels, and group study",
-    },
+    whatsNew: null,
     features: sharedFeatures,
     popular: false,
   },
