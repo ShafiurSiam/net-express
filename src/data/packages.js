@@ -5,30 +5,7 @@
 // language via `field[language]` from useLanguage().
 import { toBanglaDigits } from "../i18n/numerals.js";
 
-const sharedFeatures = {
-  bn: [
-    "হাই-স্পিড BDIX ও CDN কানেক্টিভিটি",
-    "৪K কোয়ালিটিতে ইউটিউব ও ফেসবুক স্ট্রিমিং",
-    "আনলিমিটেড ৪K ভিডিও কলিং",
-    "Optical Fiber Connection (FTTH)",
-    "শুধুমাত্র IPv6 পাবলিক আইপি",
-    "লো ল্যাটেন্সি গেমিং",
-    "২৪/৭ ফোন ও অনলাইন সাপোর্ট",
-    "১:৮ কানেকশন রেশিও",
-  ],
-  en: [
-    "High-speed BDIX & CDN connectivity",
-    "4K-quality YouTube & Facebook streaming",
-    "Unlimited 4K video calling",
-    "Optical Fiber Connection (FTTH)",
-    "IPv6 public IP only",
-    "Low-latency gaming",
-    "24/7 phone & online support",
-    "1:8 connection ratio",
-  ],
-};
-
-// Shorter, tier-specific feature list used by PRO/PRIME/ULTRA/BLAZE.
+// Standard 4-item feature list shared by every Home package.
 const shortFeatures = {
   bn: [
     "১:৮ কানেকশন রেশিও",
@@ -56,7 +33,7 @@ export const packages = [
     period: { bn: "মাস", en: "month" },
     vatNote: { bn: "(৫% ভ্যাটসহ)", en: "(VAT 5% included)" },
     whatsNew: null,
-    features: sharedFeatures,
+    features: shortFeatures,
     popular: false,
   },
   {
@@ -73,7 +50,7 @@ export const packages = [
       bn: "মাল্টি-ডিভাইস কাভারেজ বুস্ট — একসাথে ৪-৫টি ডিভাইসে স্ট্রিমিং, স্টাডি ও স্ক্রলিং, কোনো স্লো-ডাউন নেই",
       en: "Multi-device coverage boost — stream, study, and scroll on 4-5 devices at once, zero slowdown",
     },
-    features: sharedFeatures,
+    features: shortFeatures,
     popular: false,
   },
   {
@@ -87,11 +64,11 @@ export const packages = [
     period: { bn: "মাস", en: "month" },
     vatNote: { bn: "(৫% ভ্যাটসহ)", en: "(VAT 5% included)" },
     whatsNew: {
-      bn: "ওয়ার্ক-ফ্রম-হোম রেডি — জুম, গুগল মিট ও ক্লাউড আপলোডের জন্য প্রায়োরিটি ব্যান্ডউইথ",
-      en: "Work-from-home ready — priority bandwidth for Zoom, Google Meet, and cloud uploads",
+      bn: "সবচেয়ে জনপ্রিয় প্যাকেজ — পুরো পরিবারের জন্য পারফেক্ট স্পিড ও স্কেয়ালিবিলিটি",
+      en: "The most popular package — perfect speed and scalability for the whole family",
     },
     features: shortFeatures,
-    popular: false,
+    popular: true,
   },
   {
     id: "prime-65",
@@ -104,11 +81,11 @@ export const packages = [
     period: { bn: "মাস", en: "month" },
     vatNote: { bn: "(৫% ভ্যাটসহ)", en: "(VAT 5% included)" },
     whatsNew: {
-      bn: "সবচেয়ে জনপ্রিয় প্যাকেজ — পুরো পরিবারের জন্য পারফেক্ট স্পিড ও স্কেয়ালিবিলিটি",
-      en: "The most popular package — perfect speed and scalability for the whole family",
+      bn: "ওয়ার্ক-ফ্রম-হোম রেডি — জুম, গুগল মিট ও ক্লাউড আপলোডের জন্য প্রায়োরিটি ব্যান্ডউইথ",
+      en: "Work-from-home ready — priority bandwidth for Zoom, Google Meet, and cloud uploads",
     },
     features: shortFeatures,
-    popular: true,
+    popular: false,
   },
   {
     id: "ultra-80",
