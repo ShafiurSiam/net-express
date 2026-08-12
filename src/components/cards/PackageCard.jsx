@@ -1,4 +1,4 @@
-import { Check, Sparkles, Zap } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import Button from "../common/Button.jsx";
 import Badge from "../common/Badge.jsx";
 import AnimatedSection from "../common/AnimatedSection.jsx";
@@ -32,12 +32,7 @@ const PackageCard = ({ pkg, onSelect, delay = 0 }) => {
           </Badge>
         )}
 
-        <div className="flex items-center gap-2 text-primary-red">
-          <Zap size={20} />
-          <span className="text-sm font-semibold text-text-secondary">{t("packageCard.internetSpeed")}</span>
-        </div>
-
-        <div className="mt-2 flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <h3 className="text-2xl font-bold text-text-primary">{pkg.name[language]}</h3>
           {pkg.tag && (
             <Badge tone="outline" className="normal-case">
@@ -46,7 +41,7 @@ const PackageCard = ({ pkg, onSelect, delay = 0 }) => {
           )}
         </div>
 
-        <p className="mt-1 text-lg font-semibold text-text-secondary">{pkg.speed[language]}</p>
+        <p className="mt-1 text-lg font-bold text-primary-red">{pkg.speed[language]}</p>
 
         <div className="mt-3 flex items-end gap-1">
           <span className="text-4xl font-extrabold text-text-primary">৳{pkg.price[language]}</span>
