@@ -40,8 +40,8 @@ export const packages = [
     period: { bn: "মাস", en: "month" },
     vatNote: { bn: "(৫% ভ্যাটসহ)", en: "(VAT 5% included)" },
     whatsNew: {
-      bn: "ফ্রি ওয়াই-ফাই রাউটার + আনলিমিটেড FUP — অনলাইন ক্লাস, রিলস আর গ্রুপ স্টাডির জন্য পারফেক্ট",
-      en: "Free Wi-Fi router + unlimited FUP — perfect for online classes, reels, and group study",
+      bn: "আনলিমিটেড FUP — অনলাইন ক্লাস, রিলস আর গ্রুপ স্টাডির জন্য পারফেক্ট",
+      en: "Unlimited FUP — perfect for online classes, reels, and group study",
     },
     features: sharedFeatures,
     popular: false,
