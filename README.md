@@ -183,12 +183,21 @@ import path in `HeroSection.jsx` accordingly.
 
 ### The logo
 
-No final logo exists yet — `src/assets/logo/logo.svg` (for light backgrounds, used
-in the navbar) and `src/assets/logo/logo-white.svg` (for dark backgrounds, used in
-the footer) are placeholder wordmarks. **To replace the logo, swap these two files,
-keeping the same filenames and roughly the same aspect ratio (~220×48).** Every
-component that shows the logo imports from these two files — you never need to edit
-a component to change the logo.
+`src/assets/logo/logo.svg` (for light backgrounds, used in the navbar and mobile
+menu) and `src/assets/logo/logo-white.svg` (for dark backgrounds, used in the
+footer) are the two logo files. Both are imported once in `src/config/company.js`
+(as `company.logo` / `company.logoWhite`) and every component that shows the logo
+reads them from there — **to replace the logo, swap these two files (keeping the
+same filenames) and update nothing else.** The current mark is a compact icon
+(viewBox ~50×30, no wordmark text baked in), noticeably squarer than a wide
+banner-style logo — if a future version is much wider or taller, revisit the
+`h-*`/`w-auto` sizing on the `<img>` in Navbar/MobileMenu/Footer.
+
+`logo-white.svg` is currently an exact duplicate of `logo.svg`, not a real
+white/inverted variant — the footer background (`--color-charcoal: #17151a`) and
+the logo's dark fill (`#231f20`) are nearly the same near-black tone, so most of
+the mark is very hard to see in the footer (only the red shapes read clearly).
+Replace `logo-white.svg` with a proper white/light version when one is available.
 
 ### Colors
 

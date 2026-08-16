@@ -7,7 +7,13 @@
 // name/nameBangla (plain strings), tagline/shortDescription/phone/address/
 // btrcLicense/workingHours ({ bn, en } pairs), phoneRaw/hotline/email/
 // supportEmail (plain strings, no bn/en split since they're not translated),
-// and foundedYear/copyrightYear (plain numbers).
+// foundedYear/copyrightYear (plain numbers), and logo/logoWhite (imported SVG
+// asset URLs — the only place the logo files should be imported from; Navbar,
+// MobileMenu and Footer read them from here rather than importing the assets
+// directly, per spec section 51.1).
+import logo from "../assets/logo/logo.svg";
+import logoWhite from "../assets/logo/logo-white.svg";
+
 export const company = {
   name: "Net Express",
   nameBangla: "নেট এক্সপ্রেস",
@@ -26,4 +32,6 @@ export const company = {
   workingHours: { bn: "সকাল ৯টা - রাত ১০টা (সব দিন)", en: "9:00 AM - 10:00 PM (all days)" },
   foundedYear: 2026,
   copyrightYear: 2026,
+  logo,
+  logoWhite,
 };

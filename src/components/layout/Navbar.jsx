@@ -10,7 +10,6 @@ import { navLinks } from "../../data/navigation.js";
 import { ftpLinks } from "../../data/ftpLinks.js";
 import { company } from "../../config/company.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
-import logo from "../../assets/logo/logo.svg";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +34,7 @@ const Navbar = () => {
       >
         <Container className="flex h-[72px] items-center justify-between py-3">
           <Link to="/" className="shrink-0" aria-label={company.name}>
-            <img src={logo} alt={company.name} className="h-9 w-auto sm:h-10" />
+            <img src={company.logo} alt={company.name} className="h-11 w-auto sm:h-12" />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label={t("nav.mainNav")}>

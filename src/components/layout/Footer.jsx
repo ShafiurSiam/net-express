@@ -6,7 +6,6 @@ import { social } from "../../config/social.js";
 import { footerLinks } from "../../data/navigation.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
 import { formatNumber } from "../../i18n/numerals.js";
-import logoWhite from "../../assets/logo/logo-white.svg";
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from "../common/SocialIcons.jsx";
 
 const socialLinks = [
@@ -22,7 +21,7 @@ const Footer = () => {
     <footer className="bg-charcoal text-white">
       <Container className="grid grid-cols-1 gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <img src={logoWhite} alt={company.name} className="h-9 w-auto" />
+          <img src={company.logoWhite} alt={company.name} className="h-11 w-auto" />
           <p className="text-sm text-white/60">{company.shortDescription[language]}</p>
           <div className="flex items-center gap-3 pt-1">
             {socialLinks.map(({ icon: Icon, url, label }) => (

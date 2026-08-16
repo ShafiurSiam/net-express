@@ -9,7 +9,6 @@ import { navLinks } from "../../data/navigation.js";
 import { ftpLinks } from "../../data/ftpLinks.js";
 import { company } from "../../config/company.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
-import logo from "../../assets/logo/logo.svg";
 
 /** Accordion-style "FTP" section for the mobile menu — expands inline instead of hovering. */
 const MobileFtpAccordion = ({ onNavigate }) => {
@@ -96,7 +95,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
           >
             <div className="mb-6 flex items-center justify-between">
               <Link to="/" onClick={onClose}>
-                <img src={logo} alt={company.name} className="h-8 w-auto" />
+                <img src={company.logo} alt={company.name} className="h-10 w-auto" />
               </Link>
               <button
                 type="button"
