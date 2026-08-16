@@ -1,3 +1,4 @@
+// Renders the final "Get Connected" call-to-action banner, closing out the homepage.
 import { ArrowRight } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import Button from "../../components/common/Button.jsx";

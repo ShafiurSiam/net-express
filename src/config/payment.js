@@ -1,5 +1,10 @@
 // Single source of truth for the bill-payment link and supported payment methods.
 // Change VITE_PAYMENT_URL in .env to update the live payment link without touching code.
+//
+// Shape of this file: `paymentConfig.url` is a plain string (the "Pay Bill" link
+// target), `paymentConfig.methods` is a list of payment badges rendered by
+// PaymentBadges — each entry is { id, label: { bn, en }, color } where `color` is
+// a hex code used for that method's badge background.
 export const paymentConfig = {
   url: import.meta.env.VITE_PAYMENT_URL || "https://example.com/payment",
   methods: [

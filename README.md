@@ -12,6 +12,21 @@ phone numbers, images, FAQs...) without touching component code.
 
 ---
 
+## For the Non-Technical Site Owner
+
+If you don't read code and just need to change prices, contact info, offers, or
+images — or need to know how deploying/rolling back works — skip this README and
+read these two guides instead (written entirely in plain Bangla):
+
+- **[MAINTENANCE-GUIDE.md](./MAINTENANCE-GUIDE.md)** — where to go to edit any piece
+  of content, how to add a new package/offer/FAQ, how to change colors, and what
+  mistakes to avoid.
+- **[DEPLOYMENT-GUIDE.md](./DEPLOYMENT-GUIDE.md)** — how the site goes live on
+  Vercel, Railway, and (in the future) a Hostinger VPS, including how to check for a
+  failed deploy and how to roll back.
+
+---
+
 ## Table of contents
 
 1. [Tech stack](#tech-stack)
@@ -250,6 +265,7 @@ Copy `.env.example` to `.env` and fill in real values. **Never commit `.env`.**
 | `VITE_PAYMENT_URL` | External payment gateway link used by every "বিল পরিশোধ" button |
 | `VITE_SITE_URL` | Canonical site URL, used for SEO / Open Graph tags |
 | `VITE_GOOGLE_MAPS_KEY` | Only needed if the coverage checker is upgraded to a real map |
+| `VITE_SHEETS_WEBHOOK_URL` | Google Apps Script web app URL that receives connection request submissions and appends them as rows to a Google Sheet. See MAINTENANCE-GUIDE.md for how to view/replace this. |
 
 ## Deploying to Vercel
 

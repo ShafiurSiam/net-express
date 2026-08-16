@@ -3,6 +3,15 @@
 // PackagesSection / PackageCard render whatever is listed here.
 // Every human-readable field is { bn, en }; components pick the active
 // language via `field[language]` from useLanguage().
+//
+// Shape of one `packages` entry: { id (unique string), category ("home" |
+// "gaming" | "business"), tag ({ bn, en } small badge, or null), name/speed/
+// price/period/vatNote ({ bn, en } pairs), speedValue (plain number, used for
+// sorting), whatsNew ({ bn, en } highlight callout, or null), features ({ bn:
+// [...], en: [...] } — arrays of feature lines, order must match between the two
+// languages since PackageCard picks the feature icon from the English line at
+// the same index), popular (boolean, shows the "Most Popular" badge).
+// vatNote is optional per entry — PackageCard only renders it when present.
 import { toBanglaDigits } from "../i18n/numerals.js";
 
 // Standard 4-item feature list shared by every Home package.

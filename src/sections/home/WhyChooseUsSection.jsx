@@ -1,3 +1,4 @@
+// Renders the "Why Choose Us" feature grid on the homepage (speed, reliability, support, etc.).
 import { Zap, ShieldCheck, Headset, Wrench, Cpu, Wallet } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";

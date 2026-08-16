@@ -55,6 +55,7 @@ const PackageCard = ({ pkg, onSelect, delay = 0 }) => {
           <span className="text-4xl font-extrabold text-text-primary">৳{pkg.price[language]}</span>
           <span className="pb-1 text-text-secondary">/ {pkg.period[language]}</span>
         </div>
+        {/* vatNote is optional per package (packages.js) — only rendered when the entry sets it */}
         {pkg.vatNote && <span className="text-xs text-text-secondary">{pkg.vatNote[language]}</span>}
 
         {pkg.whatsNew && (

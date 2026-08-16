@@ -1,3 +1,4 @@
+// Renders the "How It Works" step-by-step timeline (choose package -> apply -> install) on the homepage.
 import { PackageSearch, ClipboardCheck, PhoneCall, Cable, Rocket } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";

@@ -1,3 +1,4 @@
+// Renders the "Pay Bill" call-to-action section on the homepage, showing supported payment method badges.
 import { Wallet } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";

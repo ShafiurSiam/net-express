@@ -1,4 +1,8 @@
 // Global site metadata used for page titles, meta descriptions, and Open Graph tags.
+// Shape: a single `site` object (not a list) — titleSuffix (plain string, appended
+// to every page <title>), defaultTitle/defaultDescription ({ bn, en } pairs, used
+// as SEO fallbacks when a page doesn't set its own), url/ogImage/themeColor (plain
+// strings), locale ({ bn, en } BCP-47 tags for the <html lang> / OG locale tag).
 export const site = {
   titleSuffix: "Net Express",
   defaultTitle: {

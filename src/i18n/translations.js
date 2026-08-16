@@ -64,8 +64,17 @@ export const translations = {
     smePlansGroup: { bn: "SME ও কর্পোরেট প্ল্যান", en: "SME & Corporate Plans" },
     smePlanOption: { bn: "{name} ({speed}) — আলোচনা সাপেক্ষে মূল্য", en: "{name} ({speed}) — Negotiable pricing" },
     submit: { bn: "অনুরোধ পাঠান", en: "Send Request" },
+    submitting: { bn: "পাঠানো হচ্ছে...", en: "Sending..." },
     successTitle: { bn: "অনুরোধ গ্রহণ করা হয়েছে", en: "Request Received" },
     successBody: { bn: "ধন্যবাদ! আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।", en: "Thank you! Our representative will contact you shortly." },
+    savedNote: {
+      bn: "আপনার তথ্য সংরক্ষণ করা হয়েছে। আমাদের প্রতিনিধি শীঘ্রই যোগাযোগ করবে।",
+      en: "Your info has been saved. Our representative will contact you soon.",
+    },
+    errorMessage: {
+      bn: "রিকুয়েস্ট পাঠাতে সমস্যা হয়েছে। আবার চেষ্টা করুন অথবা ফোনে যোগাযোগ করুন: {phone}",
+      en: "There was a problem sending the request. Try again or contact us by phone: {phone}",
+    },
     newRequest: { bn: "নতুন অনুরোধ করুন", en: "Make a New Request" },
   },
 

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Loader2 } from "lucide-react";
 import Button from "../common/Button.jsx";
 import { packages } from "../../data/packages.js";
 import { smePlans } from "../../data/smePlans.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
+import { company } from "../../config/company.js";
 
 const negotiableSmePlans = smePlans.plans.filter((plan) => plan.ctaType === "negotiable");
 
@@ -15,28 +16,68 @@ const emptyForm = {
   packageId: "",
 };
 
+// Google Apps Script web app URL that appends submissions as rows to a Google
+// Sheet (no backend of our own). Swapping this for a real backend later only
+// requires changing the fetch call in handleSubmit below.
+const SHEETS_WEBHOOK_URL = import.meta.env.VITE_SHEETS_WEBHOOK_URL;
+
+const getSelectedPackageLabel = (packageId, language, t) => {
+  const pkg = packages.find((p) => p.id === packageId);
+  if (pkg) {
+    return t("connectionForm.packageOption", {
+      name: `${pkg.name[language]} (${pkg.speed[language]})`,
+      price: pkg.price[language],
+      period: pkg.period[language],
+    });
+  }
+  const plan = negotiableSmePlans.find((p) => p.id === packageId);
+  if (plan) {
+    return t("connectionForm.smePlanOption", { name: plan.name, speed: plan.speed });
+  }
+  return "";
+};
+
 /**
  * Connection-request lead form (Section 51.5 of the spec).
- * No backend exists yet, so on submit we just show a confirmation state.
- * When a backend is ready, replace the submit handler below with a real API call.
+ * Submits in the background to a Google Sheet via SHEETS_WEBHOOK_URL —
+ * the user stays on this page throughout, success or failure.
  */
 const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
   const [form, setForm] = useState({ ...emptyForm, packageId: initialPackageId });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
   const { language, t } = useLanguage();
 
   const handleChange = (field) => (e) => {
     setForm((prev) => ({ ...prev, [field]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitting(true);
+    setError(false);
 
-    // TODO(backend): POST `form` to the connection-request API once it exists.
-    console.log("Connection request:", form);
+    try {
+      await fetch(SHEETS_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          name: form.name || "",
+          mobile: form.mobile || "",
+          area: form.area || "",
+          address: form.address || "",
+          package: getSelectedPackageLabel(form.packageId, language, t) || "",
+        }),
+      });
 
-    setSubmitted(true);
-    onSubmitted?.(form);
+      setSubmitting(false);
+      setSubmitted(true);
+      onSubmitted?.(form);
+    } catch {
+      setSubmitting(false);
+      setError(true);
+    }
   };
 
   if (submitted) {
@@ -45,6 +86,7 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
         <CheckCircle2 size={48} className="text-primary-red" />
         <h4 className="text-lg font-bold text-text-primary">{t("connectionForm.successTitle")}</h4>
         <p className="text-sm text-text-secondary">{t("connectionForm.successBody")}</p>
+        <p className="text-sm text-text-secondary">{t("connectionForm.savedNote")}</p>
         <Button
           variant="secondary"
           size="sm"
@@ -125,8 +167,21 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
         </select>
       </Field>
 
-      <Button type="submit" className="mt-2 w-full">
-        {t("connectionForm.submit")}
+      {error && (
+        <p className="rounded-xl bg-primary-red/10 px-4 py-3 text-sm text-primary-red">
+          {t("connectionForm.errorMessage", { phone: company.hotline })}
+        </p>
+      )}
+
+      <Button type="submit" disabled={submitting} className="mt-2 w-full">
+        {submitting ? (
+          <>
+            <Loader2 size={18} className="animate-spin" />
+            {t("connectionForm.submitting")}
+          </>
+        ) : (
+          t("connectionForm.submit")
+        )}
       </Button>
     </form>
   );

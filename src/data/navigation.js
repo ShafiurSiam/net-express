@@ -1,5 +1,10 @@
 // Primary navigation links shown in the Navbar and mobile menu.
 // Add/remove/reorder entries here — no component changes needed.
+//
+// Shape of one `navLinks` / `footerLinks.*` entry: { label ({ bn, en }), path
+// (plain string — a route from src/App.jsx, e.g. "/packages") }. `footerLinks`
+// groups the same shape of entry into two columns: `quickLinks` and `support`,
+// rendered by Footer.jsx.
 export const navLinks = [
   { label: { bn: "হোম", en: "Home" }, path: "/" },
   { label: { bn: "আমাদের সম্পর্কে", en: "About" }, path: "/about" },

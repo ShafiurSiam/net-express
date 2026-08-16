@@ -1,3 +1,4 @@
+// Renders the homepage area-coverage checker (search box + demo results against src/data/coverageAreas.js).
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, MapPin } from "lucide-react";

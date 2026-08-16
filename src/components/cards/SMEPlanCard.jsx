@@ -12,6 +12,8 @@ import AnimatedSection from "../common/AnimatedSection.jsx";
 const SMEPlanCard = ({ plan, onSelect, delay = 0 }) => {
   return (
     <AnimatedSection delay={delay} className="h-full">
+      {/* plan.highlighted swaps the border to red and pre-applies the hover shadow, marking this
+          as the recommended plan even before the user hovers (paired with the "Recommended" badge below) */}
       <div
         className={`relative flex h-full flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-1 ${
           plan.highlighted

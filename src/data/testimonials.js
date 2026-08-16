@@ -1,4 +1,9 @@
 // Customer testimonials — placeholder names/quotes until real reviews are collected.
+// Shape of one entry: { id (unique string), name/area/quote ({ bn, en } pairs),
+// rating (plain number 1-5, shown as filled stars) }. Designed to render through
+// TestimonialCard.jsx (expects flat `testimonial.quote`/`name`/`area`/`rating`
+// props, so a `field[language]` pick would happen at the call site) — as of this
+// writing no page or section imports this data yet.
 export const testimonials = [
   {
     id: "t1",

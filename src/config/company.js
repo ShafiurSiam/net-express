@@ -2,6 +2,12 @@
 // Edit values here to update them everywhere across the site (navbar, footer, contact page, meta tags).
 // Human-readable fields are { bn, en }; numeric fields stay plain and are
 // formatted with formatNumber(value, language) at render time.
+//
+// Shape of this file: a single `company` object (not a list), fields include —
+// name/nameBangla (plain strings), tagline/shortDescription/phone/address/
+// btrcLicense/workingHours ({ bn, en } pairs), phoneRaw/hotline/email/
+// supportEmail (plain strings, no bn/en split since they're not translated),
+// and foundedYear/copyrightYear (plain numbers).
 export const company = {
   name: "Net Express",
   nameBangla: "নেট এক্সপ্রেস",

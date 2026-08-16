@@ -1,5 +1,7 @@
 // Sample coverage-area list for the frontend demo checker on /coverage.
 // Replace with a real coverage API response once the backend is ready.
+// Shape: a flat array of { bn, en } string pairs, one per area name — checked
+// against the user's typed area on the Coverage page (see CoverageSection.jsx).
 export const coverageAreas = [
   { bn: "ধানমন্ডি", en: "Dhanmondi" },
   { bn: "মিরপুর", en: "Mirpur" },

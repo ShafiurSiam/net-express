@@ -1,3 +1,4 @@
+// Renders the promotional offers grid on the homepage, sourced from src/data/offers.js.
 import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";
 import OfferCard from "../../components/cards/OfferCard.jsx";

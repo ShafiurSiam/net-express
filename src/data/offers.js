@@ -1,6 +1,10 @@
 // Promotional offers shown on the homepage and /offers page.
 // Each offer's image lives at src/assets/images/offers/offer-0N.svg — swap the file
 // (keep the same filename) to change the artwork, and edit the fields below for copy.
+//
+// Shape of one `offers` entry: { id (unique string), image (imported SVG, see the
+// import lines above), badge/title/description/validity ({ bn, en } pairs) }.
+// Rendered by OfferCard.jsx.
 import offer01 from "../assets/images/offers/offer-01.svg";
 import offer02 from "../assets/images/offers/offer-02.svg";
 import offer03 from "../assets/images/offers/offer-03.svg";

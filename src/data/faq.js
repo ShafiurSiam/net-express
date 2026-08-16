@@ -1,4 +1,6 @@
 // Frequently asked questions rendered by the FAQ accordion (home + /support).
+// Shape of one `faqs` entry: { id (unique string), question ({ bn, en }),
+// answer ({ bn, en }) }. Rendered by the Accordion component.
 export const faqs = [
   {
     id: "faq-1",

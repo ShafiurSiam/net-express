@@ -1,3 +1,4 @@
+// Renders the homepage hero banner (headline, CTA buttons, hero artwork) — first section on Home.
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Wifi } from "lucide-react";
 import Container from "../../components/common/Container.jsx";

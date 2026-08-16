@@ -1,3 +1,4 @@
+// Renders the FAQ accordion on the homepage, sourced from src/data/faq.js.
 import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";
 import Accordion from "../../components/ui/Accordion.jsx";

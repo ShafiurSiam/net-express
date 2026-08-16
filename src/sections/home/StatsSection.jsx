@@ -1,3 +1,4 @@
+// Renders the trust/statistics strip (customer count, uptime, support, experience) below the hero.
 import Container from "../../components/common/Container.jsx";
 import AnimatedSection from "../../components/common/AnimatedSection.jsx";
 import CountUp from "../../components/ui/CountUp.jsx";
