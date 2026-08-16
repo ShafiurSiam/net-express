@@ -31,7 +31,6 @@ export const translations = {
     quickLinksHeading: { bn: "দ্রুত লিংক", en: "Quick Links" },
     supportHeading: { bn: "সহায়তা", en: "Support" },
     contactHeading: { bn: "যোগাযোগ", en: "Contact" },
-    btrcLicense: { bn: "BTRC লাইসেন্স: {license}", en: "BTRC License: {license}" },
     copyright: { bn: "© {year} {name}। সর্বস্বত্ব সংরক্ষিত।", en: "© {year} {name}. All rights reserved." },
     faqLabel: { bn: "সচরাচর জিজ্ঞাসা", en: "FAQ" },
     termsLabel: { bn: "শর্তাবলী", en: "Terms" },

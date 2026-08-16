@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import Container from "../common/Container.jsx";
 import { company } from "../../config/company.js";
 import { social } from "../../config/social.js";
@@ -7,12 +7,10 @@ import { footerLinks } from "../../data/navigation.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
 import { formatNumber } from "../../i18n/numerals.js";
 import Logo from "./Logo.jsx";
-import { FacebookIcon, InstagramIcon, YoutubeIcon } from "../common/SocialIcons.jsx";
+import { FacebookIcon } from "../common/SocialIcons.jsx";
 
 const socialLinks = [
   { icon: FacebookIcon, url: social.facebook, label: "Facebook" },
-  { icon: InstagramIcon, url: social.instagram, label: "Instagram" },
-  { icon: YoutubeIcon, url: social.youtube, label: "YouTube" },
 ];
 
 const Footer = () => {
@@ -57,10 +55,6 @@ const Footer = () => {
             <li className="flex items-start gap-2.5">
               <MapPin size={16} className="mt-0.5 shrink-0 text-primary-red-light" />
               <span>{company.address[language]}</span>
-            </li>
-            <li className="flex items-start gap-2.5">
-              <ShieldCheck size={16} className="mt-0.5 shrink-0 text-primary-red-light" />
-              <span>{t("footer.btrcLicense", { license: company.btrcLicense[language] })}</span>
             </li>
           </ul>
         </div>
