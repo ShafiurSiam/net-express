@@ -121,7 +121,7 @@ net-express/
 │   │   ├── icons/
 │   │   └── logo/{logo.svg,logo-white.svg}
 │   ├── components/
-│   │   ├── layout/    # Navbar, MobileMenu, Footer, FloatingContactButton
+│   │   ├── layout/    # Navbar, MobileMenu, Footer, Logo, FloatingContactButton
 │   │   ├── common/    # Button, Container, SectionTitle, AnimatedSection, SEO, PageHeader...
 │   │   ├── cards/      # PackageCard, OfferCard, FeatureCard, TestimonialCard
 │   │   └── ui/         # Accordion, Modal, ConnectionRequestForm, CountUp, PaymentBadges
@@ -185,13 +185,16 @@ import path in `HeroSection.jsx` accordingly.
 
 `src/assets/logo/logo.svg` (for light backgrounds, used in the navbar and mobile
 menu) and `src/assets/logo/logo-white.svg` (for dark backgrounds, used in the
-footer) are the two logo files. Both are imported once in `src/config/company.js`
-(as `company.logo` / `company.logoWhite`) and every component that shows the logo
-reads them from there — **to replace the logo, swap these two files (keeping the
-same filenames) and update nothing else.** The current mark is a compact icon
-(viewBox ~50×30, no wordmark text baked in), noticeably squarer than a wide
+footer) are the two logo files — pure icon marks, no wordmark text baked in.
+Both are imported once in `src/config/company.js` (as `company.logo` /
+`company.logoWhite`) and rendered through **`src/components/layout/Logo.jsx`**,
+which pairs the icon with a separate "Net Express" text node (styled with
+`font-heading`) so Navbar, Footer, and MobileMenu all get the same icon+wordmark
+lockup from one place. To replace the icon, swap the two SVG files (keeping the
+same filenames); to change the wordmark text or its styling, edit `Logo.jsx`
+directly. The current mark's viewBox (~50×30) is noticeably squarer than a wide
 banner-style logo — if a future version is much wider or taller, revisit the
-`h-*`/`w-auto` sizing on the `<img>` in Navbar/MobileMenu/Footer.
+`h-*`/`w-auto` sizing in `Logo.jsx`'s `sizes` map.
 
 `logo-white.svg` is currently an exact duplicate of `logo.svg`, not a real
 white/inverted variant — the footer background (`--color-charcoal: #17151a`) and

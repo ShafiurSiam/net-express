@@ -5,6 +5,7 @@ import { X, Wallet, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Button from "../common/Button.jsx";
 import LanguageSwitch from "../ui/LanguageSwitch.jsx";
+import Logo from "./Logo.jsx";
 import { navLinks } from "../../data/navigation.js";
 import { ftpLinks } from "../../data/ftpLinks.js";
 import { company } from "../../config/company.js";
@@ -94,8 +95,8 @@ const MobileMenu = ({ isOpen, onClose }) => {
             transition={{ duration: shouldReduceMotion ? 0 : 0.32, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="mb-6 flex items-center justify-between">
-              <Link to="/" onClick={onClose}>
-                <img src={company.logo} alt={company.name} className="h-10 w-auto" />
+              <Link to="/" onClick={onClose} aria-label={company.name}>
+                <Logo size="sm" />
               </Link>
               <button
                 type="button"

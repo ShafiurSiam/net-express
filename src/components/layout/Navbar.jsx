@@ -4,6 +4,7 @@ import { Menu, Wallet } from "lucide-react";
 import Container from "../common/Container.jsx";
 import Button from "../common/Button.jsx";
 import MobileMenu from "./MobileMenu.jsx";
+import Logo from "./Logo.jsx";
 import NavDropdown from "../ui/NavDropdown.jsx";
 import LanguageSwitch from "../ui/LanguageSwitch.jsx";
 import { navLinks } from "../../data/navigation.js";
@@ -34,7 +35,7 @@ const Navbar = () => {
       >
         <Container className="flex h-[72px] items-center justify-between py-3">
           <Link to="/" className="shrink-0" aria-label={company.name}>
-            <img src={company.logo} alt={company.name} className="h-11 w-auto sm:h-12" />
+            <Logo />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label={t("nav.mainNav")}>
