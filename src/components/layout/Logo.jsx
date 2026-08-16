@@ -18,7 +18,12 @@ const Logo = ({ variant = "dark", size = "md", className = "" }) => {
   return (
     <span className={`inline-flex items-center gap-2 ${className}`}>
       <img src={src} alt="" className={icon} />
-      <span className={`whitespace-nowrap font-heading font-extrabold leading-none tracking-tighter ${text}`}>
+      {/* No leading-* override here on purpose: text-lg/xl's paired default line-height
+          (like the nav links' unoverridden text-sm) keeps the glyph vertically centered
+          in its own box. `leading-none` previously made this text sit visibly higher
+          than the nav links beside it — Hind Siliguri's ascent/descent isn't symmetric,
+          so a tight line-box exaggerates that instead of centering the glyph ink. */}
+      <span className={`whitespace-nowrap font-heading font-extrabold tracking-tighter ${text}`}>
         <span className={netColor}>Net</span>
         <span className={expressColor}>Express</span>
       </span>
