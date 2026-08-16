@@ -6,8 +6,8 @@ export const faqs = [
     id: "faq-1",
     question: { bn: "কিভাবে নতুন সংযোগ নেব?", en: "How do I get a new connection?" },
     answer: {
-      bn: "আপনি ওয়েবসাইটের \"এখনই সংযোগ নিন\" বাটনে ক্লিক করে ফর্ম পূরণ করতে পারেন, অথবা সরাসরি আমাদের হটলাইনে কল করতে পারেন। আমাদের প্রতিনিধি ২৪ ঘণ্টার মধ্যে যোগাযোগ করবেন।",
-      en: "You can click the \"Get Connected Now\" button on the website and fill out the form, or call our hotline directly. Our representative will contact you within 24 hours.",
+      bn: "আপনি ওয়েবসাইটের \"এখনই সংযোগ নিন\" বাটনে ক্লিক করে ফর্ম পূরণ করতে পারেন, অথবা সরাসরি আমাদের সাথে যোগাযোগ করতে পারেন। আমাদের প্রতিনিধি ২৪ ঘণ্টার মধ্যে যোগাযোগ করবেন।",
+      en: "You can click the \"Get Connected Now\" button on the website and fill out the form, or contact us directly. Our representative will contact you within 24 hours.",
     },
   },
   {
@@ -38,8 +38,8 @@ export const faqs = [
     id: "faq-5",
     question: { bn: "সমস্যা হলে কোথায় যোগাযোগ করব?", en: "Where do I go if I have a problem?" },
     answer: {
-      bn: "আমাদের ২৪/৭ কাস্টমার সাপোর্ট হটলাইনে কল করুন অথবা যোগাযোগ পেজের ফর্ম পূরণ করুন। আমরা দ্রুততম সময়ে সমাধান দিতে প্রতিশ্রুতিবদ্ধ।",
-      en: "Call our 24/7 customer support hotline or fill out the form on the Contact page. We're committed to resolving issues as quickly as possible.",
+      bn: "আমাদের ২৪/৭ কাস্টমার সাপোর্ট নম্বরে কল করুন অথবা যোগাযোগ পেজের ফর্ম পূরণ করুন। আমরা দ্রুততম সময়ে সমাধান দিতে প্রতিশ্রুতিবদ্ধ।",
+      en: "Call our 24/7 customer support number or fill out the form on the Contact page. We're committed to resolving issues as quickly as possible.",
     },
   },
   {

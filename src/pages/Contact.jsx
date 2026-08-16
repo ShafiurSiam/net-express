@@ -17,7 +17,7 @@ const Contact = () => {
   const { language, t } = useLanguage();
 
   const contactInfo = [
-    { icon: Phone, label: t("contact.phoneLabel"), value: `${company.phone[language]} (${company.hotline})` },
+    { icon: Phone, label: t("contact.phoneLabel"), value: company.phone[language] },
     { icon: Mail, label: t("contact.emailLabel"), value: company.email },
     { icon: MapPin, label: t("contact.addressLabel"), value: company.address[language] },
     { icon: Clock, label: t("contact.hoursLabel"), value: company.workingHours[language] },

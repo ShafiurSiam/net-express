@@ -43,7 +43,7 @@ const Payment = () => {
               {t("common.payNow")}
             </Button>
             <p className="mt-4 text-xs text-text-secondary">
-              {t("payment.hotlineNote", { hotline: company.hotline })}
+              {t("payment.contactNote", { phone: company.phone[language] })}
             </p>
           </AnimatedSection>
 

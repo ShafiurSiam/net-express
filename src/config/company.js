@@ -5,7 +5,7 @@
 //
 // Shape of this file: a single `company` object (not a list), fields include —
 // name/nameBangla (plain strings), tagline/shortDescription/phone/address/
-// workingHours ({ bn, en } pairs), phoneRaw/hotline/email/
+// workingHours ({ bn, en } pairs), phoneRaw/email/
 // supportEmail (plain strings, no bn/en split since they're not translated),
 // foundedYear/copyrightYear (plain numbers), and logo/logoWhite (imported SVG
 // asset URLs — the only place the logo files should be imported from; Navbar,
@@ -24,7 +24,6 @@ export const company = {
   },
   phone: { bn: "01877630296", en: "01877630296" },
   phoneRaw: "01877630296",
-  hotline: "16XXX",
   email: "info@netexpress.example.com",
   supportEmail: "support@netexpress.example.com",
   // Deliberate exception to the site's Bangla-first rule (same as the SME & Corporate Plans

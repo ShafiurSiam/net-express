@@ -149,7 +149,7 @@ swap a file in `src/assets/`. You should not need to edit anything under
 ### Company name, phone, address, BTRC license
 
 Edit **`src/config/company.js`**. Every field there (phone, email, address, BTRC
-license, hotline, working hours) is rendered from this single file — the footer,
+license, working hours) is rendered from this single file — the footer,
 the contact page, and the payment page all read from it.
 
 ### Payment link & methods
@@ -315,7 +315,7 @@ dependency on Vercel or Railway specifically. To move to a Hostinger VPS later:
 These are clearly marked in the code (usually `[কিছু একটা লিখুন]` or `placeholder:
 true`) and should be replaced with real information before launch:
 
-- `src/config/company.js` — phone, address, BTRC license number, hotline
+- `src/config/company.js` — phone, address, BTRC license number
 - `src/data/statistics.js` — all trust/statistics numbers (customer count, uptime,
   years of experience) are demo values
 - `src/data/testimonials.js` — customer names are placeholders

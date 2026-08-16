@@ -220,7 +220,7 @@ export const translations = {
   },
 
   contact: {
-    phoneLabel: { bn: "ফোন / হটলাইন", en: "Phone / Hotline" },
+    phoneLabel: { bn: "ফোন", en: "Phone" },
     emailLabel: { bn: "ইমেইল", en: "Email" },
     addressLabel: { bn: "অফিসের ঠিকানা", en: "Office Address" },
     hoursLabel: { bn: "কার্যসময়", en: "Working Hours" },
@@ -241,8 +241,8 @@ export const translations = {
     placeholder: { bn: "এলাকার নাম লিখুন", en: "Enter area name" },
     verify: { bn: "যাচাই করুন", en: "Verify" },
     resultCoveredSuffix: {
-      bn: "এলাকায় আমাদের সংযোগ উপলব্ধ। এখনই আবেদন করুন অথবা আমাদের হটলাইনে যোগাযোগ করুন।",
-      en: "is covered by our network. Apply now or contact our hotline.",
+      bn: "এলাকায় আমাদের সংযোগ উপলব্ধ। এখনই আবেদন করুন অথবা আমাদের সাথে যোগাযোগ করুন।",
+      en: "is covered by our network. Apply now or contact us.",
     },
     resultNotCoveredSuffix: {
       bn: "এলাকাটি এই মুহূর্তে তালিকায় নেই। তবে আমরা দ্রুত সম্প্রসারণ করছি — সরাসরি যোগাযোগ করুন বিস্তারিত জানতে।",
@@ -261,7 +261,7 @@ export const translations = {
   payment: {
     cardTitle: { bn: "আপনার বিল পরিশোধ করুন", en: "Pay Your Bill" },
     cardBody: { bn: "গ্রাহক আইডি বা মোবাইল নম্বর ব্যবহার করে নিচের পেমেন্ট গেটওয়ে থেকে বিল পরিশোধ সম্পন্ন করুন।", en: "Complete your payment through the gateway below using your customer ID or mobile number." },
-    hotlineNote: { bn: "সমস্যা হলে আমাদের হটলাইনে কল করুন: {hotline}", en: "Facing an issue? Call our hotline: {hotline}" },
+    contactNote: { bn: "সমস্যা হলে আমাদের এই নম্বরে কল করুন: {phone}", en: "Facing an issue? Call us at: {phone}" },
     perks: [
       { title: { bn: "মুহূর্তেই সম্পন্ন", en: "Instant" }, description: { bn: "কোনো অপেক্ষা ছাড়াই কয়েক সেকেন্ডে বিল পরিশোধ করুন।", en: "Pay your bill in seconds with no waiting." } },
       { title: { bn: "নিরাপদ পেমেন্ট", en: "Secure Payment" }, description: { bn: "নিরাপদ ও এনক্রিপ্টেড পেমেন্ট গেটওয়ের মাধ্যমে লেনদেন সম্পন্ন হয়।", en: "Transactions go through a secure, encrypted payment gateway." } },
