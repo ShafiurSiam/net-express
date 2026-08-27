@@ -17,7 +17,8 @@ const Contact = () => {
   const { language, t } = useLanguage();
 
   const contactInfo = [
-    { icon: Phone, label: t("contact.phoneLabel"), value: company.phone[language] },
+    { icon: Phone, label: t("contact.supportPhoneLabel"), value: company.supportPhone, href: `tel:${company.supportPhone}` },
+    { icon: Phone, label: t("contact.billingPhoneLabel"), value: company.billingPhone, href: `tel:${company.billingPhone}` },
     { icon: Mail, label: t("contact.emailLabel"), value: company.email },
     { icon: MapPin, label: t("contact.addressLabel"), value: company.address[language] },
     { icon: Clock, label: t("contact.hoursLabel"), value: company.workingHours[language] },
@@ -51,7 +52,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-text-secondary">{item.label}</p>
-                  <p className="font-semibold text-text-primary">{item.value}</p>
+                  {item.href ? (
+                    <a href={item.href} className="font-semibold text-text-primary transition-colors hover:text-primary-red">{item.value}</a>
+                  ) : (
+                    <p className="font-semibold text-text-primary">{item.value}</p>
+                  )}
                 </div>
               </div>
             ))}

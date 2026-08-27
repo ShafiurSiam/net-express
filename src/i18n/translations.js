@@ -31,6 +31,8 @@ export const translations = {
     quickLinksHeading: { bn: "দ্রুত লিংক", en: "Quick Links" },
     supportHeading: { bn: "সহায়তা", en: "Support" },
     contactHeading: { bn: "যোগাযোগ", en: "Contact" },
+    supportPhoneLabel: { bn: "সাপোর্ট", en: "Support" },
+    billingPhoneLabel: { bn: "বিলিং", en: "Billing" },
     copyright: { bn: "© {year} {name}। সর্বস্বত্ব সংরক্ষিত।", en: "© {year} {name}. All rights reserved." },
     faqLabel: { bn: "সচরাচর জিজ্ঞাসা", en: "FAQ" },
     termsLabel: { bn: "শর্তাবলী", en: "Terms" },
@@ -220,7 +222,8 @@ export const translations = {
   },
 
   contact: {
-    phoneLabel: { bn: "ফোন", en: "Phone" },
+    supportPhoneLabel: { bn: "সাপোর্ট নম্বর", en: "Support Number" },
+    billingPhoneLabel: { bn: "বিলিং নম্বর", en: "Billing Number" },
     emailLabel: { bn: "ইমেইল", en: "Email" },
     addressLabel: { bn: "অফিসের ঠিকানা", en: "Office Address" },
     hoursLabel: { bn: "কার্যসময়", en: "Working Hours" },

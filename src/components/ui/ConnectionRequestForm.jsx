@@ -169,7 +169,7 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
 
       {error && (
         <p className="rounded-xl bg-primary-red/10 px-4 py-3 text-sm text-primary-red">
-          {t("connectionForm.errorMessage", { phone: company.phone[language] })}
+          {t("connectionForm.errorMessage", { phone: company.supportPhone })}
         </p>
       )}
 

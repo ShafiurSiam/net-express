@@ -46,7 +46,17 @@ const Footer = () => {
           <ul className="flex flex-col gap-3 text-sm text-white/70">
             <li className="flex items-start gap-2.5">
               <Phone size={16} className="mt-0.5 shrink-0 text-primary-red-light" />
-              <span>{company.phone[language]}</span>
+              <span>
+                {t("footer.supportPhoneLabel")}:{" "}
+                <a href={`tel:${company.supportPhone}`} className="hover:text-white">{company.supportPhone}</a>
+              </span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <Phone size={16} className="mt-0.5 shrink-0 text-primary-red-light" />
+              <span>
+                {t("footer.billingPhoneLabel")}:{" "}
+                <a href={`tel:${company.billingPhone}`} className="hover:text-white">{company.billingPhone}</a>
+              </span>
             </li>
             <li className="flex items-start gap-2.5">
               <Mail size={16} className="mt-0.5 shrink-0 text-primary-red-light" />

@@ -4,7 +4,8 @@
 // whatsapp. Read by the Footer's social icon row and by `floatingContact`
 // below.
 // Note: the whatsapp number here is WhatsApp-only — never reuse it as the
-// general contact phone (company.phone/phoneRaw) or as a tel: link.
+// support or billing contact phone (company.supportPhone/billingPhone) or as a
+// tel: link.
 export const social = {
   facebook: "https://www.facebook.com/NetExpressTongi/",
   messenger: "https://m.me/netexpress.example",

@@ -4,8 +4,10 @@
 // formatted with formatNumber(value, language) at render time.
 //
 // Shape of this file: a single `company` object (not a list), fields include —
-// name/nameBangla (plain strings), tagline/shortDescription/phone/address/
-// workingHours ({ bn, en } pairs), phoneRaw/email/
+// name/nameBangla (plain strings), tagline/shortDescription/address/
+// workingHours ({ bn, en } pairs), supportPhone/billingPhone (plain digit
+// strings — two separate, clearly labelled numbers; there is no single general
+// "phone" field any more), email/
 // supportEmail (plain strings, no bn/en split since they're not translated),
 // foundedYear/copyrightYear (plain numbers), and logo/logoWhite (imported SVG
 // asset URLs — the only place the logo files should be imported from; Navbar,
@@ -22,8 +24,11 @@ export const company = {
     bn: "একটি আধুনিক, নির্ভরযোগ্য ও প্রযুক্তিনির্ভর বাংলাদেশের ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান।",
     en: "A modern, reliable, and technology-driven internet service provider in Bangladesh.",
   },
-  phone: { bn: "01877630296", en: "01877630296" },
-  phoneRaw: "01877630296",
+  // Two separate contact numbers, each rendered with its own label everywhere:
+  // supportPhone is the general "call us" number; billingPhone is only for
+  // billing enquiries and must never be shown as a generic contact number.
+  supportPhone: "01842775508",
+  billingPhone: "01877630296",
   email: "info@netexpress.example.com",
   supportEmail: "support@netexpress.example.com",
   // Deliberate exception to the site's Bangla-first rule (same as the SME & Corporate Plans
