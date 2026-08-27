@@ -1,6 +1,6 @@
 # Net Express — Hostinger VPS Deployment Guide
 
-## ✅ STATUS: LIVE — deployed and fully working as of 2026-08-20. Auto-deploy added 2026-08-21.
+## ✅ STATUS: LIVE — deployed and fully working as of 2026-08-20. Auto-deploy added 2026-08-21. Verified/corrected 2026-08-27.
 
 Site is live at **https://netexpressbd.net** and **https://www.netexpressbd.net**. Both load correctly for regular visitors with no VPN required (see connectivity resolution below). HTTP→HTTPS redirect works, SPA routes survive refresh, cert auto-renews via `certbot.timer`.
 
@@ -13,7 +13,7 @@ The user's ISP (Bangladesh) could not reach this VPS/datacenter at all by defaul
 **Two different fixes were needed for two different audiences:**
 
 1. **For the site owner doing manual SSH/admin work (server changes, one-off fixes):** connect through a VPN (Proton VPN free tier confirmed working). A VPN is still required any time SSH is used directly from the user's own connection. SSH key is at the non-default path `~/.ssh/id_ed25519_netexpress` — always use `-i` with ssh commands. **Root login is disabled** — the working login is the `netexpress` sudo user, not `root`.
-2. **For regular site visitors (the actual fix, launch-critical):** put **Cloudflare (free plan)** in front of the domain. Domain's nameservers were switched from Hostinger's default (`aster.dns-parking.com` / `helios.dns-parking.com`) to Cloudflare's (`craig.ns.cloudflare.com` / `stevie.ns.cloudflare.com`). Both DNS records (`A` for `@`, `CNAME` for `www`) are set to **Proxied** (orange cloud) in Cloudflare, and SSL/TLS mode is set to **Full** (not Flexible, since the origin already has a real Certbot cert). This resolved the issue — confirmed 2026-08-20 that the site loads fine without VPN through Cloudflare's proxy. **DNS is now managed in Cloudflare, not Hostinger's DNS panel** — any future DNS changes (new subdomains, etc.) should be made in Cloudflare's dashboard.
+2. **For regular site visitors (the actual fix, launch-critical):** put **Cloudflare (free plan)** in front of the domain. Domain's nameservers were switched from Hostinger's default (`aster.dns-parking.com` / `helios.dns-parking.com`) to Cloudflare's (`craig.ns.cloudflare.com` / `stevie.ns.cloudflare.com`). Both DNS records (`A` for `@`, `CNAME` for `www`) are set to **Proxied** (orange cloud) in Cloudflare, and SSL/TLS mode is set to **Full** (not Flexible, since the origin already has a real Certbot cert). This resolved the issue — confirmed 2026-08-20 that the site loads fine without VPN through Cloudflare's proxy, and independently reconfirmed 2026-08-27 (`craig`/`stevie.ns.cloudflare.com` still live). **DNS is now managed in Cloudflare, not Hostinger's DNS panel** — any future DNS changes (new subdomains, etc.) should be made in Cloudflare's dashboard.
 3. **For routine code/content redeploys (2026-08-21 — VPN no longer needed for this either):** GitHub Actions auto-deploy is now set up. See below.
 
 **Practical implication going forward:** visiting/using the website — no VPN needed for anyone, ever. Routine redeploys after a `git push` — no VPN needed either now (see GitHub Actions section). VPN is only still needed for genuinely manual/ad-hoc SSH work (server config changes, debugging, anything outside the standard git-pull-and-build flow).
@@ -23,10 +23,15 @@ The user's ISP (Bangladesh) could not reach this VPS/datacenter at all by defaul
 Every push to `main` now automatically redeploys the live site — no VPN, no manual SSH step. Mechanism: GitHub's own runners (not the user's ISP/computer) SSH into the VPS directly, so the ISP-side block on the user's own connection doesn't apply.
 
 - Workflow file: `.github/workflows/deploy.yml` in the repo — on push to `main`, SSHes in via `appleboy/ssh-action` and runs `cd /var/www/net-express && git pull && npm install && npm run build` (identical to the manual redeploy process below, which still works standalone as a fallback).
-- Dedicated deploy key: a separate keypair (`id_ed25519_github_deploy`, generated 2026-08-21) was created specifically for this — **not** the user's personal `id_ed25519_netexpress` key — following least-privilege practice. Its public key is in `netexpress`'s `authorized_keys` on the VPS; the private key lives only in GitHub's encrypted repo secrets (never appeared in any chat transcript — set via `gh secret set` directly). The one-time local copy of the private key was deleted from the user's machine after confirming the GitHub secret worked, since GitHub Actions only ever needs its own stored copy, not a local one.
+- Dedicated deploy key: a separate keypair (`id_ed25519_github_deploy`, generated 2026-08-21) was created specifically for this — **not** the user's personal `id_ed25519_netexpress` key — following least-privilege practice. Its public key is in `netexpress`'s `authorized_keys` on the VPS; the private key lives only in GitHub's encrypted repo secrets (never appeared in any chat transcript — set via `gh secret set` directly).
 - GitHub repo secrets: `VPS_HOST` (`212.85.26.160`), `VPS_USER` (`netexpress`), `VPS_SSH_KEY` (the dedicated deploy key's private half).
 - Verified end-to-end 2026-08-21: pushed commit `74d46f9`, Action ran, server rebuilt at the matching timestamp, live site confirmed serving the new build (HTTP 200).
+- **Correction (2026-08-27):** the 2026-08-21 session reported the local copy of the private key (`id_ed25519_github_deploy`) as deleted from the user's machine — this turned out to be inaccurate, the file was still present. A later session independently verified this discrepancy and actually deleted it. **Lesson for future sessions: verify a stated cleanup action actually happened rather than taking a prior summary at face value**, especially for anything security-sensitive like key material.
 - **Only set up for the marketing site so far.** FNMS (Docker Compose, separate deploy process) does not have this yet — same approach could be applied there later if wanted, but needs adapting (rebuild containers rather than a static `npm run build`, possibly re-run Prisma migrations depending on what changed).
+
+## Documentation note (2026-08-27)
+
+An English-language version of the deployment guide was saved directly into the marketing site repo as `HOSTINGER-DEPLOYMENT.md`, kept deliberately separate from an existing Bengali `DEPLOYMENT-GUIDE.md` already in that repo (different documents for different audiences/readers). This project doc remains the canonical, most up-to-date source — if the two ever drift, trust this one and update the repo copy to match.
 
 ## Payment button — temporary state, needs follow-up
 
