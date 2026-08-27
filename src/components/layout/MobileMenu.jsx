@@ -124,7 +124,9 @@ const MobileMenu = ({ isOpen, onClose }) => {
                   >
                     {link.label[language]}
                   </NavLink>
-                  {link.path === "/coverage" && <MobileFtpAccordion onNavigate={onClose} />}
+                  {/* FTP accordion was anchored to the Coverage link; that link
+                      is hidden for now, so it renders after Packages instead. */}
+                  {link.path === "/packages" && <MobileFtpAccordion onNavigate={onClose} />}
                 </Fragment>
               ))}
             </nav>

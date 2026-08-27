@@ -3,8 +3,7 @@
   <url><loc>https://netexpress.example.com/</loc></url>
   <url><loc>https://netexpress.example.com/about</loc></url>
   <url><loc>https://netexpress.example.com/packages</loc></url>
-  <url><loc>https://netexpress.example.com/offers</loc></url>
-  <url><loc>https://netexpress.example.com/coverage</loc></url>
+  <!-- /offers and /coverage temporarily removed while that content is prepared -->
   <url><loc>https://netexpress.example.com/payment</loc></url>
   <url><loc>https://netexpress.example.com/contact</loc></url>
   <url><loc>https://netexpress.example.com/support</loc></url>

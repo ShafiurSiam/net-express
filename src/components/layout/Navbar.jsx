@@ -62,7 +62,9 @@ const Navbar = () => {
                     </>
                   )}
                 </NavLink>
-                {link.path === "/coverage" && (
+                {/* FTP dropdown was anchored to the Coverage link; that link is
+                    hidden for now, so it renders after Packages instead. */}
+                {link.path === "/packages" && (
                   <NavDropdown
                     label="FTP"
                     items={ftpLinks}

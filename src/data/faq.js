@@ -46,8 +46,8 @@ export const faqs = [
     id: "faq-6",
     question: { bn: "আমার এলাকায় কি সংযোগ পাওয়া যাবে?", en: "Is a connection available in my area?" },
     answer: {
-      bn: "কভারেজ পেজে আপনার এলাকার নাম লিখে সহজেই যাচাই করতে পারবেন। এলাকাটি তালিকায় না থাকলেও আমাদের সাথে যোগাযোগ করুন, আমরা সম্প্রসারণের পরিকল্পনা জানাতে পারব।",
-      en: "You can easily check by entering your area name on the Coverage page. Even if your area isn't listed yet, contact us — we can share our expansion plans.",
+      bn: "আপনার এলাকার নাম জানিয়ে আমাদের সাপোর্ট নম্বরে কল করুন অথবা যোগাযোগ পেজের ফর্ম পূরণ করুন — আমরা দ্রুত জানিয়ে দেব সংযোগ পাওয়া যাবে কিনা এবং সম্প্রসারণের পরিকল্পনা।",
+      en: "Call our support number with your area name or fill out the form on the Contact page — we'll quickly let you know whether a connection is available and share our expansion plans.",
     },
   },
 ];
