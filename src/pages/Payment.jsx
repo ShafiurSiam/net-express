@@ -6,6 +6,7 @@ import Button from "../components/common/Button.jsx";
 import AnimatedSection from "../components/common/AnimatedSection.jsx";
 import FeatureCard from "../components/cards/FeatureCard.jsx";
 import PaymentBadges from "../components/ui/PaymentBadges.jsx";
+import BkashPaymentGuide from "../components/payment/BkashPaymentGuide.jsx";
 import { paymentConfig } from "../config/payment.js";
 import { company } from "../config/company.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
@@ -54,6 +55,8 @@ const Payment = () => {
           </div>
         </Container>
       </section>
+
+      <BkashPaymentGuide />
     </>
   );
 };

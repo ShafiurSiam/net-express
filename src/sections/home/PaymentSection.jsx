@@ -1,5 +1,6 @@
 // Renders the "Pay Bill" call-to-action section on the homepage — bKash bill payment.
 import { Wallet } from "lucide-react";
+import { Link } from "react-router-dom";
 import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";
 import Button from "../../components/common/Button.jsx";
@@ -30,6 +31,12 @@ const PaymentSection = () => {
             {t("common.payNow")}
           </Button>
           <p className="max-w-sm text-sm text-white/70">{t("home.paymentSection.reassurance")}</p>
+          <Link
+            to="/payment"
+            className="text-sm font-semibold text-primary-red-light underline-offset-4 transition-colors hover:text-white hover:underline"
+          >
+            {t("home.paymentSection.guideLink")}
+          </Link>
         </div>
       </Container>
     </section>

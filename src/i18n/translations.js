@@ -165,6 +165,7 @@ export const translations = {
       title: { bn: "ঘরে বসেই সহজে বিল পরিশোধ করুন", en: "Pay Your Bill Easily From Home" },
       subtitle: { bn: "বিকাশের মাধ্যমে দ্রুত ও নিরাপদে আপনার ইন্টারনেট বিল পরিশোধ করুন — যেকোনো সময়, ঘরে বসেই।", en: "Pay your internet bill quickly and securely with bKash — anytime, from home." },
       reassurance: { bn: "বিকাশের মাধ্যমে ঘরে বসেই কয়েক সেকেন্ডে নিরাপদে বিল পরিশোধ করুন।", en: "Securely pay your bill in seconds from home with bKash." },
+      guideLink: { bn: "বিস্তারিত গাইড দেখুন", en: "See the step-by-step guide" },
     },
     faqSection: {
       eyebrow: { bn: "সচরাচর জিজ্ঞাসা", en: "Frequently Asked Questions" },
@@ -272,6 +273,54 @@ export const translations = {
       { title: { bn: "নিরাপদ পেমেন্ট", en: "Secure Payment" }, description: { bn: "নিরাপদ ও এনক্রিপ্টেড পেমেন্ট গেটওয়ের মাধ্যমে লেনদেন সম্পন্ন হয়।", en: "Transactions go through a secure, encrypted payment gateway." } },
       { title: { bn: "মোবাইল থেকেই সম্ভব", en: "Pay From Mobile" }, description: { bn: "বিকাশ অ্যাপ থেকে সরাসরি বিল পরিশোধ করুন।", en: "Pay directly from the bKash app." } },
     ],
+    bkashGuide: {
+      eyebrow: { bn: "ধাপে ধাপে নির্দেশনা", en: "Step-by-Step Guide" },
+      heading: { bn: "কিভাবে বিকাশে বিল পরিশোধ করবেন", en: "How to Pay via bKash" },
+      subtitle: { bn: "বিকাশ অ্যাপে মাত্র চারটি ধাপে আপনার নেট এক্সপ্রেস ইন্টারনেট বিল পরিশোধ করুন।", en: "Pay your Net Express internet bill in just four steps inside the bKash app." },
+      note: { bn: "বিকাশ অ্যাপের সংস্করণ ভেদে স্ক্রিনের ধরন সামান্য ভিন্ন হতে পারে।", en: "Screens may look slightly different depending on your bKash app version." },
+      steps: [
+        {
+          caption: {
+            bn: "বিকাশ অ্যাপ খুলুন এবং হোম স্ক্রিন থেকে 'পে বিল' আইকনে ট্যাপ করুন।",
+            en: "Open the bKash app and tap the 'Pay Bill' icon on the home screen.",
+          },
+          alt: {
+            bn: "বিকাশ অ্যাপের হোম স্ক্রিন — 'পে বিল' আইকন হলুদ রিং দিয়ে চিহ্নিত।",
+            en: "bKash app home screen with the 'Pay Bill' icon highlighted by a yellow ring.",
+          },
+        },
+        {
+          caption: {
+            bn: "সার্চ বক্সে 'Net Express' লিখে সার্চ করুন এবং লাল বক্স দিয়ে চিহ্নিত 'Net Express' নির্বাচন করুন — 'NetExpress Online' একটি ভিন্ন প্রতিষ্ঠান, ভুল করে সেটি নির্বাচন করবেন না।",
+            en: "Search for 'Net Express' and select the 'Net Express' entry marked with the red box — 'NetExpress Online' is a different company, do not select it by mistake.",
+          },
+          alt: {
+            bn: "বিকাশ সার্চ ফলাফল — সঠিক 'Net Express' বিলারটি লাল বক্স দিয়ে চিহ্নিত।",
+            en: "bKash search results with the correct 'Net Express' biller marked by a red box.",
+          },
+        },
+        {
+          caption: {
+            bn: "'বিল সময়সীমা' থেকে মাস নির্বাচন করুন, আপনার কাস্টমার আইডি লিখুন, এবং 'পরবর্তী' চাপুন।",
+            en: "Choose the month from 'Bill Period', enter your Customer ID, and press 'Next'.",
+          },
+          alt: {
+            bn: "বিকাশ পে বিল স্ক্রিন — বিল সময়সীমা নির্বাচন ও কাস্টমার আইডি লেখার ঘর।",
+            en: "bKash Pay Bill screen showing the bill period selector and the Customer ID field.",
+          },
+        },
+        {
+          caption: {
+            bn: "বিলের বিবরণ ও পরিমাণ যাচাই করে 'পরবর্তী' চেপে পেমেন্ট সম্পন্ন করুন।",
+            en: "Review the bill details and amount, then press 'Next' to complete the payment.",
+          },
+          alt: {
+            bn: "বিকাশে বিল পরিশোধের আগে বিলের বিবরণ ও পরিমাণ যাচাইয়ের স্ক্রিন।",
+            en: "bKash screen for reviewing the bill details and amount before paying.",
+          },
+        },
+      ],
+    },
   },
 
   terms: {
