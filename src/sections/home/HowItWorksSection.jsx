@@ -1,5 +1,5 @@
 // Renders the "How It Works" step-by-step timeline (choose package -> apply -> install) on the homepage.
-import { PackageSearch, ClipboardCheck, PhoneCall, Cable, Rocket } from "lucide-react";
+import { PackageSearch, ClipboardCheck, PhoneCall, Cable, Wifi } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";
 import Button from "../../components/common/Button.jsx";
@@ -9,7 +9,7 @@ import { useLanguage } from "../../context/LanguageContext.jsx";
 import { translations } from "../../i18n/translations.js";
 import { formatNumber } from "../../i18n/numerals.js";
 
-const icons = [PackageSearch, ClipboardCheck, PhoneCall, Cable, Rocket];
+const icons = [PackageSearch, ClipboardCheck, PhoneCall, Cable, Wifi];
 
 const HowItWorksSection = () => {
   const { openRequest } = useConnectionRequest();

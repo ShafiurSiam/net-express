@@ -128,7 +128,7 @@ export const translations = {
         { title: { bn: "২৪/৭ কাস্টমার সাপোর্ট", en: "24/7 Customer Support" }, description: { bn: "যেকোনো সময় প্রয়োজনে আমাদের সাপোর্ট টিম আপনার পাশে রয়েছে।", en: "Our support team is by your side whenever you need us." } },
         { title: { bn: "দ্রুত সমস্যা সমাধান", en: "Fast Issue Resolution" }, description: { bn: "প্রযুক্তিগত সমস্যায় দ্রুততম সময়ে সমাধান দেওয়াই আমাদের অগ্রাধিকার।", en: "Resolving technical issues as quickly as possible is our priority." } },
         { title: { bn: "আধুনিক নেটওয়ার্ক প্রযুক্তি", en: "Modern Network Technology" }, description: { bn: "সর্বশেষ প্রযুক্তি ব্যবহার করে গড়ে তোলা নেটওয়ার্ক পরিকাঠামো।", en: "Network infrastructure built with the latest technology." } },
-        { title: { bn: "সহজ বিল পেমেন্ট", en: "Easy Bill Payment" }, description: { bn: "বিকাশ, নগদ, রকেট বা কার্ডের মাধ্যমে ঘরে বসেই বিল পরিশোধ করুন।", en: "Pay your bill from home via bKash, Nagad, Rocket, or card." } },
+        { title: { bn: "সহজ বিল পেমেন্ট", en: "Easy Bill Payment" }, description: { bn: "বিকাশের মাধ্যমে ঘরে বসেই কয়েক সেকেন্ডে বিল পরিশোধ করুন।", en: "Pay your bill from home in seconds with bKash." } },
       ],
     },
     coverageSection: {
@@ -163,7 +163,8 @@ export const translations = {
     paymentSection: {
       eyebrow: { bn: "বিল পরিশোধ", en: "Bill Payment" },
       title: { bn: "ঘরে বসেই সহজে বিল পরিশোধ করুন", en: "Pay Your Bill Easily From Home" },
-      subtitle: { bn: "বিকাশ, নগদ, রকেট অথবা কার্ড/ব্যাংক ট্রান্সফারের মাধ্যমে দ্রুত ও নিরাপদে আপনার ইন্টারনেট বিল পরিশোধ করুন।", en: "Pay your internet bill quickly and securely via bKash, Nagad, Rocket, or card/bank transfer." },
+      subtitle: { bn: "বিকাশের মাধ্যমে দ্রুত ও নিরাপদে আপনার ইন্টারনেট বিল পরিশোধ করুন — যেকোনো সময়, ঘরে বসেই।", en: "Pay your internet bill quickly and securely with bKash — anytime, from home." },
+      reassurance: { bn: "বিকাশের মাধ্যমে ঘরে বসেই কয়েক সেকেন্ডে নিরাপদে বিল পরিশোধ করুন।", en: "Securely pay your bill in seconds from home with bKash." },
     },
     faqSection: {
       eyebrow: { bn: "সচরাচর জিজ্ঞাসা", en: "Frequently Asked Questions" },
@@ -183,7 +184,7 @@ export const translations = {
     notFound: { title: { bn: "পৃষ্ঠা পাওয়া যায়নি", en: "Page Not Found" }, description: { bn: "দুঃখিত, আপনার খোঁজা পৃষ্ঠাটি খুঁজে পাওয়া যায়নি।", en: "Sorry, the page you're looking for could not be found." } },
     offers: { title: { bn: "বিশেষ অফার", en: "Special Offers" }, description: { bn: "Net Express এর চলমান সকল বিশেষ অফার ও প্রমোশন দেখুন।", en: "See all of Net Express's current special offers and promotions." } },
     packages: { title: { bn: "ইন্টারনেট প্যাকেজ", en: "Internet Packages" }, description: { bn: "Net Express এর সকল ইন্টারনেট প্যাকেজ ও মূল্য তালিকা — বাসা ও ব্যবসার জন্য।", en: "All Net Express internet packages and pricing — for home and business." } },
-    payment: { title: { bn: "বিল পরিশোধ", en: "Pay Bill" }, description: { bn: "বিকাশ, নগদ, রকেট বা কার্ডের মাধ্যমে Net Express এর ইন্টারনেট বিল পরিশোধ করুন।", en: "Pay your Net Express internet bill via bKash, Nagad, Rocket, or card." } },
+    payment: { title: { bn: "বিল পরিশোধ", en: "Pay Bill" }, description: { bn: "বিকাশের মাধ্যমে Net Express এর ইন্টারনেট বিল পরিশোধ করুন।", en: "Pay your Net Express internet bill with bKash." } },
     privacy: { title: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" }, description: { bn: "Net Express এর গোপনীয়তা নীতি।", en: "Net Express's privacy policy." } },
     speedTest: { title: { bn: "স্পিড টেস্ট", en: "Speed Test" }, description: { bn: "আপনার ইন্টারনেট সংযোগের গতি যাচাই করুন (ডেমো)।", en: "Check your internet connection speed (demo)." } },
     support: { title: { bn: "সহায়তা", en: "Support" }, description: { bn: "Net Express গ্রাহক সহায়তা কেন্দ্র — সচরাচর জিজ্ঞাসা ও যোগাযোগের তথ্য।", en: "Net Express customer support center — FAQs and contact information." } },
@@ -196,7 +197,7 @@ export const translations = {
     coverage: { eyebrow: { bn: "কভারেজ", en: "Coverage" }, title: { bn: "আপনার এলাকায় কি সংযোগ পাওয়া যাবে?", en: "Is a Connection Available in Your Area?" }, subtitle: { bn: "এলাকার নাম লিখে যাচাই করুন, অথবা নিচের তালিকায় খুঁজুন।", en: "Check by entering your area name, or search the list below." } },
     offers: { eyebrow: { bn: "অফার", en: "Offers" }, title: { bn: "চলমান বিশেষ অফারসমূহ", en: "Current Special Offers" }, subtitle: { bn: "সীমিত সময়ের জন্য উপলব্ধ চমৎকার সব সুবিধা।", en: "Great perks available for a limited time." } },
     packages: { eyebrow: { bn: "প্যাকেজ", en: "Packages" }, title: { bn: "ইন্টারনেট প্যাকেজ ও মূল্য তালিকা", en: "Internet Packages & Pricing" }, subtitle: { bn: "প্রয়োজন অনুযায়ী বেছে নিন সবচেয়ে উপযুক্ত প্যাকেজ।", en: "Choose the package that best fits your needs." } },
-    payment: { eyebrow: { bn: "বিল পরিশোধ", en: "Pay Bill" }, title: { bn: "সহজে ও নিরাপদে বিল পরিশোধ করুন", en: "Pay Your Bill Easily & Securely" }, subtitle: { bn: "নিচের বাটনে ক্লিক করে আপনার পছন্দের মাধ্যমে বিল পরিশোধ করুন।", en: "Click the button below to pay via your preferred method." } },
+    payment: { eyebrow: { bn: "বিল পরিশোধ", en: "Pay Bill" }, title: { bn: "সহজে ও নিরাপদে বিল পরিশোধ করুন", en: "Pay Your Bill Easily & Securely" }, subtitle: { bn: "নিচের বাটনে ক্লিক করে বিকাশের মাধ্যমে বিল পরিশোধ করুন।", en: "Click the button below to pay your bill with bKash." } },
     privacy: { eyebrow: { bn: "আইনি তথ্য", en: "Legal" }, title: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" }, subtitle: { bn: "এই পৃষ্ঠাটি একটি প্লেসহোল্ডার — চূড়ান্ত বিষয়বস্তু শীঘ্রই আপডেট করা হবে।", en: "This page is a placeholder — final content will be updated soon." } },
     speedTest: { eyebrow: { bn: "স্পিড টেস্ট", en: "Speed Test" }, title: { bn: "ইন্টারনেট স্পিড টেস্ট", en: "Internet Speed Test" }, subtitle: { bn: "আপনার সংযোগের ডাউনলোড, আপলোড ও পিং গতি যাচাই করুন।", en: "Check your connection's download, upload, and ping speed." } },
     support: { eyebrow: { bn: "সহায়তা", en: "Support" }, title: { bn: "আমরা আপনার পাশে আছি", en: "We're Here to Help" }, subtitle: { bn: "সাধারণ প্রশ্নের উত্তর খুঁজুন, অথবা সরাসরি আমাদের সাপোর্ট টিমের সাথে যোগাযোগ করুন।", en: "Find answers to common questions, or reach our support team directly." } },
@@ -263,12 +264,13 @@ export const translations = {
 
   payment: {
     cardTitle: { bn: "আপনার বিল পরিশোধ করুন", en: "Pay Your Bill" },
-    cardBody: { bn: "গ্রাহক আইডি বা মোবাইল নম্বর ব্যবহার করে নিচের পেমেন্ট গেটওয়ে থেকে বিল পরিশোধ সম্পন্ন করুন।", en: "Complete your payment through the gateway below using your customer ID or mobile number." },
+    cardBody: { bn: "গ্রাহক আইডি বা মোবাইল নম্বর ব্যবহার করে বিকাশ পেমেন্ট পোর্টাল থেকে বিল পরিশোধ সম্পন্ন করুন।", en: "Complete your payment on the bKash portal using your customer ID or mobile number." },
     contactNote: { bn: "সমস্যা হলে আমাদের এই নম্বরে কল করুন: {phone}", en: "Facing an issue? Call us at: {phone}" },
+    reassurance: { bn: "বিকাশের মাধ্যমে ঘরে বসেই কয়েক সেকেন্ডে নিরাপদে বিল পরিশোধ করুন।", en: "Securely pay your bill in seconds from home with bKash." },
     perks: [
       { title: { bn: "মুহূর্তেই সম্পন্ন", en: "Instant" }, description: { bn: "কোনো অপেক্ষা ছাড়াই কয়েক সেকেন্ডে বিল পরিশোধ করুন।", en: "Pay your bill in seconds with no waiting." } },
       { title: { bn: "নিরাপদ পেমেন্ট", en: "Secure Payment" }, description: { bn: "নিরাপদ ও এনক্রিপ্টেড পেমেন্ট গেটওয়ের মাধ্যমে লেনদেন সম্পন্ন হয়।", en: "Transactions go through a secure, encrypted payment gateway." } },
-      { title: { bn: "মোবাইল থেকেই সম্ভব", en: "Pay From Mobile" }, description: { bn: "বিকাশ, নগদ বা রকেট অ্যাপ থেকে সরাসরি বিল পরিশোধ করুন।", en: "Pay directly from the bKash, Nagad, or Rocket app." } },
+      { title: { bn: "মোবাইল থেকেই সম্ভব", en: "Pay From Mobile" }, description: { bn: "বিকাশ অ্যাপ থেকে সরাসরি বিল পরিশোধ করুন।", en: "Pay directly from the bKash app." } },
     ],
   },
 

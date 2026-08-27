@@ -1,4 +1,4 @@
-// Renders the "Pay Bill" call-to-action section on the homepage, showing supported payment method badges.
+// Renders the "Pay Bill" call-to-action section on the homepage — bKash bill payment.
 import { Wallet } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";
@@ -23,11 +23,14 @@ const PaymentSection = () => {
           subtitle={t("home.paymentSection.subtitle")}
         />
 
-        <PaymentBadges />
+        <PaymentBadges className="scale-105" />
 
-        <Button href={paymentConfig.url} target="_blank" rel="noopener noreferrer" size="lg" icon={Wallet} iconPosition="left">
-          {t("common.payNow")}
-        </Button>
+        <div className="flex flex-col items-center gap-4">
+          <Button href={paymentConfig.url} target="_blank" rel="noopener noreferrer" size="lg" icon={Wallet} iconPosition="left">
+            {t("common.payNow")}
+          </Button>
+          <p className="max-w-sm text-sm text-white/70">{t("home.paymentSection.reassurance")}</p>
+        </div>
       </Container>
     </section>
   );

@@ -33,16 +33,16 @@ const Payment = () => {
       <section className="py-14 sm:py-20">
         <Container className="flex flex-col items-center gap-10">
           <AnimatedSection className="w-full max-w-xl rounded-3xl border border-border bg-white p-8 text-center shadow-card sm:p-12">
-            <Wallet size={40} className="mx-auto text-primary-red" />
-            <h2 className="mt-4 text-2xl font-bold text-text-primary">{t("payment.cardTitle")}</h2>
-            <p className="mt-2 text-text-secondary">{t("payment.cardBody")}</p>
-            <div className="mt-6 flex justify-center">
+            <div className="flex justify-center">
               <PaymentBadges />
             </div>
-            <Button href={paymentConfig.url} target="_blank" rel="noopener noreferrer" size="lg" className="mt-8 w-full">
+            <h2 className="mt-6 text-2xl font-bold text-text-primary">{t("payment.cardTitle")}</h2>
+            <p className="mt-2 text-text-secondary">{t("payment.cardBody")}</p>
+            <Button href={paymentConfig.url} target="_blank" rel="noopener noreferrer" size="lg" icon={Wallet} iconPosition="left" className="mt-8 w-full">
               {t("common.payNow")}
             </Button>
-            <p className="mt-4 text-xs text-text-secondary">
+            <p className="mt-4 text-sm font-medium text-text-primary">{t("payment.reassurance")}</p>
+            <p className="mt-2 text-xs text-text-secondary">
               {t("payment.contactNote", { phone: company.billingPhone })}
             </p>
           </AnimatedSection>

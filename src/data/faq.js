@@ -22,8 +22,8 @@ export const faqs = [
     id: "faq-3",
     question: { bn: "বিল কিভাবে পরিশোধ করব?", en: "How do I pay my bill?" },
     answer: {
-      bn: "বিকাশ, নগদ, রকেট অথবা কার্ড/ব্যাংক ট্রান্সফারের মাধ্যমে সহজেই অনলাইনে বিল পরিশোধ করতে পারবেন। \"বিল পরিশোধ করুন\" বাটনে ক্লিক করলেই বিস্তারিত নির্দেশনা পাবেন।",
-      en: "You can easily pay your bill online via bKash, Nagad, Rocket, or card/bank transfer. Click the \"Pay Bill\" button for detailed instructions.",
+      bn: "বিকাশের মাধ্যমে সহজেই অনলাইনে বিল পরিশোধ করতে পারবেন। \"বিল পরিশোধ করুন\" বাটনে ক্লিক করলেই বিকাশ পেমেন্ট পোর্টালে চলে যাবেন।",
+      en: "You can easily pay your bill online with bKash. Click the \"Pay Bill\" button to go straight to the bKash payment portal.",
     },
   },
   {
