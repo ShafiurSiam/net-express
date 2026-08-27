@@ -1,4 +1,4 @@
-import { Headset, Phone, Mail } from "lucide-react";
+import { Headset, Phone } from "lucide-react";
 import SEO from "../components/common/SEO.jsx";
 import PageHeader from "../components/common/PageHeader.jsx";
 import Container from "../components/common/Container.jsx";
@@ -29,7 +29,6 @@ const Support = () => {
             <p className="text-sm text-text-secondary">{t("support.directBody")}</p>
             <div className="flex flex-col gap-2 text-sm text-text-secondary">
               <span className="flex items-center gap-2"><Phone size={16} className="text-primary-red" /> <a href={`tel:${company.supportPhone}`} className="transition-colors hover:text-primary-red">{company.supportPhone}</a></span>
-              <span className="flex items-center gap-2"><Mail size={16} className="text-primary-red" /> {company.supportEmail}</span>
             </div>
             <Button to="/contact" size="sm" className="mt-2">{t("support.contactButton")}</Button>
           </AnimatedSection>

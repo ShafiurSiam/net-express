@@ -29,8 +29,11 @@ export const company = {
   // billing enquiries and must never be shown as a generic contact number.
   supportPhone: "01842775508",
   billingPhone: "01877630296",
-  email: "info@netexpress.example.com",
-  supportEmail: "support@netexpress.example.com",
+  // Email addresses intentionally left blank for now — no public inbox is live
+  // yet, so nothing is rendered anywhere. Set these to real addresses and
+  // re-add the display in Footer / Contact / Support when an inbox exists.
+  email: "",
+  supportEmail: "",
   // Deliberate exception to the site's Bangla-first rule (same as the SME & Corporate Plans
   // section): the address value stays in English in both languages; only labels around it are Bangla.
   address: {

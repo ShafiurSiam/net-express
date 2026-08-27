@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import Container from "../common/Container.jsx";
 import { company } from "../../config/company.js";
 import { social } from "../../config/social.js";
@@ -57,10 +57,6 @@ const Footer = () => {
                 {t("footer.billingPhoneLabel")}:{" "}
                 <a href={`tel:${company.billingPhone}`} className="hover:text-white">{company.billingPhone}</a>
               </span>
-            </li>
-            <li className="flex items-start gap-2.5">
-              <Mail size={16} className="mt-0.5 shrink-0 text-primary-red-light" />
-              <span>{company.email}</span>
             </li>
             <li className="flex items-start gap-2.5">
               <MapPin size={16} className="mt-0.5 shrink-0 text-primary-red-light" />

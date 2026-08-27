@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
+import { Phone, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import SEO from "../components/common/SEO.jsx";
 import PageHeader from "../components/common/PageHeader.jsx";
 import Container from "../components/common/Container.jsx";
@@ -19,7 +19,6 @@ const Contact = () => {
   const contactInfo = [
     { icon: Phone, label: t("contact.supportPhoneLabel"), value: company.supportPhone, href: `tel:${company.supportPhone}` },
     { icon: Phone, label: t("contact.billingPhoneLabel"), value: company.billingPhone, href: `tel:${company.billingPhone}` },
-    { icon: Mail, label: t("contact.emailLabel"), value: company.email },
     { icon: MapPin, label: t("contact.addressLabel"), value: company.address[language] },
     { icon: Clock, label: t("contact.hoursLabel"), value: company.workingHours[language] },
   ];

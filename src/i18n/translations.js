@@ -180,7 +180,7 @@ export const translations = {
 
   seo: {
     about: { title: { bn: "আমাদের সম্পর্কে", en: "About Us" }, description: { bn: "Net Express একটি আধুনিক, নির্ভরযোগ্য বাংলাদেশি ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান।", en: "Net Express is a modern, reliable Bangladeshi internet service provider." } },
-    contact: { title: { bn: "যোগাযোগ", en: "Contact" }, description: { bn: "Net Express এর সাথে যোগাযোগ করুন — ফোন, ইমেইল অথবা অফিসের ঠিকানায়।", en: "Get in touch with Net Express — by phone, email, or at our office." } },
+    contact: { title: { bn: "যোগাযোগ", en: "Contact" }, description: { bn: "Net Express এর সাথে যোগাযোগ করুন — ফোনে অথবা অফিসের ঠিকানায়।", en: "Get in touch with Net Express — by phone or at our office." } },
     coverage: { title: { bn: "কভারেজ এলাকা", en: "Coverage Area" }, description: { bn: "আপনার এলাকায় Net Express এর সংযোগ রয়েছে কিনা যাচাই করুন।", en: "Check whether Net Express covers your area." } },
     notFound: { title: { bn: "পৃষ্ঠা পাওয়া যায়নি", en: "Page Not Found" }, description: { bn: "দুঃখিত, আপনার খোঁজা পৃষ্ঠাটি খুঁজে পাওয়া যায়নি।", en: "Sorry, the page you're looking for could not be found." } },
     offers: { title: { bn: "বিশেষ অফার", en: "Special Offers" }, description: { bn: "Net Express এর চলমান সকল বিশেষ অফার ও প্রমোশন দেখুন।", en: "See all of Net Express's current special offers and promotions." } },
