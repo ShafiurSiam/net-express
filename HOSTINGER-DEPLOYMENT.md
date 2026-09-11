@@ -33,9 +33,26 @@ Every push to `main` now automatically redeploys the live site — no VPN, no ma
 
 An English-language version of the deployment guide was saved directly into the marketing site repo as `HOSTINGER-DEPLOYMENT.md`, kept deliberately separate from an existing Bengali `DEPLOYMENT-GUIDE.md` already in that repo (different documents for different audiences/readers). This project doc remains the canonical, most up-to-date source — if the two ever drift, trust this one and update the repo copy to match.
 
-## Payment button — temporary state, needs follow-up
+## Payment button — bKash-only redesign shipped 2026-08-27, server `.env` update still pending
 
-`VITE_PAYMENT_URL` is currently set to `https://wa.me/8801611160096` (WhatsApp) as a placeholder — the user has no real payment gateway (bKash Merchant/Nagad/SSLCommerz etc.) set up yet. The "বিল পরিশোধ" button opens a WhatsApp chat so customers can arrange payment manually in the meantime. **When a real payment method is ready:** update `VITE_PAYMENT_URL` in the server's `.env` at `/var/www/net-express/.env` and rebuild (`npm run build`) — no code changes needed, this is the only place the payment link lives per the architecture (spec Section 13).
+The site's payment feature was changed from four placeholder methods (bKash/Nagad/Rocket/card) to a bKash-only design. That code was pushed and GitHub Actions auto-deployed it successfully (run `33029906574`, 2026-08-27, commit `d68a312`).
+
+**Live-site check after that deploy confirmed a split result:**
+- ✅ Nagad/Rocket/card badges gone from the live bundle, bKash-only redesign live.
+- ❌ The "বিল পরিশোধ করুন" button on netexpressbd.net still opens `https://wa.me/8801611160096` (the old WhatsApp placeholder), not the new bKash link.
+
+**Why:** the GitHub Actions workflow only runs `git pull && npm install && npm run build` on the VPS — it never touches `/var/www/net-express/.env`. That file still has the old `VITE_PAYMENT_URL=https://wa.me/8801611160096` baked in from the original setup, so every `npm run build` (including the auto-deploy one) rebuilds with the stale value. Vite env vars are baked into the build at build time, not read at runtime — editing `.env` and rebuilding is unavoidable; a `git push` alone can never fix this.
+
+**To finish (requires manual SSH, VPN needed):**
+```bash
+ssh -i ~/.ssh/id_ed25519_netexpress netexpress@212.85.26.160
+cd /var/www/net-express
+nano .env        # set: VITE_PAYMENT_URL=https://nxtongi.ispdigital.cloud/BillPayment/Index
+npm run build    # rebuilds dist/ with the new link; Nginx serves it, no restart needed
+```
+Alternatively, edit `.env` over SSH, then just re-run the GitHub Actions workflow instead of building by hand — either way the SSH step to edit `.env` itself can't be skipped.
+
+**Lesson for future payment-link (or any `VITE_*`) changes:** always confirm the server's actual `.env` value after a deploy that changes an env-driven URL — auto-deploy only ships code, not env vars, and this will bite again the next time a `VITE_*` value changes unless `.env` is edited separately on the server. The payment link is the only place the URL lives per the architecture (spec Section 13).
 
 ## Redeploying after future changes
 
