@@ -10,9 +10,34 @@
 // sorting), whatsNew ({ bn, en } highlight callout, or null), features ({ bn:
 // [...], en: [...] } — arrays of feature lines, order must match between the two
 // languages since PackageCard picks the feature icon from the English line at
-// the same index), popular (boolean, shows the "Most Popular" badge).
+// the same index), popular (boolean, shows the "Most Popular" badge),
+// contentionRatio/bdixCache/realIp ({ bn, en } pairs — short structured values
+// for the /packages comparison table; see ComparisonTable.jsx). These three are
+// deliberately NOT derived from `features` at render time — feature lists differ
+// in wording/length/order between tiers, so string-matching them for a table cell
+// is fragile. Each value below is transcribed from (or, where nothing in a
+// package's features says anything on the topic, honestly marked "—" instead of
+// guessed) that same package's own `features` line — see the inline comment on
+// each entry for exactly which feature line it came from.
 // vatNote is optional per entry — PackageCard only renders it when present.
 import { toBanglaDigits } from "../i18n/numerals.js";
+
+// GEN Z through BLAZE all share `shortFeatures` verbatim — nothing in the data
+// distinguishes an "entry" vs "standard" home tier, so all six home packages get
+// identical comparison-table values. Contention ratio is taken straight from
+// shortFeatures' own "১:৮ কানেকশন রেশিও" line. BDIX/cache and real-IP status
+// aren't part of any home package's features array (only gaming/business
+// mention BDIX or real IP) — bdixCache instead reflects the sitewide "হাই-স্পিড
+// BDIX ও ক্যাশ সার্ভার অ্যাক্সেস" promise already made in the Packages page's
+// feature highlight bar (see packagesPage.highlights in translations.js), and
+// realIp points at the same "রিয়েল স্ট্যাটিক পাবলিক আইপি" on-request add-on
+// already listed in the add-ons section (src/data/addons.js), since none of
+// these six tiers include a static/real IP by default.
+const homeTierTableFields = {
+  contentionRatio: { bn: "১:৮", en: "1:8" },
+  bdixCache: { bn: "BDIX ও ক্যাশ অন্তর্ভুক্ত", en: "BDIX & Cache Included" },
+  realIp: { bn: "ঐচ্ছিক (এড-অন)", en: "Optional (Add-on)" },
+};
 
 // Standard 4-item feature list shared by every Home package.
 const shortFeatures = {
@@ -44,6 +69,7 @@ export const packages = [
     whatsNew: null,
     features: shortFeatures,
     popular: false,
+    ...homeTierTableFields,
   },
   {
     id: "turbo-40",
@@ -61,6 +87,7 @@ export const packages = [
     },
     features: shortFeatures,
     popular: false,
+    ...homeTierTableFields,
   },
   {
     id: "pro-50",
@@ -78,6 +105,7 @@ export const packages = [
     },
     features: shortFeatures,
     popular: true,
+    ...homeTierTableFields,
   },
   {
     id: "prime-65",
@@ -95,6 +123,7 @@ export const packages = [
     },
     features: shortFeatures,
     popular: false,
+    ...homeTierTableFields,
   },
   {
     id: "ultra-80",
@@ -112,6 +141,7 @@ export const packages = [
     },
     features: shortFeatures,
     popular: false,
+    ...homeTierTableFields,
   },
   {
     id: "blaze-100",
@@ -129,6 +159,7 @@ export const packages = [
     },
     features: shortFeatures,
     popular: false,
+    ...homeTierTableFields,
   },
   {
     id: "gamex-nitro-150",
@@ -159,6 +190,11 @@ export const packages = [
       ],
     },
     popular: false,
+    // From this package's own features above: "আনক্যাপড স্পিড (IX/গেমিং)" (uncapped,
+    // not a fixed ratio), "আনমিটার্ড BDIX FTP সার্ভার অ্যাক্সেস", "রিয়েল আইপি (IPv4 ও IPv6)".
+    contentionRatio: { bn: "আনক্যাপড (IX)", en: "Uncapped (IX)" },
+    bdixCache: { bn: "আনমিটার্ড BDIX FTP", en: "Unmetered BDIX FTP" },
+    realIp: { bn: "অন্তর্ভুক্ত (IPv4 ও IPv6)", en: "Included (IPv4 & IPv6)" },
   },
   {
     id: "freelancer-175",
@@ -189,6 +225,12 @@ export const packages = [
       ],
     },
     popular: false,
+    // From this package's own features above: nothing specifies a connection
+    // ratio (it's an uncapped-upload product, not a shared-ratio one), so "—"
+    // rather than guessing. "আনক্যাপড BDIX FTP সার্ভার অ্যাক্সেস", "রিয়েল আইপি (IPv4 ও IPv6)".
+    contentionRatio: { bn: "—", en: "—" },
+    bdixCache: { bn: "আনক্যাপড BDIX FTP", en: "Uncapped BDIX FTP" },
+    realIp: { bn: "অন্তর্ভুক্ত (IPv4 ও IPv6)", en: "Included (IPv4 & IPv6)" },
   },
 ];
 

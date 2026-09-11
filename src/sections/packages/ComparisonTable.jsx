@@ -1,9 +1,11 @@
-// "প্যাকেজ তুলনা" table. Every cell is derived directly from packages.js /
-// smePlans.js at render time — nothing here is hand-typed. Contention
-// ratio / BDIX / Real IP presence is detected by scanning each package's own
-// `features.en` text for the relevant keyword, so a data-file edit (e.g.
-// removing the BDIX line from a package) automatically updates this table too.
-import { Check } from "lucide-react";
+// "প্যাকেজ তুলনা" table. Every cell reads straight off packages.js / smePlans.js
+// fields (contentionRatio, bdixCache, realIp, price/ctaLabel, speed, name) — there
+// is no more scanning each package's freeform `features` array to guess a value.
+// That approach broke because feature lists differ in wording/length/order
+// between tiers (home vs gaming vs business vs SME), so string-matching them at
+// render time was fragile; the three comparison fields are now explicit data on
+// each package/plan instead. See the comments on those fields in packages.js /
+// smePlans.js for exactly where each value came from.
 import Button from "../../components/common/Button.jsx";
 import Badge from "../../components/common/Badge.jsx";
 import AnimatedSection from "../../components/common/AnimatedSection.jsx";
@@ -13,18 +15,25 @@ import { useLanguage } from "../../context/LanguageContext.jsx";
 import { packages } from "../../data/packages.js";
 import { smePlans } from "../../data/smePlans.js";
 
-const CONTENTION_RE = /connection ratio/i;
-const BDIX_RE = /bdix/i;
-const REAL_IP_RE = /real ip/i;
+// Category -> left-accent color, per the redesign: red for home, the site's
+// darker brand red for gaming+freelancer, near-black/gray for SME/Corporate.
+// Deliberately stays inside the existing red/white/neutral palette (variables.css)
+// — no blue/navy.
+const CATEGORY_ACCENT = {
+  home: "border-l-primary-red",
+  gaming: "border-l-primary-red-dark",
+  business: "border-l-primary-red-dark",
+};
+const SME_ACCENT = "border-l-charcoal";
 
-const findFeatureText = (pkg, regex, language) => {
-  const idx = pkg.features.en.findIndex((f) => regex.test(f));
-  return idx === -1 ? null : pkg.features[language][idx];
+// FREELANCER has no `tag` in packages.js (adding one there would also put a
+// badge on its PackageCard, which is out of scope here) — this table-only
+// lookup adds the "Pro" tag to just this row without touching card data.
+const COMPARE_ONLY_TAGS = {
+  "freelancer-175": { bn: "Pro", en: "Pro" },
 };
 
-const hasFeature = (pkg, regex) => pkg.features.en.some((f) => regex.test(f));
-
-const Dash = ({ children }) => <span className="text-text-secondary/60">{children}</span>;
+const cellValue = (value, language, dash) => value?.[language] ?? dash;
 
 const ComparisonTable = ({ onSelectPackage, onSelectSmePlan }) => {
   const { language, t } = useLanguage();
@@ -39,27 +48,26 @@ const ComparisonTable = ({ onSelectPackage, onSelectSmePlan }) => {
           subtitle={t("packagesPage.comparison.subtitle")}
         />
 
-        <AnimatedSection className="overflow-x-auto rounded-2xl border border-border bg-white shadow-card">
-          <table className="w-full min-w-[860px] border-collapse text-left text-sm">
+        <AnimatedSection className="overflow-x-auto rounded-2xl border border-border shadow-card">
+          <table className="w-full min-w-[900px] border-collapse text-left text-sm">
             <thead>
-              <tr className="border-b border-border bg-surface text-text-secondary">
-                <th className="px-5 py-4 font-semibold">{t("packagesPage.comparison.colName")}</th>
-                <th className="px-5 py-4 font-semibold">{t("packagesPage.comparison.colSpeed")}</th>
-                <th className="px-5 py-4 font-semibold">{t("packagesPage.comparison.colContention")}</th>
-                <th className="px-5 py-4 font-semibold">{t("packagesPage.comparison.colBdix")}</th>
-                <th className="px-5 py-4 font-semibold">{t("packagesPage.comparison.colRealIp")}</th>
-                <th className="px-5 py-4 font-semibold">{t("packagesPage.comparison.colPrice")}</th>
-                <th className="px-5 py-4 font-semibold">{t("packagesPage.comparison.colAction")}</th>
+              <tr className="bg-charcoal text-xs font-semibold uppercase tracking-wide text-white">
+                <th className="px-5 py-4">{t("packagesPage.comparison.colName")}</th>
+                <th className="px-5 py-4">{t("packagesPage.comparison.colSpeed")}</th>
+                <th className="px-5 py-4">{t("packagesPage.comparison.colContention")}</th>
+                <th className="px-5 py-4">{t("packagesPage.comparison.colBdix")}</th>
+                <th className="px-5 py-4">{t("packagesPage.comparison.colRealIp")}</th>
+                <th className="px-5 py-4">{t("packagesPage.comparison.colPrice")}</th>
+                <th className="px-5 py-4">{t("packagesPage.comparison.colAction")}</th>
               </tr>
             </thead>
             <tbody>
-              {packages.map((pkg) => {
-                const contention = findFeatureText(pkg, CONTENTION_RE, language);
-                const bdix = hasFeature(pkg, BDIX_RE);
-                const realIp = hasFeature(pkg, REAL_IP_RE);
+              {packages.map((pkg, i) => {
+                const accent = CATEGORY_ACCENT[pkg.category] ?? SME_ACCENT;
+                const proTag = COMPARE_ONLY_TAGS[pkg.id];
                 return (
-                  <tr key={pkg.id} className="border-b border-border last:border-0 hover:bg-surface/60">
-                    <td className="px-5 py-4">
+                  <tr key={pkg.id} className={i % 2 === 0 ? "bg-white" : "bg-surface"}>
+                    <td className={`border-l-4 px-5 py-4 ${accent}`}>
                       <div className="flex items-center gap-2 font-semibold text-text-primary">
                         {pkg.name[language]}
                         {pkg.popular && <Badge tone="red">{t("packageCard.mostPopular")}</Badge>}
@@ -68,21 +76,20 @@ const ComparisonTable = ({ onSelectPackage, onSelectSmePlan }) => {
                             {pkg.tag[language]}
                           </Badge>
                         )}
+                        {proTag && (
+                          <Badge tone="outline" className="normal-case">
+                            {proTag[language]}
+                          </Badge>
+                        )}
                       </div>
                     </td>
                     <td className="px-5 py-4 font-semibold text-primary-red">{pkg.speed[language]}</td>
-                    <td className="px-5 py-4">{contention ?? <Dash>{dash}</Dash>}</td>
+                    <td className="px-5 py-4 text-text-secondary">{cellValue(pkg.contentionRatio, language, dash)}</td>
+                    <td className="px-5 py-4 text-text-secondary">{cellValue(pkg.bdixCache, language, dash)}</td>
+                    <td className="px-5 py-4 text-text-secondary">{cellValue(pkg.realIp, language, dash)}</td>
+                    <td className="px-5 py-4 whitespace-nowrap font-bold text-primary-red">৳{pkg.price[language]}</td>
                     <td className="px-5 py-4">
-                      {bdix ? <Check size={18} className="text-primary-red" /> : <Dash>{dash}</Dash>}
-                    </td>
-                    <td className="px-5 py-4">
-                      {realIp ? <Check size={18} className="text-primary-red" /> : <Dash>{dash}</Dash>}
-                    </td>
-                    <td className="px-5 py-4 whitespace-nowrap font-bold text-text-primary">
-                      ৳{pkg.price[language]} / {pkg.period[language]}
-                    </td>
-                    <td className="px-5 py-4">
-                      <Button size="sm" variant="secondary" onClick={() => onSelectPackage(pkg)}>
+                      <Button size="sm" variant="primary" onClick={() => onSelectPackage(pkg)}>
                         {t("packagesPage.comparison.buyButton")}
                       </Button>
                     </td>
@@ -90,34 +97,24 @@ const ComparisonTable = ({ onSelectPackage, onSelectSmePlan }) => {
                 );
               })}
 
-              {smePlans.plans.map((plan) => (
-                <tr key={plan.id} className="border-b border-border bg-surface/40 last:border-0 hover:bg-surface/70">
-                  <td className="px-5 py-4">
-                    <div className="flex items-center gap-2 font-semibold text-text-primary">
-                      {plan.name}
-                      {/* "Recommended" matches SMEPlanCard.jsx's own badge text for plan.highlighted — SME copy is English-only (see smePlans.js) */}
-                      {plan.highlighted && <Badge tone="red">Recommended</Badge>}
-                    </div>
+              {smePlans.plans.map((plan, i) => (
+                <tr key={plan.id} className={(packages.length + i) % 2 === 0 ? "bg-white" : "bg-surface"}>
+                  <td className={`border-l-4 px-5 py-4 ${SME_ACCENT}`}>
+                    <span className="font-semibold text-text-primary">{plan.name}</span>
                   </td>
                   <td className="px-5 py-4 font-semibold text-primary-red">{plan.speed}</td>
-                  <td className="px-5 py-4">
-                    <Dash>{dash}</Dash>
-                  </td>
-                  <td className="px-5 py-4">
-                    <Dash>{dash}</Dash>
-                  </td>
-                  <td className="px-5 py-4">
-                    <Dash>{dash}</Dash>
-                  </td>
+                  <td className="px-5 py-4 text-text-secondary">{cellValue(plan.contentionRatio, language, dash)}</td>
+                  <td className="px-5 py-4 text-text-secondary">{cellValue(plan.bdixCache, language, dash)}</td>
+                  <td className="px-5 py-4 text-text-secondary">{cellValue(plan.realIp, language, dash)}</td>
                   <td className="px-5 py-4 whitespace-nowrap font-bold text-text-primary">{plan.ctaLabel}</td>
                   <td className="px-5 py-4">
                     {plan.ctaType === "contact" ? (
-                      <Button size="sm" variant="secondary" to="/contact">
-                        {t("packagesPage.comparison.buyButton")}
+                      <Button size="sm" variant="dark" to="/contact">
+                        {t("packagesPage.comparison.quoteButton")}
                       </Button>
                     ) : (
-                      <Button size="sm" variant="secondary" onClick={() => onSelectSmePlan(plan)}>
-                        {t("packagesPage.comparison.buyButton")}
+                      <Button size="sm" variant="dark" onClick={() => onSelectSmePlan(plan)}>
+                        {t("packagesPage.comparison.quoteButton")}
                       </Button>
                     )}
                   </td>
