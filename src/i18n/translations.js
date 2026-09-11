@@ -205,6 +205,99 @@ export const translations = {
     terms: { eyebrow: { bn: "আইনি তথ্য", en: "Legal" }, title: { bn: "শর্তাবলী", en: "Terms" }, subtitle: { bn: "এই পৃষ্ঠাটি একটি প্লেসহোল্ডার — চূড়ান্ত বিষয়বস্তু শীঘ্রই আপডেট করা হবে।", en: "This page is a placeholder — final content will be updated soon." } },
   },
 
+  // UI copy for the redesigned /packages page (breadcrumb, header buttons, tabs,
+  // plan finder, comparison table, add-ons, final CTA). Package/plan data itself
+  // stays in src/data/packages.js and src/data/smePlans.js — nothing here duplicates
+  // a price or speed.
+  packagesPage: {
+    breadcrumb: { ariaLabel: { bn: "ব্রেডক্রাম্ব", en: "Breadcrumb" } },
+    header: {
+      title: {
+        bn: "বাসা থেকে ব্যবসা — সব ধরনের ইন্টারনেট প্যাকেজ, এক জায়গায়",
+        en: "From Home to Business — Every Internet Package, In One Place",
+      },
+      subtitle: {
+        bn: "গেমিং থেকে ফ্রিল্যান্সিং, পরিবারের বিনোদন থেকে কর্পোরেট লিজড লাইন — আপনার ঠিক যে গতি ও বাজেট দরকার, নেট এক্সপ্রেসের প্যাকেজ লাইনআপে তা রয়েছে।",
+        en: "From gaming to freelancing, family streaming to corporate leased lines — whatever speed and budget you need, it's in the Net Express lineup.",
+      },
+      tariffButton: { bn: "BTRC অনুমোদিত ট্যারিফ (PDF)", en: "BTRC Approved Tariff (PDF)" },
+      viewAllButton: { bn: "সব প্যাকেজ দেখুন", en: "View All Packages" },
+      corporateButton: { bn: "কর্পোরেট লিজড লাইন", en: "Corporate Leased Line" },
+    },
+    highlights: [
+      { bn: "১০০% অপটিক্যাল ফাইবার সংযোগ (FTTH)", en: "100% Optical Fiber Connection (FTTH)" },
+      { bn: "হাই-স্পিড আপলোড, ফ্রিল্যান্সার ও গেমারদের জন্য", en: "High-speed upload — built for freelancers & gamers" },
+      { bn: "হাই-স্পিড BDIX ও ক্যাশ সার্ভার অ্যাক্সেস", en: "High-speed BDIX & cache server access" },
+      { bn: "২৪/৭ কাস্টমার সাপোর্ট", en: "24/7 Customer Support" },
+    ],
+    tabs: {
+      ariaLabel: { bn: "প্যাকেজ ক্যাটাগরি", en: "Package categories" },
+      all: { bn: "সব প্যাকেজ", en: "All Packages" },
+      home: { bn: "হোম ইন্টারনেট", en: "Home Internet" },
+      gaming: { bn: "গেমিং", en: "Gaming" },
+      business: { bn: "ফ্রিল্যান্সার ও প্রো", en: "Freelancer & Pro" },
+      sme: { bn: "SME ও কর্পোরেট", en: "SME & Corporate" },
+    },
+    planFinder: {
+      eyebrow: { bn: "প্ল্যান ফাইন্ডার", en: "Plan Finder" },
+      title: { bn: "কোন প্যাকেজ আপনার জন্য?", en: "Which Package Is Right For You?" },
+      subtitle: {
+        bn: "দুটি সহজ প্রশ্নের উত্তর দিন, আমরা বলে দেব কোন প্যাকেজ আপনার জন্য সবচেয়ে ভালো।",
+        en: "Answer two quick questions and we'll tell you which package fits you best.",
+      },
+      q1Label: { bn: "কতগুলো ডিভাইস কানেক্টেড থাকবে?", en: "How many devices will be connected?" },
+      q1Options: {
+        "1-3": { bn: "১-৩টি", en: "1-3" },
+        "4-7": { bn: "৪-৭টি", en: "4-7" },
+        "8-15": { bn: "৮-১৫টি", en: "8-15" },
+        "20+": { bn: "২০+", en: "20+" },
+      },
+      q2Label: { bn: "প্রধান ব্যবহার কী?", en: "What's your main use?" },
+      q2Options: {
+        browsing: { bn: "সাধারণ ব্রাউজিং ও সোশ্যাল মিডিয়া", en: "General browsing & social media" },
+        streaming: { bn: "4K স্ট্রিমিং ও পরিবার", en: "4K streaming & family" },
+        gaming: { bn: "গেমিং", en: "Gaming" },
+        office: { bn: "হেভি ক্লাউড ও অফিসের কাজ", en: "Heavy cloud & office work" },
+      },
+      prompt: { bn: "উভয় প্রশ্নের উত্তর দিলে আপনার জন্য সেরা প্যাকেজ দেখাব।", en: "Answer both questions and we'll show your best match." },
+      resultLabel: { bn: "সুপারিশকৃত প্যাকেজ", en: "Recommended package" },
+      resultCta: { bn: "দেখুন", en: "View" },
+    },
+    comparison: {
+      eyebrow: { bn: "তুলনা করুন", en: "Compare" },
+      title: { bn: "প্যাকেজ তুলনা", en: "Package Comparison" },
+      subtitle: { bn: "সব প্যাকেজ এক নজরে — গতি, মূল্য ও ফিচার তুলনা করুন।", en: "All packages at a glance — compare speed, price, and features." },
+      colName: { bn: "প্যাকেজের নাম", en: "Package" },
+      colSpeed: { bn: "স্পিড", en: "Speed" },
+      colContention: { bn: "কনটেনশন রেশিও", en: "Contention Ratio" },
+      colBdix: { bn: "BDIX/ক্যাশ", en: "BDIX/Cache" },
+      colRealIp: { bn: "রিয়েল আইপি", en: "Real IP" },
+      colPrice: { bn: "মাসিক মূল্য", en: "Monthly Price" },
+      colAction: { bn: "কিনুন", en: "Buy" },
+      buyButton: { bn: "এখনই কিনুন", en: "Buy Now" },
+      contactButton: { bn: "যোগাযোগ করুন", en: "Contact" },
+      dash: { bn: "—", en: "—" },
+      negotiable: { bn: "আলোচনা সাপেক্ষে", en: "Negotiable" },
+    },
+    addons: {
+      eyebrow: { bn: "অ্যাড-অন্স", en: "Add-ons" },
+      title: { bn: "ভ্যালু-অ্যাডেড অ্যাড-অন্স", en: "Value-Added Add-ons" },
+      subtitle: { bn: "আপনার প্যাকেজের সাথে যোগ করুন বাড়তি সুবিধা।", en: "Enhance your package with these optional extras." },
+      contactButton: { bn: "যোগাযোগ করুন", en: "Contact Us" },
+    },
+    finalCta: {
+      eyebrow: { bn: "সিদ্ধান্ত নিতে সমস্যা?", en: "Need Help Deciding?" },
+      title: { bn: "কোন প্যাকেজ বেছে নেবেন বুঝতে পারছেন না?", en: "Not Sure Which Package to Choose?" },
+      subtitle: {
+        bn: "আমাদের টিম সরাসরি কথা বলে আপনাকে সঠিক প্যাকেজ বেছে নিতে সাহায্য করবে।",
+        en: "Talk to our team directly — we'll help you pick the right package.",
+      },
+      callLabel: { bn: "কল করুন", en: "Call Us" },
+      whatsappLabel: { bn: "হোয়াটসঅ্যাপে বার্তা দিন", en: "Message on WhatsApp" },
+      coverageLabel: { bn: "এলাকা কভারেজ জানতে যোগাযোগ করুন", en: "Ask About Area Coverage" },
+    },
+  },
+
   about: {
     journeyTitle: { bn: "আমাদের যাত্রা", en: "Our Journey" },
     paragraph1: {

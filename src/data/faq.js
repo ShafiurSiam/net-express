@@ -50,4 +50,26 @@ export const faqs = [
       en: "Call our support number with your area name or fill out the form on the Contact page — we'll quickly let you know whether a connection is available and share our expansion plans.",
     },
   },
+  {
+    id: "faq-7",
+    question: {
+      bn: "আমাদের প্যাকেজ ও মূল্য কি BTRC অনুমোদিত ট্যারিফ মেনে চলে?",
+      en: "Do your packages and pricing follow BTRC-approved tariffs?",
+    },
+    answer: {
+      bn: "হ্যাঁ, নেট এক্সপ্রেসের সকল প্যাকেজ ও মূল্য BTRC (বাংলাদেশ টেলিযোগাযোগ নিয়ন্ত্রণ কমিশন) অনুমোদিত ট্যারিফ মেনে নির্ধারণ করা হয়। বিস্তারিত ট্যারিফ ডকুমেন্ট প্যাকেজ পেজে পাওয়া যাবে।",
+      en: "Yes, all Net Express packages and pricing are set according to tariffs approved by the BTRC (Bangladesh Telecommunication Regulatory Commission). The detailed tariff document is available on the Packages page.",
+    },
+  },
+  {
+    id: "faq-8",
+    question: {
+      bn: "শেয়ার্ড ও ডেডিকেটেড ব্যান্ডউইথের মধ্যে পার্থক্য কী?",
+      en: "What's the difference between shared and dedicated bandwidth?",
+    },
+    answer: {
+      bn: "হোম প্যাকেজগুলোতে একটি নির্দিষ্ট কানেকশন রেশিওতে (যেমন ১:৮) ব্যান্ডউইথ শেয়ার করা হয়, যা সাধারণ ব্যবহারের জন্য সাশ্রয়ী ও যথেষ্ট। SME ও কর্পোরেট প্ল্যানে ডেডিকেটেড ব্যান্ডউইথ দেওয়া হয়, যেখানে পুরো স্পিড শুধু আপনার জন্য বরাদ্দ থাকে — ব্যবসার গুরুত্বপূর্ণ কাজের জন্য এটি বেশি নির্ভরযোগ্য।",
+      en: "Home packages share bandwidth at a set connection ratio (e.g., 1:8), which is affordable and sufficient for typical use. SME and Corporate plans provide dedicated bandwidth, where the full speed is reserved just for you — more reliable for critical business work.",
+    },
+  },
 ];
