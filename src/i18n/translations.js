@@ -44,6 +44,13 @@ export const translations = {
     messenger: { bn: "Messenger এ যোগাযোগ করুন", en: "Contact us on Messenger" },
   },
 
+  mobileActionBar: {
+    landmarkLabel: { bn: "দ্রুত যোগাযোগ", en: "Quick contact actions" },
+    facebookLabel: { bn: "আমাদের ফেসবুক পেজে যান", en: "Visit our Facebook page" },
+    whatsappLabel: { bn: "হোয়াটসঅ্যাপে বার্তা দিন", en: "Message us on WhatsApp" },
+    callLabel: { bn: "আমাদের কল করুন", en: "Call us" },
+  },
+
   modal: {
     close: { bn: "বন্ধ করুন", en: "Close" },
     connectionRequestTitle: { bn: "নতুন সংযোগের জন্য আবেদন করুন", en: "Apply for a New Connection" },

@@ -23,7 +23,7 @@ const FloatingContactButton = () => {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ delay: shouldReduceMotion ? 0 : 1, duration: shouldReduceMotion ? 0 : 0.4, ease: "easeOut" }}
       whileHover={{ scale: shouldReduceMotion ? 1 : 1.08 }}
-      className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl sm:bottom-7 sm:right-7"
+      className="fixed bottom-5 right-5 z-40 hidden h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl md:flex sm:bottom-7 sm:right-7"
     >
       <MessageCircle size={26} fill="currentColor" className="text-white" />
     </motion.a>
