@@ -135,9 +135,8 @@ export const translations = {
       eyebrow: { bn: "কভারেজ এলাকা", en: "Coverage Area" },
       title: { bn: "আপনার এলাকায় কি আমাদের সংযোগ রয়েছে?", en: "Do We Cover Your Area?" },
       subtitle: { bn: "আপনার এলাকার নাম লিখে দ্রুত যাচাই করুন।", en: "Enter your area name to check quickly." },
-      placeholder: { bn: "এলাকার নাম লিখুন, যেমনঃ মিরপুর", en: "Enter area name, e.g. Mirpur" },
+      placeholder: { bn: "এলাকার নাম লিখুন, যেমনঃ Tongi Bazar", en: "Enter area name, e.g. Tongi Bazar" },
       button: { bn: "কভারেজ দেখুন", en: "Check Coverage" },
-      imageAlt: { bn: "কভারেজ এলাকার বিমূর্ত মানচিত্র", en: "Abstract map of coverage areas" },
       resultPrefix: { bn: "", en: "" },
       resultSuffix: {
         bn: "এলাকায় সংযোগ সম্পর্কে জানতে আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন। বিস্তারিত তালিকার জন্য",
@@ -347,8 +346,39 @@ export const translations = {
       bn: "এলাকাটি এই মুহূর্তে তালিকায় নেই। তবে আমরা দ্রুত সম্প্রসারণ করছি — সরাসরি যোগাযোগ করুন বিস্তারিত জানতে।",
       en: "isn't on our list yet. We're expanding quickly, though — contact us directly for details.",
     },
-    sampleHeading: { bn: "বর্তমান কভারেজ এলাকা (নমুনা)", en: "Current Coverage Areas (Sample)" },
-    disclaimer: { bn: "* এটি একটি ডেমো তালিকা। প্রকৃত কভারেজ তথ্যের জন্য পরবর্তীতে সরাসরি API সংযুক্ত করা হবে।", en: "* This is a demo list. A real coverage API will be connected later." },
+    sampleHeading: { bn: "বর্তমান কভারেজ এলাকা", en: "Current Coverage Areas" },
+    disclaimer: {
+      bn: "* তালিকার বাইরে থাকা এলাকার জন্যও যোগাযোগ করুন — আমরা টঙ্গী জুড়ে দ্রুত নেটওয়ার্ক সম্প্রসারণ করছি।",
+      en: "* Don't see your area? Contact us anyway — we're rapidly expanding our network across Tongi.",
+    },
+  },
+
+  networkCoverageMap: {
+    badge: { bn: "নেটওয়ার্ক কভারেজ", en: "Network Coverage" },
+    heading: { bn: "টঙ্গী নেটওয়ার্ক কভারেজ ম্যাপ", en: "Tongi Network Coverage Map" },
+    subtitle: {
+      bn: "টঙ্গীর অলিগলি পর্যন্ত ছড়িয়ে থাকা আমাদের ফাইবার নেটওয়ার্ক এক নজরে দেখুন।",
+      en: "See our fiber network spread across every corner of Tongi, at a glance.",
+    },
+    connectivityPill: { bn: "ফাইবার সংযোগ", en: "Fiber Connectivity" },
+    hubLabel: { bn: "নেটওয়ার্ক হাব", en: "Network Hub" },
+    hubAriaLabel: { bn: "নেট এক্সপ্রেস নেটওয়ার্ক হাব, Tongi Bazar", en: "Net Express network hub, Tongi Bazar" },
+    nodeAriaSuffix: { bn: "কভারেজ এলাকা", en: "coverage area" },
+    svgLabel: {
+      bn: "টঙ্গী এলাকায় নেট এক্সপ্রেসের নেটওয়ার্ক কভারেজ দেখানো একটি ইন্টারেক্টিভ চিত্র",
+      en: "Interactive diagram showing Net Express network coverage across Tongi",
+    },
+    statsLocationsLabel: { bn: "কভারেজ এলাকা", en: "Coverage Locations" },
+    statsTypeLabel: { bn: "সংযোগের ধরন", en: "Connection Type" },
+    statsTypeValue: { bn: "ফাইবার অপটিক", en: "Fiber Optic" },
+    statsSupportLabel: { bn: "স্থানীয় সাপোর্ট", en: "Local Support" },
+    legendHub: { bn: "নেটওয়ার্ক হাব", en: "Network hub" },
+    legendNode: { bn: "কভারেজ পয়েন্ট", en: "Coverage point" },
+    disclaimer: {
+      bn: "মানচিত্রটি একটি সরলীকৃত নেটওয়ার্ক স্কিম — সুনির্দিষ্ট কভারেজ যাচাই করতে নিচে আপনার এলাকা লিখে দেখুন।",
+      en: "This map is a simplified network schematic — check your exact address below to confirm availability.",
+    },
+    ctaButton: { bn: "আপনার এলাকা চেক করুন", en: "Check Your Area" },
   },
 
   notFound: {

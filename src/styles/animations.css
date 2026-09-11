@@ -26,6 +26,11 @@
   to { transform: rotate(360deg); }
 }
 
+/* Flowing-dash effect for NetworkCoverageMap.jsx connector lines. */
+@keyframes coverage-dash-flow {
+  to { stroke-dashoffset: -24; }
+}
+
 .animate-float-slow {
   animation: float-slow 5s ease-in-out infinite;
 }
@@ -36,6 +41,15 @@
 
 .animate-spin-slow {
   animation: spin-slow 26s linear infinite;
+}
+
+.coverage-connector {
+  stroke-dasharray: 6 6;
+  animation: coverage-dash-flow 1.1s linear infinite;
+}
+
+.coverage-node-dot {
+  transition: r 0.2s ease, fill 0.2s ease;
 }
 
 /* Global safety net: framer-motion variants already branch on useReducedMotion,

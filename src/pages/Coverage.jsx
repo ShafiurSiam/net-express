@@ -6,13 +6,14 @@ import Container from "../components/common/Container.jsx";
 import Button from "../components/common/Button.jsx";
 import AnimatedSection from "../components/common/AnimatedSection.jsx";
 import CTASection from "../sections/home/CTASection.jsx";
+import NetworkCoverageMap from "../components/coverage/NetworkCoverageMap.jsx";
 import { coverageAreas } from "../data/coverageAreas.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
 
 const Coverage = () => {
   const [area, setArea] = useState("");
   const [result, setResult] = useState(null);
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +21,11 @@ const Coverage = () => {
     if (!query) return;
 
     // TODO(backend): replace with a real coverage-lookup API call.
-    const isCovered = coverageAreas.some((a) => a[language].includes(query) || query.includes(a[language]));
+    const normalizedQuery = query.toLowerCase();
+    const isCovered = coverageAreas.some((a) => {
+      const name = a.name.toLowerCase();
+      return name.includes(normalizedQuery) || normalizedQuery.includes(name);
+    });
     setResult({ query, isCovered });
   };
 
@@ -39,7 +44,9 @@ const Coverage = () => {
 
       <section className="py-14 sm:py-20">
         <Container className="flex flex-col gap-12">
-          <AnimatedSection className="mx-auto w-full max-w-xl">
+          <NetworkCoverageMap />
+
+          <AnimatedSection id="coverage-checker" className="mx-auto w-full max-w-xl scroll-mt-24">
             <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
               <label className="relative flex-1">
                 <MapPin size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary" />
@@ -82,10 +89,10 @@ const Coverage = () => {
             <div className="flex flex-wrap justify-center gap-3">
               {coverageAreas.map((a) => (
                 <span
-                  key={a.en}
+                  key={a.id}
                   className="rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-text-secondary"
                 >
-                  {a[language]}
+                  {a.name}
                 </span>
               ))}
             </div>

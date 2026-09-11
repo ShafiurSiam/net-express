@@ -1,4 +1,6 @@
-// Renders the homepage area-coverage checker (search box + demo results against src/data/coverageAreas.js).
+// Renders the homepage coverage section: the animated network schematic
+// (NetworkCoverageMap) plus the area-checker (search box + demo result
+// against src/data/coverageAreas.js).
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, MapPin } from "lucide-react";
@@ -6,8 +8,8 @@ import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";
 import Button from "../../components/common/Button.jsx";
 import AnimatedSection from "../../components/common/AnimatedSection.jsx";
+import NetworkCoverageMap from "../../components/coverage/NetworkCoverageMap.jsx";
 import { useLanguage } from "../../context/LanguageContext.jsx";
-import coverageMap from "../../assets/images/coverage/coverage-map.svg";
 
 const CoverageSection = () => {
   const [area, setArea] = useState("");
@@ -24,14 +26,11 @@ const CoverageSection = () => {
 
   return (
     <section className="py-20 sm:py-28">
-      <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        <AnimatedSection>
-          <img src={coverageMap} alt={t("home.coverageSection.imageAlt")} className="w-full" loading="lazy" />
-        </AnimatedSection>
+      <Container className="flex flex-col gap-16">
+        <NetworkCoverageMap />
 
-        <div className="flex flex-col gap-6">
+        <div id="coverage-checker" className="mx-auto flex w-full max-w-xl scroll-mt-24 flex-col gap-6">
           <SectionTitle
-            align="left"
             eyebrow={t("home.coverageSection.eyebrow")}
             title={t("home.coverageSection.title")}
             subtitle={t("home.coverageSection.subtitle")}
