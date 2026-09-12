@@ -23,10 +23,12 @@ const Offers = () => {
       />
 
       <section className="py-14 sm:py-20">
-        <Container className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {offers.map((offer, i) => (
-            <OfferCard key={offer.id} offer={offer} delay={i * 0.08} />
-          ))}
+        <Container>
+          <div className="mx-auto grid w-full max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
+            {offers.map((offer, i) => (
+              <OfferCard key={offer.id} offer={offer} delay={i * 0.08} />
+            ))}
+          </div>
         </Container>
       </section>
 

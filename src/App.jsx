@@ -12,8 +12,7 @@ import { LanguageProvider } from "./context/LanguageContext.jsx";
 const Home = lazy(() => import("./pages/Home.jsx"));
 const About = lazy(() => import("./pages/About.jsx"));
 const Packages = lazy(() => import("./pages/Packages.jsx"));
-// Hidden until content is ready — uncomment with the matching routes below.
-// const Offers = lazy(() => import("./pages/Offers.jsx"));
+const Offers = lazy(() => import("./pages/Offers.jsx"));
 const Coverage = lazy(() => import("./pages/Coverage.jsx"));
 const Payment = lazy(() => import("./pages/Payment.jsx"));
 const Contact = lazy(() => import("./pages/Contact.jsx"));
@@ -35,7 +34,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/packages" element={<Packages />} />
-              {/* <Route path="/offers" element={<Offers />} /> — hidden until content is ready */}
+              <Route path="/offers" element={<Offers />} />
               <Route path="/coverage" element={<Coverage />} />
               <Route path="/payment" element={<Payment />} />
               <Route path="/contact" element={<Contact />} />

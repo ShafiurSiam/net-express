@@ -2,8 +2,7 @@ import SEO from "../components/common/SEO.jsx";
 import HeroSection from "../sections/home/HeroSection.jsx";
 import StatsSection from "../sections/home/StatsSection.jsx";
 import PackagesSection from "../sections/home/PackagesSection.jsx";
-// Hidden until real offer content is ready — uncomment to bring back.
-// import OffersSection from "../sections/home/OffersSection.jsx";
+import OffersSection from "../sections/home/OffersSection.jsx";
 import WhyChooseUsSection from "../sections/home/WhyChooseUsSection.jsx";
 import PartnersSection from "../sections/home/PartnersSection.jsx";
 import CoverageSection from "../sections/home/CoverageSection.jsx";
@@ -19,7 +18,7 @@ const Home = () => {
       <HeroSection />
       <StatsSection />
       <PackagesSection />
-      {/* <OffersSection /> — hidden until real offer content is ready */}
+      <OffersSection />
       <WhyChooseUsSection />
       <PartnersSection />
       <CoverageSection />

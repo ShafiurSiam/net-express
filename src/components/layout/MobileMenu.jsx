@@ -6,7 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Button from "../common/Button.jsx";
 import LanguageSwitch from "../ui/LanguageSwitch.jsx";
 import Logo from "./Logo.jsx";
-import { navLinks } from "../../data/navigation.js";
+import { navLinks, isNewOffer } from "../../data/navigation.js";
 import { ftpLinks } from "../../data/ftpLinks.js";
 import { company } from "../../config/company.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
@@ -117,12 +117,18 @@ const MobileMenu = ({ isOpen, onClose }) => {
                     to={link.path}
                     onClick={onClose}
                     className={({ isActive }) =>
-                      `rounded-xl px-4 py-3 text-base font-medium transition-colors ${
+                      `relative rounded-xl px-4 py-3 text-base font-medium transition-colors ${
                         isActive ? "bg-primary-red/10 text-primary-red" : "text-text-primary hover:bg-surface"
                       }`
                     }
                   >
                     {link.label[language]}
+                    {/* "New" badge on the Offers link — see isNewOffer in data/navigation.js to remove it later */}
+                    {link.path === "/offers" && isNewOffer && (
+                      <span className="absolute right-2 top-1.5 z-10 rounded-full bg-primary-red px-1.5 py-0.5 text-[9px] font-bold uppercase leading-none tracking-wide text-white shadow-sm motion-safe:animate-pulse">
+                        New
+                      </span>
+                    )}
                   </NavLink>
                   {/* FTP accordion was anchored to the Coverage link; that link
                       is hidden for now, so it renders after Packages instead. */}

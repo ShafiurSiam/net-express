@@ -7,7 +7,7 @@ import MobileMenu from "./MobileMenu.jsx";
 import Logo from "./Logo.jsx";
 import NavDropdown from "../ui/NavDropdown.jsx";
 import LanguageSwitch from "../ui/LanguageSwitch.jsx";
-import { navLinks } from "../../data/navigation.js";
+import { navLinks, isNewOffer } from "../../data/navigation.js";
 import { ftpLinks } from "../../data/ftpLinks.js";
 import { company } from "../../config/company.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
@@ -58,6 +58,12 @@ const Navbar = () => {
                       {link.label[language]}
                       {isActive && (
                         <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-primary-red" />
+                      )}
+                      {/* "New" badge on the Offers link — see isNewOffer in data/navigation.js to remove it later */}
+                      {link.path === "/offers" && isNewOffer && (
+                        <span className="absolute -right-2 -top-1.5 z-10 rounded-full bg-primary-red px-1.5 py-0.5 text-[9px] font-bold uppercase leading-none tracking-wide text-white shadow-sm motion-safe:animate-pulse">
+                          New
+                        </span>
                       )}
                     </>
                   )}

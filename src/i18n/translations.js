@@ -92,10 +92,6 @@ export const translations = {
     whatsNew: { bn: "নতুন কী", en: "What's New" },
   },
 
-  offerCard: {
-    validity: { bn: "মেয়াদ: {validity}", en: "Validity: {validity}" },
-  },
-
   hero: {
     eyebrow: { bn: "বাংলাদেশের বিশ্বস্ত ইন্টারনেট সেবা", en: "Bangladesh's Trusted Internet Service" },
     titleLead: { bn: "আপনার গতির", en: "Your Speed" },

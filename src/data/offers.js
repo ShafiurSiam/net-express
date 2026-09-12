@@ -1,46 +1,43 @@
 // Promotional offers shown on the homepage and /offers page.
-// Each offer's image lives at src/assets/images/offers/offer-0N.svg — swap the file
-// (keep the same filename) to change the artwork, and edit the fields below for copy.
+// Rendered by OfferCard.jsx as elegant icon-badge cards (see OfferCard.jsx for the markup).
 //
-// Shape of one `offers` entry: { id (unique string), image (imported SVG, see the
-// import lines above), badge/title/description/validity ({ bn, en } pairs) }.
-// Rendered by OfferCard.jsx.
+// Shape of one `offers` entry:
+//   id          unique string
+//   icon        lucide-react icon component, shown in a soft red icon badge at the top of the card
+//   image       imported placeholder artwork (src/assets/images/offers/offer-0N.svg) — swap the
+//               file (keep the same filename) to drop in real photography/artwork later. The
+//               current icon-badge card design doesn't render this field, but it's kept so the
+//               data model doesn't need reshaping if a future card design brings the image back.
+//   highlight   optional { bn, en } — a large reward figure shown prominently on the card (e.g. "৳৫০০")
+//   title/description  { bn, en } headline and one-line supporting copy
+//   cta         { label: { bn, en }, action: "openRequest" (opens the connection-request modal)
+//                 | "link" (navigates to `to`) }
+import { UserPlus, Gift } from "lucide-react";
 import offer01 from "../assets/images/offers/offer-01.svg";
 import offer02 from "../assets/images/offers/offer-02.svg";
-import offer03 from "../assets/images/offers/offer-03.svg";
 
 export const offers = [
   {
-    id: "offer-01",
+    id: "referral-bonus",
+    icon: UserPlus,
     image: offer01,
-    badge: { bn: "নতুন সংযোগ", en: "New Connection" },
-    title: { bn: "ইনস্টলেশন সম্পূর্ণ ফ্রি", en: "Installation Completely Free" },
+    highlight: { bn: "৳৫০০", en: "৳500" },
+    title: { bn: "বন্ধুকে রেফার করুন, নিয়ে যান ৳৫০০", en: "Refer a Friend, Get BDT 500" },
     description: {
-      bn: "নতুন সংযোগ নিলে এখনই পাচ্ছেন সম্পূর্ণ ফ্রি ইনস্টলেশন, কোনো লুকানো খরচ নেই।",
-      en: "Get a new connection now and enjoy completely free installation — no hidden costs.",
+      bn: "আপনার রেফারেন্সে বন্ধু নতুন সংযোগ নিলেই সরাসরি আপনার অ্যাকাউন্টে যোগ হবে ৳৫০০ বোনাস।",
+      en: "The moment a friend takes a new connection through your referral, a BDT 500 bonus lands straight in your account.",
     },
-    validity: { bn: "[অফারের মেয়াদ লিখুন]", en: "[Enter offer validity]" },
+    cta: { label: { bn: "এখনই রেফার করুন", en: "Refer Now" }, action: "link", to: "/contact" },
   },
   {
-    id: "offer-02",
+    id: "free-connection-charge",
+    icon: Gift,
     image: offer02,
-    badge: { bn: "আপগ্রেড অফার", en: "Upgrade Offer" },
-    title: { bn: "১ মাস অতিরিক্ত ফ্রি", en: "1 Extra Month Free" },
+    title: { bn: "নতুন সংযোগে ফ্রি সংযোগ চার্জ", en: "Free Connection Charge on Sign-Up" },
     description: {
-      bn: "৬ মাসের প্যাকেজ অগ্রিম পরিশোধ করলে পাবেন ১ মাস সম্পূর্ণ ফ্রি।",
-      en: "Prepay for a 6-month package and get 1 month completely free.",
+      bn: "নতুন গ্রাহকদের জন্য সংযোগ চার্জ এখন সম্পূর্ণ মওকুফ — আজই যুক্ত হোন বাড়তি কোনো খরচ ছাড়াই।",
+      en: "Connection charge is now fully waived for new customers — join today with zero extra cost.",
     },
-    validity: { bn: "[অফারের মেয়াদ লিখুন]", en: "[Enter offer validity]" },
-  },
-  {
-    id: "offer-03",
-    image: offer03,
-    badge: { bn: "রেফারেল অফার", en: "Referral Offer" },
-    title: { bn: "বন্ধুকে রেফার করুন, বিল ছাড় পান", en: "Refer a Friend, Get a Bill Discount" },
-    description: {
-      bn: "আপনার রেফারেন্সে নতুন গ্রাহক যুক্ত হলে উভয়েই পাবেন পরবর্তী বিলে ছাড়।",
-      en: "When a new customer joins through your referral, you both get a discount on your next bill.",
-    },
-    validity: { bn: "[অফারের মেয়াদ লিখুন]", en: "[Enter offer validity]" },
+    cta: { label: { bn: "সংযোগ নিন", en: "Get Connected" }, action: "openRequest" },
   },
 ];

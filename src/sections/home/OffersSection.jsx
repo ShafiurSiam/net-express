@@ -17,7 +17,7 @@ const OffersSection = () => {
           subtitle={t("home.offersSection.subtitle")}
         />
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid w-full max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
           {offers.map((offer, i) => (
             <OfferCard key={offer.id} offer={offer} delay={i * 0.08} />
           ))}
