@@ -142,9 +142,10 @@ export const translations = {
       eyebrow: { bn: "নির্ভরযোগ্য অবকাঠামো", en: "Trusted Infrastructure" },
       title: { bn: "আমাদের পার্টনার", en: "Our Partners" },
       subtitle: {
-        bn: "বাংলাদেশের নির্ভরযোগ্য আপস্ট্রিম ও ট্রান্সমিশন নেটওয়ার্ক প্রতিষ্ঠানের সাথে সংযুক্ত।",
-        en: "Connected with Bangladesh's trusted upstream and transmission network operators.",
+        bn: "বাংলাদেশের শীর্ষস্থানীয় আপস্ট্রিম, পিয়ারিং ও প্রযুক্তি প্রতিষ্ঠানের সাথে সংযুক্ত।",
+        en: "Connected with Bangladesh's leading upstream, peering, and technology partners.",
       },
+      tabsAriaLabel: { bn: "পার্টনার ক্যাটাগরি ফিল্টার", en: "Filter partners by category" },
     },
     coverageSection: {
       eyebrow: { bn: "কভারেজ এলাকা", en: "Coverage Area" },

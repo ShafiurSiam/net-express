@@ -117,7 +117,7 @@ net-express/
 ├── public/                    # static files served as-is (favicon, robots.txt, sitemap.xml)
 ├── src/
 │   ├── assets/
-│   │   ├── images/{home,offers,about,coverage,packages}/   # section-specific images
+│   │   ├── images/{home,offers,about,coverage,packages,partners}/   # section-specific images
 │   │   ├── icons/
 │   │   └── logo/{logo.svg,logo-white.svg}
 │   ├── components/
@@ -183,15 +183,28 @@ import path in `HeroSection.jsx` accordingly.
 
 ### Partner logos ("Our Partners" homepage section)
 
-Edit **`src/data/partners.js`** for the partner list (name, category, order).
-None of the current partners has a real logo file yet, so `PartnerCard.jsx`
-renders a styled text wordmark of the partner's `name` as a fallback. To swap
-in a real logo: add the image under `src/assets/images/partners/`, import it
-in `partners.js`, and set that partner's `logoSrc` field to the import —
-`PartnerCard.jsx` already renders an `<img>` from `logoSrc` when it's present,
-so no component changes are needed. `partnerCategories` in the same file
-defines the filter categories (e.g. "IIG / Upstream", "NTTN"); a category only
-gets rendered once at least one partner is assigned to it.
+Edit **`src/data/partners.js`** for the partner list — each entry's `name`,
+`categories` (an array, since a partner like Summit Communications can
+legitimately belong to more than one tab), and `logoSrc`. Logo files live at
+**`src/assets/images/partners/`**: most are official brand marks sourced from
+Wikimedia Commons (global vendor/peering names like Google, Cisco, Juniper)
+or downloaded directly from the partner's own official site (Bangladeshi
+names like BDIX, ISPAB, BDCOM, Summit Communications). These are third-party
+trademarks used only to indicate a real technology or network relationship
+(upstream transit, peering, equipment vendor, or transmission network
+operator) — not to imply endorsement by those companies.
+
+Fiber@Home currently has no logo file — their official site was unreachable
+during sourcing and no other public source had one — so it falls back to a
+styled text wordmark rendered by `PartnerCard.jsx`. To add a real logo for
+Fiber@Home (or replace any other partner's), drop the image under
+`src/assets/images/partners/`, import it in `partners.js`, and set that
+partner's `logoSrc` field to the import — `PartnerCard.jsx` already renders
+an `<img>` from `logoSrc` when it's present, so no component changes are
+needed. `partnerCategories` in the same file defines the filter tabs (e.g.
+"IIG / Upstream", "Peering", "Technology", "NTTN"); a tab only renders once
+at least one partner is assigned to it, and each tab's count badge is
+computed from the data, never hardcoded.
 
 ### The logo
 
