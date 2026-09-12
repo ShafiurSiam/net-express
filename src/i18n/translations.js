@@ -138,6 +138,14 @@ export const translations = {
         { title: { bn: "সহজ বিল পেমেন্ট", en: "Easy Bill Payment" }, description: { bn: "বিকাশের মাধ্যমে ঘরে বসেই কয়েক সেকেন্ডে বিল পরিশোধ করুন।", en: "Pay your bill from home in seconds with bKash." } },
       ],
     },
+    partnersSection: {
+      eyebrow: { bn: "নির্ভরযোগ্য অবকাঠামো", en: "Trusted Infrastructure" },
+      title: { bn: "আমাদের পার্টনার", en: "Our Partners" },
+      subtitle: {
+        bn: "বাংলাদেশের নির্ভরযোগ্য আপস্ট্রিম ও ট্রান্সমিশন নেটওয়ার্ক প্রতিষ্ঠানের সাথে সংযুক্ত।",
+        en: "Connected with Bangladesh's trusted upstream and transmission network operators.",
+      },
+    },
     coverageSection: {
       eyebrow: { bn: "কভারেজ এলাকা", en: "Coverage Area" },
       title: { bn: "আপনার এলাকায় কি আমাদের সংযোগ রয়েছে?", en: "Do We Cover Your Area?" },

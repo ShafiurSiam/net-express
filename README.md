@@ -181,6 +181,18 @@ visual. Since it's an SVG it scales to any screen size, so a separate mobile ass
 isn't needed — if you replace it with a raster image (`.webp`/`.png`), update the
 import path in `HeroSection.jsx` accordingly.
 
+### Partner logos ("Our Partners" homepage section)
+
+Edit **`src/data/partners.js`** for the partner list (name, category, order).
+None of the current partners has a real logo file yet, so `PartnerCard.jsx`
+renders a styled text wordmark of the partner's `name` as a fallback. To swap
+in a real logo: add the image under `src/assets/images/partners/`, import it
+in `partners.js`, and set that partner's `logoSrc` field to the import —
+`PartnerCard.jsx` already renders an `<img>` from `logoSrc` when it's present,
+so no component changes are needed. `partnerCategories` in the same file
+defines the filter categories (e.g. "IIG / Upstream", "NTTN"); a category only
+gets rendered once at least one partner is assigned to it.
+
 ### The logo
 
 `src/assets/logo/logo.svg` (for light backgrounds, used in the navbar and mobile

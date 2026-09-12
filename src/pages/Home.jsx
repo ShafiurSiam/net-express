@@ -5,6 +5,7 @@ import PackagesSection from "../sections/home/PackagesSection.jsx";
 // Hidden until real offer content is ready — uncomment to bring back.
 // import OffersSection from "../sections/home/OffersSection.jsx";
 import WhyChooseUsSection from "../sections/home/WhyChooseUsSection.jsx";
+import PartnersSection from "../sections/home/PartnersSection.jsx";
 import CoverageSection from "../sections/home/CoverageSection.jsx";
 import HowItWorksSection from "../sections/home/HowItWorksSection.jsx";
 import PaymentSection from "../sections/home/PaymentSection.jsx";
@@ -20,6 +21,7 @@ const Home = () => {
       <PackagesSection />
       {/* <OffersSection /> — hidden until real offer content is ready */}
       <WhyChooseUsSection />
+      <PartnersSection />
       <CoverageSection />
       <HowItWorksSection />
       <PaymentSection />
