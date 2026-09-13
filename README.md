@@ -194,14 +194,17 @@ trademarks used only to indicate a real technology or network relationship
 (upstream transit, peering, equipment vendor, or transmission network
 operator) — not to imply endorsement by those companies.
 
-Fiber@Home currently has no logo file — their official site was unreachable
-during sourcing and no other public source had one — so it falls back to a
-styled text wordmark rendered by `PartnerCard.jsx`. To add a real logo for
-Fiber@Home (or replace any other partner's), drop the image under
+`level-3.png` and `fiber-at-home.png` were supplied directly rather than
+found by the automated sourcing pass (their official sites were unreachable
+at the time). `level-3.png` is cropped from a promotional banner rather than
+an isolated logo file, so — unlike the other cards' clean white/transparent
+marks — it keeps a photographic background; swap in a cleaner asset later if
+one turns up. To replace any partner's logo, drop the image under
 `src/assets/images/partners/`, import it in `partners.js`, and set that
 partner's `logoSrc` field to the import — `PartnerCard.jsx` already renders
-an `<img>` from `logoSrc` when it's present, so no component changes are
-needed. `partnerCategories` in the same file defines the filter tabs (e.g.
+an `<img>` from `logoSrc` when it's present (falling back to a styled text
+wordmark when it's unset), so no component changes are needed.
+`partnerCategories` in the same file defines the filter tabs (e.g.
 "IIG / Upstream", "Peering", "Technology", "NTTN"); a tab only renders once
 at least one partner is assigned to it, and each tab's count badge is
 computed from the data, never hardcoded.

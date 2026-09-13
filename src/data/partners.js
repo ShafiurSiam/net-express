@@ -12,13 +12,13 @@
 // transmission network operator) — not to imply endorsement by those
 // companies.
 //
-// Fiber@Home has no logo file: their official site (fiberathome.net) was
-// unreachable (connection timeout) during sourcing, they have no page on
-// Wikimedia Commons/Wikidata, and no other public source had a usable
-// image. PartnerCard falls back to a styled text wordmark for them — swap
-// in `src/assets/images/partners/fiber-at-home.<ext>` and set `logoSrc`
-// below once a real logo is available, no component changes needed.
-import level3Logo from "../assets/images/partners/level-3.svg";
+// level-3.png and fiber-at-home.png were supplied directly by Siam (their
+// official sites were unreachable/had no sourceable logo during the initial
+// automated pass). level-3.png is cropped from a promotional banner rather
+// than an isolated logo file, so it keeps a photographic background unlike
+// the other cards' clean white/transparent marks — swap in a cleaner asset
+// later if one turns up, same `logoSrc` mechanism.
+import level3Logo from "../assets/images/partners/level-3.png";
 import summitLogo from "../assets/images/partners/summit.png";
 import bdixLogo from "../assets/images/partners/bdix.png";
 import googleLogo from "../assets/images/partners/google.svg";
@@ -30,6 +30,7 @@ import huaweiLogo from "../assets/images/partners/huawei.svg";
 import dellLogo from "../assets/images/partners/dell.svg";
 import bdcomLogo from "../assets/images/partners/bdcom.png";
 import mikrotikLogo from "../assets/images/partners/mikrotik.svg";
+import fiberAtHomeLogo from "../assets/images/partners/fiber-at-home.png";
 
 // Filter categories for the tab bar. `icon` is a lucide-react icon name,
 // resolved to a component in PartnersSection.jsx. Kept even if a category
@@ -61,5 +62,5 @@ export const partners = [
   { id: "dell", name: "Dell Technologies", categories: ["technology"], logoSrc: dellLogo },
   { id: "bdcom", name: "BDCOM", categories: ["technology"], logoSrc: bdcomLogo },
   { id: "mikrotik", name: "MikroTik", categories: ["technology"], logoSrc: mikrotikLogo },
-  { id: "fiber-at-home", name: "Fiber@Home", categories: ["nttn"], logoSrc: undefined },
+  { id: "fiber-at-home", name: "Fiber@Home", categories: ["nttn"], logoSrc: fiberAtHomeLogo },
 ];
