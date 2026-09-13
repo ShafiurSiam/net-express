@@ -391,6 +391,7 @@ export const translations = {
       en: "This map is a simplified network schematic — check your exact address below to confirm availability.",
     },
     ctaButton: { bn: "আপনার এলাকা চেক করুন", en: "Check Your Area" },
+    swipeHint: { bn: "← পুরো মানচিত্র দেখতে পাশে টেনে দেখুন", en: "← Swipe sideways to see the full map" },
   },
 
   notFound: {

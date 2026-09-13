@@ -129,10 +129,10 @@ const NetworkCoverageMap = ({ className = "" }) => {
       </div>
 
       <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[2fr_1fr]">
-        <div className="relative rounded-2xl bg-surface p-2 sm:p-4">
+        <div className="coverage-map-scroll relative overflow-x-auto rounded-2xl bg-surface p-2 sm:p-4">
           <svg
             viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
-            className="h-auto w-full"
+            className="h-auto w-full min-w-[640px] md:min-w-0"
             role="group"
             aria-label={t("networkCoverageMap.svgLabel")}
           >
@@ -234,9 +234,8 @@ const NetworkCoverageMap = ({ className = "" }) => {
                     x={node.point.x + node.dx}
                     y={node.point.y + node.dy}
                     textAnchor={node.anchor}
-                    style={{ opacity: isActive ? 1 : undefined }}
-                    className={`pointer-events-none text-[11px] transition-opacity duration-150 ${
-                      isActive ? "fill-primary-red font-bold" : "fill-text-secondary font-medium opacity-0 sm:opacity-90"
+                    className={`pointer-events-none text-[11px] transition-[fill,font-weight] duration-150 ${
+                      isActive ? "fill-primary-red font-bold" : "fill-text-secondary font-medium"
                     }`}
                   >
                     {node.name}
@@ -246,6 +245,7 @@ const NetworkCoverageMap = ({ className = "" }) => {
             })}
           </svg>
         </div>
+        <p className="text-center text-xs text-text-secondary md:hidden">{t("networkCoverageMap.swipeHint")}</p>
 
         <div className="flex flex-col gap-4">
           <div className="flex flex-1 flex-col justify-center gap-4 rounded-2xl border border-border bg-surface p-5">
