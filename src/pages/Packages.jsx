@@ -9,7 +9,6 @@ import PackageTabs from "../sections/packages/PackageTabs.jsx";
 import PlanFinderSection from "../sections/packages/PlanFinderSection.jsx";
 import SMECorporateSection from "../sections/packages/SMECorporateSection.jsx";
 import ComparisonTable from "../sections/packages/ComparisonTable.jsx";
-import AddonsSection from "../sections/packages/AddonsSection.jsx";
 import HowItWorksSection from "../sections/home/HowItWorksSection.jsx";
 import PackagesFaqSection from "../sections/packages/PackagesFaqSection.jsx";
 import PackagesFinalCTA from "../sections/packages/PackagesFinalCTA.jsx";
@@ -121,7 +120,6 @@ const Packages = () => {
         onSelectSmePlan={(plan) => openRequest(plan.id)}
       />
 
-      <AddonsSection />
       <HowItWorksSection />
       <PackagesFaqSection />
       <PackagesFinalCTA />

@@ -123,12 +123,6 @@ const MobileMenu = ({ isOpen, onClose }) => {
                     }
                   >
                     {link.label[language]}
-                    {/* Small static accent dot to draw the eye to the Add-ons deep-link
-                        without reading as a permanent "New" badge; decorative only, the
-                        link text alone conveys the destination. */}
-                    {link.path === "/packages#addons" && (
-                      <span aria-hidden="true" className="ml-1 inline-block h-1.5 w-1.5 rounded-full bg-primary-red align-middle" />
-                    )}
                     {/* "New" badge on the Offers link — see isNewOffer in data/navigation.js to remove it later */}
                     {link.path === "/offers" && isNewOffer && (
                       <span className="absolute right-2 top-1.5 z-10 rounded-full bg-primary-red px-1.5 py-0.5 text-[9px] font-bold uppercase leading-none tracking-wide text-white shadow-sm motion-safe:animate-pulse">

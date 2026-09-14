@@ -1,14 +1,13 @@
-// "ভ্যালু-অ্যাডেড অ্যাড-অন্স" section — 5 optional extras with no fixed price yet
-// (see src/data/addons.js), each linking to /contact for a quote. Deep-linked
-// from the navbar's "অ্যাড-অনস" link via id="addons" (see ScrollToTop.jsx for
-// the hash-scroll mechanism).
+// Grid of value-added service cards for the standalone /services page (see
+// src/data/services.js), each linking to /contact for a quote. The page-level
+// <PageHeader> (in src/pages/Services.jsx) carries the eyebrow/title/subtitle,
+// so this section renders only the card grid.
 import { ArrowRight, Globe, Wifi, Home, Camera, Code2 } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
-import SectionTitle from "../../components/common/SectionTitle.jsx";
 import Button from "../../components/common/Button.jsx";
 import AnimatedSection from "../../components/common/AnimatedSection.jsx";
 import { useLanguage } from "../../context/LanguageContext.jsx";
-import { addons } from "../../data/addons.js";
+import { services } from "../../data/services.js";
 
 const icons = [Globe, Wifi, Home, Camera, Code2];
 
@@ -22,11 +21,11 @@ const accents = [
   { glow: "-left-10 -bottom-10", chip: "from-primary-red to-primary-red-light" },
 ];
 
-const AddonsSection = () => {
+const ServicesSection = () => {
   const { language, t } = useLanguage();
 
   return (
-    <section id="addons" className="relative scroll-mt-28 overflow-hidden bg-surface py-14 sm:py-20">
+    <section className="relative overflow-hidden bg-surface py-14 sm:py-20">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-primary-red/5 blur-3xl"
@@ -36,20 +35,14 @@ const AddonsSection = () => {
         className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-primary-red/5 blur-3xl"
       />
 
-      <Container className="relative flex flex-col gap-10">
-        <SectionTitle
-          eyebrow={t("packagesPage.addons.eyebrow")}
-          title={t("packagesPage.addons.title")}
-          subtitle={t("packagesPage.addons.subtitle")}
-        />
-
+      <Container className="relative">
         <div className="flex flex-wrap justify-center gap-6">
-          {addons.map((addon, i) => {
+          {services.map((service, i) => {
             const Icon = icons[i];
             const accent = accents[i % accents.length];
             return (
               <AnimatedSection
-                key={addon.id}
+                key={service.id}
                 delay={i * 0.06}
                 className="flex w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
               >
@@ -81,13 +74,13 @@ const AddonsSection = () => {
                     </span>
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-primary-red/15 to-primary-red/5 px-3 py-1 text-xs font-semibold text-primary-red-dark ring-1 ring-primary-red/20">
                       <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary-red" />
-                      {addon.badge[language]}
+                      {service.badge[language]}
                     </span>
                   </div>
 
                   <div className="relative z-10 flex flex-1 flex-col gap-2">
-                    <h3 className="text-lg font-bold text-text-primary">{addon.title[language]}</h3>
-                    <p className="flex-1 text-sm text-text-secondary">{addon.description[language]}</p>
+                    <h3 className="text-lg font-bold text-text-primary">{service.title[language]}</h3>
+                    <p className="flex-1 text-sm text-text-secondary">{service.description[language]}</p>
                   </div>
 
                   <Button
@@ -97,7 +90,7 @@ const AddonsSection = () => {
                     icon={ArrowRight}
                     className="relative z-10 w-full hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-card-hover"
                   >
-                    {t("packagesPage.addons.contactButton")}
+                    {t("servicesPage.contactButton")}
                   </Button>
                 </div>
               </AnimatedSection>
@@ -109,4 +102,4 @@ const AddonsSection = () => {
   );
 };
 
-export default AddonsSection;
+export default ServicesSection;

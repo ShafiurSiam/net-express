@@ -1,17 +1,13 @@
-// Optional value-added add-ons shown on the /packages page, below the comparison table.
+// Optional value-added services shown on the standalone /services page.
 // None of these have a fixed price yet, so unlike packages.js there is no `price`
 // field — each entry shows a status `badge` instead ("চাহিদা অনুযায়ী", etc.) and
 // links to /contact for a quote. Update copy/badges here only; do not add prices
-// until real add-on pricing exists.
+// until real service pricing exists.
 //
-// The "web-development" entry is intentionally Bangla in both `bn` and `en` —
-// unlike the other entries, its copy does not swap to English when the site
-// language is toggled.
-//
-// Shape of one `addons` entry: { id (unique string), badge/title/description
-// ({ bn, en } pairs) }. Icon choice lives in AddonsSection.jsx (parallel array,
+// Shape of one `services` entry: { id (unique string), badge/title/description
+// ({ bn, en } pairs) }. Icon choice lives in ServicesSection.jsx (parallel array,
 // same convention as WhyChooseUsSection), not here.
-export const addons = [
+export const services = [
   {
     id: "static-ip",
     badge: { bn: "চাহিদা অনুযায়ী উপলব্ধ", en: "Available on request" },
@@ -50,14 +46,14 @@ export const addons = [
   },
   {
     id: "web-development",
-    badge: { bn: "কাস্টম ডিজাইন", en: "কাস্টম ডিজাইন" },
+    badge: { bn: "কাস্টম ডিজাইন", en: "Custom Design" },
     title: {
       bn: "ওয়েবসাইট ডেভেলপমেন্ট (পার্সনাল + বিজনেস)",
-      en: "ওয়েবসাইট ডেভেলপমেন্ট (পার্সনাল + বিজনেস)",
+      en: "Website Development (Personal + Business)",
     },
     description: {
       bn: "আপনার নির্দিষ্ট চাহিদা ও পরিকল্পনা অনুযায়ী তৈরি প্রফেশনাল, সম্পূর্ণ কাস্টম ওয়েবসাইট — ব্যক্তিগত ও ব্যবসায়িক, উভয় প্রয়োজনেই।",
-      en: "আপনার নির্দিষ্ট চাহিদা ও পরিকল্পনা অনুযায়ী তৈরি প্রফেশনাল, সম্পূর্ণ কাস্টম ওয়েবসাইট — ব্যক্তিগত ও ব্যবসায়িক, উভয় প্রয়োজনেই।",
+      en: "Professional, fully custom website design and development — built to your exact requirements, for personal or business use.",
     },
   },
 ];

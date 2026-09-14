@@ -198,6 +198,7 @@ export const translations = {
     packages: { title: { bn: "ইন্টারনেট প্যাকেজ", en: "Internet Packages" }, description: { bn: "Net Express এর সকল ইন্টারনেট প্যাকেজ ও মূল্য তালিকা — বাসা ও ব্যবসার জন্য।", en: "All Net Express internet packages and pricing — for home and business." } },
     payment: { title: { bn: "বিল পরিশোধ", en: "Pay Bill" }, description: { bn: "বিকাশের মাধ্যমে Net Express এর ইন্টারনেট বিল পরিশোধ করুন।", en: "Pay your Net Express internet bill with bKash." } },
     privacy: { title: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" }, description: { bn: "Net Express এর গোপনীয়তা নীতি।", en: "Net Express's privacy policy." } },
+    services: { title: { bn: "সেবাসমূহ", en: "Services" }, description: { bn: "নেট এক্সপ্রেসের অতিরিক্ত সেবাসমূহ — রিয়েল আইপি, রাউটার, মেশ Wi-Fi, সিসিটিভি ও ওয়েবসাইট ডেভেলপমেন্ট।", en: "Net Express's additional services — real IP, routers, mesh Wi-Fi, CCTV, and website development." } },
     speedTest: { title: { bn: "স্পিড টেস্ট", en: "Speed Test" }, description: { bn: "আপনার ইন্টারনেট সংযোগের গতি যাচাই করুন (ডেমো)।", en: "Check your internet connection speed (demo)." } },
     support: { title: { bn: "সহায়তা", en: "Support" }, description: { bn: "Net Express গ্রাহক সহায়তা কেন্দ্র — সচরাচর জিজ্ঞাসা ও যোগাযোগের তথ্য।", en: "Net Express customer support center — FAQs and contact information." } },
     terms: { title: { bn: "শর্তাবলী", en: "Terms" }, description: { bn: "Net Express এর সেবা ব্যবহারের শর্তাবলী।", en: "Net Express's terms of service." } },
@@ -211,13 +212,14 @@ export const translations = {
     packages: { eyebrow: { bn: "প্যাকেজ", en: "Packages" }, title: { bn: "ইন্টারনেট প্যাকেজ ও মূল্য তালিকা", en: "Internet Packages & Pricing" }, subtitle: { bn: "প্রয়োজন অনুযায়ী বেছে নিন সবচেয়ে উপযুক্ত প্যাকেজ।", en: "Choose the package that best fits your needs." } },
     payment: { eyebrow: { bn: "বিল পরিশোধ", en: "Pay Bill" }, title: { bn: "সহজে ও নিরাপদে বিল পরিশোধ করুন", en: "Pay Your Bill Easily & Securely" }, subtitle: { bn: "নিচের বাটনে ক্লিক করে বিকাশের মাধ্যমে বিল পরিশোধ করুন।", en: "Click the button below to pay your bill with bKash." } },
     privacy: { eyebrow: { bn: "আইনি তথ্য", en: "Legal" }, title: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" }, subtitle: { bn: "এই পৃষ্ঠাটি একটি প্লেসহোল্ডার — চূড়ান্ত বিষয়বস্তু শীঘ্রই আপডেট করা হবে।", en: "This page is a placeholder — final content will be updated soon." } },
+    services: { eyebrow: { bn: "সেবাসমূহ", en: "Services" }, title: { bn: "আমাদের সেবাসমূহ", en: "Our Services" }, subtitle: { bn: "আপনার প্রয়োজন অনুযায়ী নেট এক্সপ্রেসের অতিরিক্ত সেবাসমূহ দেখুন।", en: "Explore the additional services Net Express offers to complement your connection." } },
     speedTest: { eyebrow: { bn: "স্পিড টেস্ট", en: "Speed Test" }, title: { bn: "ইন্টারনেট স্পিড টেস্ট", en: "Internet Speed Test" }, subtitle: { bn: "আপনার সংযোগের ডাউনলোড, আপলোড ও পিং গতি যাচাই করুন।", en: "Check your connection's download, upload, and ping speed." } },
     support: { eyebrow: { bn: "সহায়তা", en: "Support" }, title: { bn: "আমরা আপনার পাশে আছি", en: "We're Here to Help" }, subtitle: { bn: "সাধারণ প্রশ্নের উত্তর খুঁজুন, অথবা সরাসরি আমাদের সাপোর্ট টিমের সাথে যোগাযোগ করুন।", en: "Find answers to common questions, or reach our support team directly." } },
     terms: { eyebrow: { bn: "আইনি তথ্য", en: "Legal" }, title: { bn: "শর্তাবলী", en: "Terms" }, subtitle: { bn: "এই পৃষ্ঠাটি একটি প্লেসহোল্ডার — চূড়ান্ত বিষয়বস্তু শীঘ্রই আপডেট করা হবে।", en: "This page is a placeholder — final content will be updated soon." } },
   },
 
   // UI copy for the redesigned /packages page (breadcrumb, header buttons, tabs,
-  // plan finder, comparison table, add-ons, final CTA). Package/plan data itself
+  // plan finder, comparison table, final CTA). Package/plan data itself
   // stays in src/data/packages.js and src/data/smePlans.js — nothing here duplicates
   // a price or speed.
   packagesPage: {
@@ -291,12 +293,6 @@ export const translations = {
       dash: { bn: "—", en: "—" },
       negotiable: { bn: "আলোচনা সাপেক্ষে", en: "Negotiable" },
     },
-    addons: {
-      eyebrow: { bn: "অ্যাড-অন্স", en: "Add-ons" },
-      title: { bn: "ভ্যালু-অ্যাডেড অ্যাড-অন্স", en: "Value-Added Add-ons" },
-      subtitle: { bn: "আপনার প্যাকেজের সাথে যোগ করুন বাড়তি সুবিধা।", en: "Enhance your package with these optional extras." },
-      contactButton: { bn: "যোগাযোগ করুন", en: "Contact Us" },
-    },
     finalCta: {
       eyebrow: { bn: "সিদ্ধান্ত নিতে সমস্যা?", en: "Need Help Deciding?" },
       title: { bn: "কোন প্যাকেজ বেছে নেবেন বুঝতে পারছেন না?", en: "Not Sure Which Package to Choose?" },
@@ -308,6 +304,12 @@ export const translations = {
       whatsappLabel: { bn: "হোয়াটসঅ্যাপে বার্তা দিন", en: "Message on WhatsApp" },
       coverageLabel: { bn: "এলাকা কভারেজ জানতে যোগাযোগ করুন", en: "Ask About Area Coverage" },
     },
+  },
+
+  // UI copy for the standalone /services page. Service card data itself
+  // (title/badge/description) stays in src/data/services.js.
+  servicesPage: {
+    contactButton: { bn: "যোগাযোগ করুন", en: "Contact Us" },
   },
 
   about: {

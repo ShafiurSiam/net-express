@@ -56,12 +56,6 @@ const Navbar = () => {
                   {({ isActive }) => (
                     <>
                       {link.label[language]}
-                      {/* Small static accent dot to draw the eye to the Add-ons deep-link
-                          without reading as a permanent "New" badge; decorative only, the
-                          link text alone conveys the destination. */}
-                      {link.path === "/packages#addons" && (
-                        <span aria-hidden="true" className="ml-1 inline-block h-1.5 w-1.5 rounded-full bg-primary-red align-middle" />
-                      )}
                       {isActive && (
                         <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-primary-red" />
                       )}

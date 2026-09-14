@@ -30,8 +30,8 @@ import { toBanglaDigits } from "../i18n/numerals.js";
 // mention BDIX or real IP) — bdixCache instead reflects the sitewide "হাই-স্পিড
 // BDIX ও ক্যাশ সার্ভার অ্যাক্সেস" promise already made in the Packages page's
 // feature highlight bar (see packagesPage.highlights in translations.js), and
-// realIp points at the same "রিয়েল স্ট্যাটিক পাবলিক আইপি" on-request add-on
-// already listed in the add-ons section (src/data/addons.js), since none of
+// realIp points at the same "রিয়েল স্ট্যাটিক পাবলিক আইপি" on-request service
+// already listed on the /services page (src/data/services.js), since none of
 // these six tiers include a static/real IP by default.
 const homeTierTableFields = {
   contentionRatio: { bn: "১:৮", en: "1:8" },
