@@ -4,6 +4,7 @@ import { ArrowRight, Wifi } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import Button from "../../components/common/Button.jsx";
 import HeroVisual from "../../components/home/HeroVisual.jsx";
+import ParticleBackground from "../../components/common/ParticleBackground.jsx";
 import { useConnectionRequest } from "../../context/ConnectionRequestContext.jsx";
 import { useLanguage } from "../../context/LanguageContext.jsx";
 
@@ -25,7 +26,13 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-surface to-white pb-20 pt-32 sm:pt-36 lg:pb-28 lg:pt-44">
-      <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
+      {/* Live particle-network backdrop, full-bleed behind the whole hero (both
+          columns) — z-0, layered under the content below via relative z-10.
+          Ambient-only on touch devices; gently reacts to cursor proximity on
+          desktop (see ParticleBackground's "hero" strength). */}
+      <ParticleBackground strength="hero" className="z-0" />
+
+      <Container className="relative z-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
         <motion.div
           variants={container}
           initial="hidden"

@@ -19,7 +19,9 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.2",
-    "serve": "^14.2.6"
+    "react-tsparticles": "^2.12.2",
+    "serve": "^14.2.6",
+    "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",

@@ -3,6 +3,7 @@ import { Zap, ShieldCheck, Headset, Wrench, Cpu, Wallet } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";
 import FeatureCard from "../../components/cards/FeatureCard.jsx";
+import ParticleBackground from "../../components/common/ParticleBackground.jsx";
 import { useLanguage } from "../../context/LanguageContext.jsx";
 import { translations } from "../../i18n/translations.js";
 
@@ -17,8 +18,9 @@ const WhyChooseUsSection = () => {
   }));
 
   return (
-    <section className="py-20 sm:py-28">
-      <Container className="flex flex-col gap-12">
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      <ParticleBackground strength="ambient" className="z-0" />
+      <Container className="relative z-10 flex flex-col gap-12">
         <SectionTitle
           eyebrow={t("home.whyChooseUs.eyebrow")}
           title={t("home.whyChooseUs.title")}

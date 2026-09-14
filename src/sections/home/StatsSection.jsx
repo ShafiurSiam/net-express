@@ -2,6 +2,7 @@
 import { Award, LifeBuoy, SignalHigh, Users } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import AnimatedSection from "../../components/common/AnimatedSection.jsx";
+import ParticleBackground from "../../components/common/ParticleBackground.jsx";
 import CountUp from "../../components/ui/CountUp.jsx";
 import { statistics } from "../../data/statistics.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
@@ -16,12 +17,18 @@ const STAT_ICONS = {
   experience: Award,
 };
 
-const StatsSection = () => {
+/**
+ * ambientParticles: opt-in quiet particle-network backdrop (see
+ * ParticleBackground) — enabled on the homepage only, since this section is
+ * also reused on the About page where it should stay plain.
+ */
+const StatsSection = ({ ambientParticles = false }) => {
   const { language } = useLanguage();
 
   return (
-    <section className="border-y border-border bg-surface py-14 sm:py-16">
-      <Container>
+    <section className="relative overflow-hidden border-y border-border bg-surface py-14 sm:py-16">
+      {ambientParticles && <ParticleBackground strength="ambient" className="z-0" />}
+      <Container className="relative z-10">
         <div className="grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-4">
           {statistics.map((stat, i) => {
             const Icon = STAT_ICONS[stat.id] ?? Users;

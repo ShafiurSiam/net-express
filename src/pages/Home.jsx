@@ -16,7 +16,7 @@ const Home = () => {
     <>
       <SEO path="/" />
       <HeroSection />
-      <StatsSection />
+      <StatsSection ambientParticles />
       <PackagesSection />
       <OffersSection />
       <WhyChooseUsSection />
