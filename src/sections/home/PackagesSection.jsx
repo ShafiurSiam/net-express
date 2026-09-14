@@ -5,13 +5,14 @@ import SectionTitle from "../../components/common/SectionTitle.jsx";
 import Button from "../../components/common/Button.jsx";
 import PackageCard from "../../components/cards/PackageCard.jsx";
 import { packages } from "../../data/packages.js";
+import { centerPopular, getRowStaggerDelay } from "../../utils/packageCardLayout.js";
 import { useConnectionRequest } from "../../context/ConnectionRequestContext.jsx";
 import { useLanguage } from "../../context/LanguageContext.jsx";
 
 const PackagesSection = () => {
   const { openRequest } = useConnectionRequest();
   const { t } = useLanguage();
-  const homePackages = packages.filter((pkg) => pkg.category === "home");
+  const homePackages = centerPopular(packages.filter((pkg) => pkg.category === "home"));
 
   return (
     <section className="py-20 sm:py-28">
@@ -24,7 +25,13 @@ const PackagesSection = () => {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {homePackages.map((pkg, i) => (
-            <PackageCard key={pkg.id} pkg={pkg} delay={i * 0.08} onSelect={(p) => openRequest(p.id)} />
+            <PackageCard
+              key={pkg.id}
+              pkg={pkg}
+              delay={getRowStaggerDelay(i)}
+              variantIndex={i}
+              onSelect={(p) => openRequest(p.id)}
+            />
           ))}
         </div>
 

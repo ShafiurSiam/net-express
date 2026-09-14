@@ -14,6 +14,7 @@ import HowItWorksSection from "../sections/home/HowItWorksSection.jsx";
 import PackagesFaqSection from "../sections/packages/PackagesFaqSection.jsx";
 import PackagesFinalCTA from "../sections/packages/PackagesFinalCTA.jsx";
 import { packages, packageCategories } from "../data/packages.js";
+import { centerPopular, getRowStaggerDelay } from "../utils/packageCardLayout.js";
 import { useConnectionRequest } from "../context/ConnectionRequestContext.jsx";
 import { useLanguage } from "../context/LanguageContext.jsx";
 
@@ -84,7 +85,7 @@ const Packages = () => {
 
           <div id="package-tab-panel" role="tabpanel" aria-labelledby={`package-tab-${activeTab}`} className="flex flex-col gap-16">
             {visibleCategories.map((cat) => {
-              const catPackages = packages.filter((pkg) => pkg.category === cat.id);
+              const catPackages = centerPopular(packages.filter((pkg) => pkg.category === cat.id));
               return (
                 <div key={cat.id} className="flex flex-col gap-10">
                   <SectionTitle title={cat.label[language]} />
@@ -97,7 +98,12 @@ const Packages = () => {
                           highlightId === pkg.id ? "ring-4 ring-primary-red/40 ring-offset-2 ring-offset-surface" : ""
                         }`}
                       >
-                        <PackageCard pkg={pkg} delay={i * 0.08} onSelect={(p) => openRequest(p.id)} />
+                        <PackageCard
+                          pkg={pkg}
+                          delay={getRowStaggerDelay(i)}
+                          variantIndex={i}
+                          onSelect={(p) => openRequest(p.id)}
+                        />
                       </div>
                     ))}
                   </div>
