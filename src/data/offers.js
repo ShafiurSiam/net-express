@@ -13,7 +13,7 @@
 //                 (e.g. "up to"), for rewards that aren't a flat guaranteed amount
 //   disclaimer    optional { bn, en } — small print shown under the highlight figure (e.g. "শর্ত প্রযোজ্য");
 //                 paired with disclaimerLink to render it as a link to that route
-//   disclaimerLink  optional route string, e.g. "/terms"
+//   disclaimerLink  optional route string, e.g. "/contact"
 //   title/description  { bn, en } headline and one-line supporting copy
 //   cta         { label: { bn, en }, action: "openRequest" (opens the connection-request modal)
 //                 | "link" (navigates to `to`) }
@@ -29,7 +29,7 @@ export const offers = [
     highlight: { bn: "৳৫০০", en: "৳500" },
     highlightNote: { bn: "পর্যন্ত", en: "up to" },
     disclaimer: { bn: "শর্ত প্রযোজ্য", en: "Terms apply" },
-    disclaimerLink: "/terms",
+    disclaimerLink: "/contact",
     title: { bn: "বন্ধুকে রেফার করুন, জিতুন ৳৫০০ পর্যন্ত", en: "Refer a Friend, Win Up to BDT 500" },
     description: {
       bn: "আপনার রেফারেন্সে বন্ধু নতুন সংযোগ নিলেই আপনার অ্যাকাউন্টে যোগ হবে রেফারেল বোনাস।",
