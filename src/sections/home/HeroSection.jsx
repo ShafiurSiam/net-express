@@ -3,9 +3,9 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Wifi } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import Button from "../../components/common/Button.jsx";
+import HeroVisual from "../../components/home/HeroVisual.jsx";
 import { useConnectionRequest } from "../../context/ConnectionRequestContext.jsx";
 import { useLanguage } from "../../context/LanguageContext.jsx";
-import heroArt from "../../assets/images/home/hero.svg";
 
 const container = {
   hidden: {},
@@ -69,13 +69,9 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-          className="relative mx-auto w-full max-w-md lg:max-w-none"
+          className="relative mx-auto w-full max-w-sm lg:max-w-md"
         >
-          <img
-            src={heroArt}
-            alt={t("hero.imageAlt")}
-            className={`w-full ${shouldReduceMotion ? "" : "animate-float-slow"}`}
-          />
+          <HeroVisual />
         </motion.div>
       </Container>
     </section>
