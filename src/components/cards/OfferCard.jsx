@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import Button from "../common/Button.jsx";
 import { useConnectionRequest } from "../../context/ConnectionRequestContext.jsx";
@@ -117,6 +118,20 @@ const OfferCard = ({ offer, delay = 0 }) => {
           <p className="text-5xl font-extrabold leading-none text-primary-red drop-shadow-[0_2px_14px_rgba(200,16,46,0.3)] sm:text-6xl">
             {offer.highlight[language]}
           </p>
+          {(offer.highlightNote || offer.disclaimer) && (
+            <p className="mt-1 text-xs text-text-secondary">
+              {offer.highlightNote && <span>{offer.highlightNote[language]}</span>}
+              {offer.highlightNote && offer.disclaimer && " · "}
+              {offer.disclaimer &&
+                (offer.disclaimerLink ? (
+                  <Link to={offer.disclaimerLink} className="underline decoration-dotted hover:text-primary-red">
+                    {offer.disclaimer[language]}
+                  </Link>
+                ) : (
+                  <span>{offer.disclaimer[language]}</span>
+                ))}
+            </p>
+          )}
         </motion.div>
       )}
 

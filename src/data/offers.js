@@ -8,7 +8,12 @@
 //               file (keep the same filename) to drop in real photography/artwork later. The
 //               current icon-badge card design doesn't render this field, but it's kept so the
 //               data model doesn't need reshaping if a future card design brings the image back.
-//   highlight   optional { bn, en } — a large reward figure shown prominently on the card (e.g. "৳৫০০")
+//   highlight     optional { bn, en } — a large reward figure shown prominently on the card (e.g. "৳৫০০")
+//   highlightNote optional { bn, en } — small plain-text qualifier shown under the highlight figure
+//                 (e.g. "up to"), for rewards that aren't a flat guaranteed amount
+//   disclaimer    optional { bn, en } — small print shown under the highlight figure (e.g. "শর্ত প্রযোজ্য");
+//                 paired with disclaimerLink to render it as a link to that route
+//   disclaimerLink  optional route string, e.g. "/terms"
 //   title/description  { bn, en } headline and one-line supporting copy
 //   cta         { label: { bn, en }, action: "openRequest" (opens the connection-request modal)
 //                 | "link" (navigates to `to`) }
@@ -22,10 +27,13 @@ export const offers = [
     icon: UserPlus,
     image: offer01,
     highlight: { bn: "৳৫০০", en: "৳500" },
-    title: { bn: "বন্ধুকে রেফার করুন, নিয়ে যান ৳৫০০", en: "Refer a Friend, Get BDT 500" },
+    highlightNote: { bn: "পর্যন্ত", en: "up to" },
+    disclaimer: { bn: "শর্ত প্রযোজ্য", en: "Terms apply" },
+    disclaimerLink: "/terms",
+    title: { bn: "বন্ধুকে রেফার করুন, জিতুন ৳৫০০ পর্যন্ত", en: "Refer a Friend, Win Up to BDT 500" },
     description: {
-      bn: "আপনার রেফারেন্সে বন্ধু নতুন সংযোগ নিলেই সরাসরি আপনার অ্যাকাউন্টে যোগ হবে ৳৫০০ বোনাস।",
-      en: "The moment a friend takes a new connection through your referral, a BDT 500 bonus lands straight in your account.",
+      bn: "আপনার রেফারেন্সে বন্ধু নতুন সংযোগ নিলেই আপনার অ্যাকাউন্টে যোগ হবে রেফারেল বোনাস।",
+      en: "The moment a friend takes a new connection through your referral, a referral bonus lands in your account.",
     },
     cta: { label: { bn: "এখনই রেফার করুন", en: "Refer Now" }, action: "link", to: "/contact" },
   },
