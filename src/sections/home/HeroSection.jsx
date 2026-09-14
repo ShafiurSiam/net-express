@@ -72,11 +72,14 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
+        {/* Centerpiece graphic: hidden below md (768px) so it doesn't render or
+            reserve layout space on mobile — matches this project's existing
+            mobile/tablet cutoff (see MobileActionBar.jsx, NetworkCoverageMap.jsx). */}
         <motion.div
           initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-          className="relative mx-auto w-full max-w-sm lg:max-w-md"
+          className="relative mx-auto hidden w-full max-w-sm md:block lg:max-w-md"
         >
           <HeroVisual />
         </motion.div>
