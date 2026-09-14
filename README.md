@@ -1,7 +1,7 @@
 # Net Express — ISP Website
 
-A modern, Bangla-first website for **Net Express**, a Bangladeshi Internet Service
-Provider. Built with React + Vite + Tailwind CSS + Framer Motion, structured so that
+A modern, Bangla-first website for **Net Express**, an Internet Service
+Provider based in Tongi, Gazipur. Built with React + Vite + Tailwind CSS + Framer Motion, structured so that
 someone with little coding experience can find and edit content (prices, offers,
 phone numbers, images, FAQs...) without touching component code.
 

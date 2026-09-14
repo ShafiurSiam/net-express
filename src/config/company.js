@@ -21,8 +21,8 @@ export const company = {
   nameBangla: "নেট এক্সপ্রেস",
   tagline: { bn: "আপনার গতির সাথী", en: "Your Speed Companion" },
   shortDescription: {
-    bn: "একটি আধুনিক, নির্ভরযোগ্য ও প্রযুক্তিনির্ভর বাংলাদেশের ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান।",
-    en: "A modern, reliable, and technology-driven internet service provider in Bangladesh.",
+    bn: "একটি আধুনিক, নির্ভরযোগ্য ও প্রযুক্তিনির্ভর টঙ্গী, গাজীপুরের ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান।",
+    en: "A modern, reliable, and technology-driven internet service provider in Tongi, Gazipur.",
   },
   // Two separate contact numbers, each rendered with its own label everywhere:
   // supportPhone is the general "call us" number; billingPhone is only for

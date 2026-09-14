@@ -9,8 +9,8 @@
 export const site = {
   titleSuffix: "Net Express",
   defaultTitle: {
-    bn: "Net Express | বাংলাদেশের নির্ভরযোগ্য ইন্টারনেট সেবা",
-    en: "Net Express | Bangladesh's Reliable Internet Service",
+    bn: "Net Express | টঙ্গী, গাজীপুরের নির্ভরযোগ্য ইন্টারনেট সেবা",
+    en: "Net Express | Reliable Internet Service in Tongi, Gazipur",
   },
   defaultDescription: {
     bn: "Net Express — দ্রুতগতির, নির্ভরযোগ্য ও সাশ্রয়ী মূল্যের ব্রডব্যান্ড ইন্টারনেট সংযোগ। আজই আপনার এলাকায় সংযোগ নিন।",

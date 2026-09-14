@@ -93,7 +93,7 @@ export const translations = {
   },
 
   hero: {
-    eyebrow: { bn: "বাংলাদেশের বিশ্বস্ত ইন্টারনেট সেবা", en: "Bangladesh's Trusted Internet Service" },
+    eyebrow: { bn: "টঙ্গী, গাজীপুরের বিশ্বস্ত ইন্টারনেট সেবা", en: "Tongi, Gazipur's Trusted Internet Service" },
     titleLead: { bn: "আপনার গতির", en: "Your Speed" },
     titleHighlight: { bn: "সাথী", en: "Companion" },
     titleTail: { bn: "নেট এক্সপ্রেস", en: "Net Express" },
@@ -190,7 +190,7 @@ export const translations = {
   },
 
   seo: {
-    about: { title: { bn: "আমাদের সম্পর্কে", en: "About Us" }, description: { bn: "Net Express একটি আধুনিক, নির্ভরযোগ্য বাংলাদেশি ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান।", en: "Net Express is a modern, reliable Bangladeshi internet service provider." } },
+    about: { title: { bn: "আমাদের সম্পর্কে", en: "About Us" }, description: { bn: "Net Express টঙ্গী, গাজীপুরের একটি আধুনিক, নির্ভরযোগ্য ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান।", en: "Net Express is a modern, reliable internet service provider in Tongi, Gazipur." } },
     contact: { title: { bn: "যোগাযোগ", en: "Contact" }, description: { bn: "Net Express এর সাথে যোগাযোগ করুন — ফোনে অথবা অফিসের ঠিকানায়।", en: "Get in touch with Net Express — by phone or at our office." } },
     coverage: { title: { bn: "কভারেজ এলাকা", en: "Coverage Area" }, description: { bn: "আপনার এলাকায় Net Express এর সংযোগ রয়েছে কিনা যাচাই করুন।", en: "Check whether Net Express covers your area." } },
     notFound: { title: { bn: "পৃষ্ঠা পাওয়া যায়নি", en: "Page Not Found" }, description: { bn: "দুঃখিত, আপনার খোঁজা পৃষ্ঠাটি খুঁজে পাওয়া যায়নি।", en: "Sorry, the page you're looking for could not be found." } },
@@ -313,8 +313,8 @@ export const translations = {
   about: {
     journeyTitle: { bn: "আমাদের যাত্রা", en: "Our Journey" },
     paragraph1: {
-      bn: "{companyName} প্রতিষ্ঠিত হয়েছে একটি সহজ লক্ষ্য নিয়ে — বাংলাদেশের মানুষের জন্য দ্রুত, নির্ভরযোগ্য ও সাশ্রয়ী ইন্টারনেট সংযোগ নিশ্চিত করা। আধুনিক নেটওয়ার্ক প্রযুক্তি ও দক্ষ টিমের মাধ্যমে আমরা প্রতিনিয়ত গ্রাহকসেবার মান উন্নত করে চলেছি।",
-      en: "{companyName} was founded with a simple goal — to bring fast, reliable, and affordable internet connections to the people of Bangladesh. With modern network technology and a skilled team, we're continuously improving the quality of our customer service.",
+      bn: "{companyName} প্রতিষ্ঠিত হয়েছে একটি সহজ লক্ষ্য নিয়ে — টঙ্গী, গাজীপুরের মানুষের জন্য দ্রুত, নির্ভরযোগ্য ও সাশ্রয়ী ইন্টারনেট সংযোগ নিশ্চিত করা। আধুনিক নেটওয়ার্ক প্রযুক্তি ও দক্ষ টিমের মাধ্যমে আমরা প্রতিনিয়ত গ্রাহকসেবার মান উন্নত করে চলেছি।",
+      en: "{companyName} was founded with a simple goal — to bring fast, reliable, and affordable internet connections to the people of Tongi, Gazipur. With modern network technology and a skilled team, we're continuously improving the quality of our customer service.",
     },
     paragraph2: {
       bn: "বাসাবাড়ি থেকে শুরু করে ব্যবসা প্রতিষ্ঠান — সব ধরনের গ্রাহকের চাহিদা মাথায় রেখে আমরা তৈরি করেছি বিভিন্ন মূল্যের ও গতির প্যাকেজ, যা মানানসই আপনার প্রয়োজনের সাথে।",
@@ -323,7 +323,7 @@ export const translations = {
     imageAlt: { bn: "নেট এক্সপ্রেস অফিস ও নেটওয়ার্কের বিমূর্ত চিত্র", en: "Abstract illustration of the Net Express office and network" },
     values: [
       { title: { bn: "আমাদের লক্ষ্য", en: "Our Mission" }, description: { bn: "প্রতিটি ঘরে ও ব্যবসায় সাশ্রয়ী মূল্যে দ্রুতগতির ইন্টারনেট পৌঁছে দেওয়া।", en: "Delivering fast internet at an affordable price to every home and business." } },
-      { title: { bn: "আমাদের দৃষ্টিভঙ্গি", en: "Our Vision" }, description: { bn: "বাংলাদেশের সবচেয়ে নির্ভরযোগ্য ও গ্রাহকবান্ধব ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান হয়ে ওঠা।", en: "Becoming Bangladesh's most reliable and customer-friendly internet service provider." } },
+      { title: { bn: "আমাদের দৃষ্টিভঙ্গি", en: "Our Vision" }, description: { bn: "টঙ্গী, গাজীপুরের সবচেয়ে নির্ভরযোগ্য ও গ্রাহকবান্ধব ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান হয়ে ওঠা।", en: "Becoming the most reliable and customer-friendly internet service provider in Tongi, Gazipur." } },
       { title: { bn: "আমাদের প্রতিশ্রুতি", en: "Our Promise" }, description: { bn: "স্বচ্ছতা, মানসম্পন্ন সেবা ও দ্রুত সমস্যা সমাধানের মাধ্যমে গ্রাহকের আস্থা অর্জন করা।", en: "Earning customer trust through transparency, quality service, and fast issue resolution." } },
     ],
   },
