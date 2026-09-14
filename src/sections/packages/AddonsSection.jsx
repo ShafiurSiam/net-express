@@ -1,6 +1,8 @@
-// "ভ্যালু-অ্যাডেড অ্যাড-অন্স" section — 4 optional extras with no fixed price yet
-// (see src/data/addons.js), each linking to /contact for a quote.
-import { ArrowRight, Globe, Wifi, Home, Camera } from "lucide-react";
+// "ভ্যালু-অ্যাডেড অ্যাড-অন্স" section — 5 optional extras with no fixed price yet
+// (see src/data/addons.js), each linking to /contact for a quote. Deep-linked
+// from the navbar's "অ্যাড-অনস" link via id="addons" (see ScrollToTop.jsx for
+// the hash-scroll mechanism).
+import { ArrowRight, Globe, Wifi, Home, Camera, Code2 } from "lucide-react";
 import Container from "../../components/common/Container.jsx";
 import SectionTitle from "../../components/common/SectionTitle.jsx";
 import Button from "../../components/common/Button.jsx";
@@ -8,10 +10,11 @@ import AnimatedSection from "../../components/common/AnimatedSection.jsx";
 import { useLanguage } from "../../context/LanguageContext.jsx";
 import { addons } from "../../data/addons.js";
 
-const icons = [Globe, Wifi, Home, Camera];
+const icons = [Globe, Wifi, Home, Camera, Code2];
 
 // One subtle, token-only accent per card (corner-glow corner + icon-chip gradient
-// direction) so the row of 4 doesn't read as identical clones.
+// direction) so the row doesn't read as identical clones. Cycled via `i %
+// accents.length`, so a 5th card reuses the first accent.
 const accents = [
   { glow: "-right-10 -top-10", chip: "from-primary-red to-primary-red-dark" },
   { glow: "-left-10 -top-10", chip: "from-primary-red-light to-primary-red" },
@@ -23,7 +26,7 @@ const AddonsSection = () => {
   const { language, t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-surface py-14 sm:py-20">
+    <section id="addons" className="relative scroll-mt-28 overflow-hidden bg-surface py-14 sm:py-20">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-primary-red/5 blur-3xl"
@@ -40,13 +43,17 @@ const AddonsSection = () => {
           subtitle={t("packagesPage.addons.subtitle")}
         />
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-wrap justify-center gap-6">
           {addons.map((addon, i) => {
             const Icon = icons[i];
             const accent = accents[i % accents.length];
             return (
-              <AnimatedSection key={addon.id} delay={i * 0.06} className="h-full">
-                <div className="group relative isolate flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-border bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-card-hover">
+              <AnimatedSection
+                key={addon.id}
+                delay={i * 0.06}
+                className="flex w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+              >
+                <div className="group relative isolate flex h-full w-full flex-col gap-4 overflow-hidden rounded-2xl border border-border bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-card-hover">
                   {/* Ambient red-tinted corner wash; intensifies on hover */}
                   <div
                     aria-hidden="true"

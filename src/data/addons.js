@@ -4,6 +4,10 @@
 // links to /contact for a quote. Update copy/badges here only; do not add prices
 // until real add-on pricing exists.
 //
+// The "web-development" entry is intentionally Bangla in both `bn` and `en` —
+// unlike the other entries, its copy does not swap to English when the site
+// language is toggled.
+//
 // Shape of one `addons` entry: { id (unique string), badge/title/description
 // ({ bn, en } pairs) }. Icon choice lives in AddonsSection.jsx (parallel array,
 // same convention as WhyChooseUsSection), not here.
@@ -42,6 +46,18 @@ export const addons = [
     description: {
       bn: "বাসা বা অফিসের জন্য প্রফেশনাল সিসিটিভি ক্যামেরা ইনস্টলেশন ও রিমোট মনিটরিং সেটআপ।",
       en: "Professional CCTV camera installation and remote monitoring setup for your home or office.",
+    },
+  },
+  {
+    id: "web-development",
+    badge: { bn: "কাস্টম ডিজাইন", en: "কাস্টম ডিজাইন" },
+    title: {
+      bn: "ওয়েবসাইট ডেভেলপমেন্ট (পার্সনাল + বিজনেস)",
+      en: "ওয়েবসাইট ডেভেলপমেন্ট (পার্সনাল + বিজনেস)",
+    },
+    description: {
+      bn: "আপনার নির্দিষ্ট চাহিদা ও পরিকল্পনা অনুযায়ী তৈরি প্রফেশনাল, সম্পূর্ণ কাস্টম ওয়েবসাইট — ব্যক্তিগত ও ব্যবসায়িক, উভয় প্রয়োজনেই।",
+      en: "আপনার নির্দিষ্ট চাহিদা ও পরিকল্পনা অনুযায়ী তৈরি প্রফেশনাল, সম্পূর্ণ কাস্টম ওয়েবসাইট — ব্যক্তিগত ও ব্যবসায়িক, উভয় প্রয়োজনেই।",
     },
   },
 ];

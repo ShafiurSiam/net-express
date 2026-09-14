@@ -11,6 +11,12 @@ export const navLinks = [
   { label: { bn: "হোম", en: "Home" }, path: "/" },
   { label: { bn: "আমাদের সম্পর্কে", en: "About" }, path: "/about" },
   { label: { bn: "প্যাকেজ", en: "Packages" }, path: "/packages" },
+  // Deep-links to the Add-ons section on /packages (id="addons" in
+  // AddonsSection.jsx); ScrollToTop.jsx smooth-scrolls to the hash on both
+  // same-page and cross-page navigation. Uses a non-breaking hyphen (U+2011,
+  // not a plain "-") so the label can't wrap mid-word in the tight desktop
+  // navbar around the lg breakpoint — renders identically to a normal hyphen.
+  { label: { bn: "অ্যাড‑অনস", en: "Add-ons" }, path: "/packages#addons" },
   { label: { bn: "অফার", en: "Offers" }, path: "/offers" },
   { label: { bn: "কভারেজ", en: "Coverage" }, path: "/coverage" },
   { label: { bn: "সহায়তা", en: "Support" }, path: "/support" },
