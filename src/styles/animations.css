@@ -31,6 +31,20 @@
   to { stroke-dashoffset: -24; }
 }
 
+/* Continuous "breathing" scale for OfferCard.jsx icon badges. */
+@keyframes badge-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+/* Diagonal light sweep for OfferCard.jsx ribbon tags. Rests off-canvas for most of the
+   cycle so the shimmer reads as an occasional flash, not a constant animation. */
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-120%) skewX(-16deg); }
+  20% { transform: translateX(220%) skewX(-16deg); }
+  100% { transform: translateX(220%) skewX(-16deg); }
+}
+
 .animate-float-slow {
   animation: float-slow 5s ease-in-out infinite;
 }
@@ -50,6 +64,14 @@
 
 .coverage-node-dot {
   transition: r 0.2s ease, fill 0.2s ease;
+}
+
+.animate-badge-breathe {
+  animation: badge-breathe 3.4s ease-in-out infinite;
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 4.5s ease-in-out infinite;
 }
 
 /* Global safety net: framer-motion variants already branch on useReducedMotion,
