@@ -7,7 +7,7 @@ import { useLanguage } from "../../context/LanguageContext.jsx";
 
 // Short "notice me" ribbon copy per offer — purely decorative, so it lives here rather
 // than in offers.js (which stays reserved for actual offer terms/copy).
-const OFFER_TAGS = {
+export const OFFER_TAGS = {
   "referral-bonus": { bn: "সীমিত অফার", en: "Limited Offer" },
   "free-connection-charge": { bn: "একদম ফ্রি", en: "100% Free" },
 };

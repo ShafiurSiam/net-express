@@ -4,6 +4,7 @@ import Navbar from "./components/layout/Navbar.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import FloatingContactButton from "./components/layout/FloatingContactButton.jsx";
 import MobileActionBar from "./components/layout/MobileActionBar.jsx";
+import OfferPopup from "./components/common/OfferPopup.jsx";
 import ScrollToTop from "./components/common/ScrollToTop.jsx";
 import PageLoader from "./components/common/PageLoader.jsx";
 import { ConnectionRequestProvider } from "./context/ConnectionRequestContext.jsx";
@@ -53,6 +54,7 @@ function App() {
         <div className="md:hidden" style={{ height: "calc(4.5rem + env(safe-area-inset-bottom))" }} aria-hidden="true" />
         <FloatingContactButton />
         <MobileActionBar />
+        <OfferPopup />
       </ConnectionRequestProvider>
     </LanguageProvider>
   );

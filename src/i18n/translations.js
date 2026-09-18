@@ -56,6 +56,12 @@ export const translations = {
     connectionRequestTitle: { bn: "নতুন সংযোগের জন্য আবেদন করুন", en: "Apply for a New Connection" },
   },
 
+  offerPopup: {
+    heading: { bn: "বিশেষ অফার! আজই সুযোগ নিন", en: "Special Offers! Grab Yours Today" },
+    subheading: { bn: "নতুন সংযোগে এই দুটি সুবিধা এখন আপনার জন্য", en: "Two great perks, waiting for you on a new connection" },
+    cta: { bn: "Get Connection Now", en: "Get Connection Now" },
+  },
+
   connectionForm: {
     nameLabel: { bn: "নাম", en: "Name" },
     namePlaceholder: { bn: "আপনার নাম লিখুন", en: "Enter your name" },
