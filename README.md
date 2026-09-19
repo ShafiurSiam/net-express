@@ -6,7 +6,7 @@ someone with little coding experience can find and edit content (prices, offers,
 phone numbers, images, FAQs...) without touching component code.
 
 > The company name is the only confirmed real detail. Everything else — phone
-> number, address, BTRC license, statistics, testimonials, offer copy — is clearly
+> number, address, BTRC license, statistics, offer copy — is clearly
 > marked placeholder content (e.g. `[ফোন নম্বর লিখুন]`) until the real information is
 > supplied. See "Placeholder content" below for the full list of what to replace.
 
@@ -123,11 +123,11 @@ net-express/
 │   ├── components/
 │   │   ├── layout/    # Navbar, MobileMenu, Footer, Logo, FloatingContactButton
 │   │   ├── common/    # Button, Container, SectionTitle, AnimatedSection, SEO, PageHeader...
-│   │   ├── cards/      # PackageCard, OfferCard, FeatureCard, TestimonialCard
+│   │   ├── cards/      # PackageCard, OfferCard, FeatureCard, ReviewCard
 │   │   └── ui/         # Accordion, Modal, ConnectionRequestForm, CountUp, PaymentBadges
 │   ├── config/         # company.js, payment.js, social.js, site.js — single source of truth
 │   ├── context/        # ConnectionRequestContext — shared "request a connection" modal
-│   ├── data/            # packages.js, offers.js, faq.js, statistics.js, navigation.js, testimonials.js, coverageAreas.js
+│   ├── data/            # packages.js, offers.js, faq.js, statistics.js, navigation.js, reviews.js, coverageAreas.js
 │   ├── pages/            # one file per route
 │   ├── sections/home/    # homepage sections, composed together in pages/Home.jsx
 │   ├── styles/            # globals.css, variables.css (design tokens), animations.css
@@ -306,6 +306,7 @@ Copy `.env.example` to `.env` and fill in real values. **Never commit `.env`.**
 | `VITE_SITE_URL` | Canonical site URL, used for SEO / Open Graph tags |
 | `VITE_GOOGLE_MAPS_KEY` | Only needed if the coverage checker is upgraded to a real map |
 | `VITE_SHEETS_WEBHOOK_URL` | Google Apps Script web app URL that receives connection request submissions and appends them as rows to a Google Sheet. See MAINTENANCE-GUIDE.md for how to view/replace this. |
+| `VITE_REVIEWS_WEBHOOK_URL` | Google Apps Script web app URL (a separate deployment from the one above) that stores and serves public customer reviews. Optional — see `net-express-reviews-addendum.md`. |
 
 ## Deploying to Vercel
 
@@ -346,7 +347,7 @@ true`) and should be replaced with real information before launch:
 - `src/config/company.js` — phone, address, BTRC license number
 - `src/data/statistics.js` — all trust/statistics numbers (customer count, uptime,
   years of experience) are demo values
-- `src/data/testimonials.js` — customer names are placeholders
+- `src/data/reviews.js` — empty placeholders; replace with real customer feedback only (see `net-express-reviews-addendum.md`)
 - `src/data/offers.js` — offer validity dates
 - `src/config/social.js` — social media URLs point to example.com
 - `src/config/payment.js` — payment URL points to example.com (set

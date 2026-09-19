@@ -9,6 +9,7 @@ import CoverageSection from "../sections/home/CoverageSection.jsx";
 import HowItWorksSection from "../sections/home/HowItWorksSection.jsx";
 import PaymentSection from "../sections/home/PaymentSection.jsx";
 import FAQSection from "../sections/home/FAQSection.jsx";
+import ReviewsSection from "../sections/home/ReviewsSection.jsx";
 import CTASection from "../sections/home/CTASection.jsx";
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
       <HowItWorksSection />
       <PaymentSection />
       <FAQSection />
+      <ReviewsSection />
       <CTASection />
     </>
   );

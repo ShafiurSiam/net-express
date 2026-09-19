@@ -195,6 +195,55 @@ export const translations = {
     },
   },
 
+  reviews: {
+    eyebrow: { bn: "গ্রাহকদের মতামত", en: "Customer Reviews" },
+    title: { bn: "আমাদের গ্রাহকরা কী বলছেন", en: "What Our Customers Say" },
+    subtitle: { bn: "নেট এক্সপ্রেসের সেবা নিয়ে গ্রাহকদের সরাসরি অভিজ্ঞতা।", en: "Real experiences from customers using Net Express." },
+    countLabel: { bn: "{count}টি মতামত", en: "{count} reviews" },
+    ratingAria: { bn: "৫ এর মধ্যে {rating} রেটিং", en: "Rated {rating} out of 5" },
+    starLabel: { bn: "{count} তারা", en: "{count} star(s)" },
+    writeButton: { bn: "আপনার মতামত লিখুন", en: "Write a review" },
+    showMore: { bn: "আরও দেখুন", en: "Show more" },
+    emptyTitle: { bn: "এখনো কোনো মতামত নেই", en: "No reviews yet" },
+    emptyBody: {
+      bn: "নেট এক্সপ্রেসের সেবা কেমন লাগছে? প্রথম মতামতটি আপনিই লিখুন — আপনার কথা অন্যদের সিদ্ধান্ত নিতে সাহায্য করবে।",
+      en: "How is your Net Express experience? Be the first to write a review — your words help others decide.",
+    },
+    form: {
+      title: { bn: "আপনার মতামত লিখুন", en: "Write a review" },
+      ratingLabel: { bn: "আপনার রেটিং", en: "Your rating" },
+      nameLabel: { bn: "আপনার নাম", en: "Your name" },
+      namePlaceholder: { bn: "যেমনঃ রাহিম উদ্দিন", en: "e.g. Rahim Uddin" },
+      commentLabel: { bn: "আপনার মতামত", en: "Your review" },
+      commentPlaceholder: { bn: "আমাদের সেবা সম্পর্কে আপনার অভিজ্ঞতা লিখুন...", en: "Tell us about your experience with our service..." },
+      counter: { bn: "{count}/{max}", en: "{count}/{max}" },
+      submit: { bn: "মতামত জমা দিন", en: "Submit review" },
+      sending: { bn: "জমা হচ্ছে...", en: "Submitting..." },
+      thanks: { bn: "ধন্যবাদ! আপনার মতামত প্রকাশিত হয়েছে।", en: "Thank you! Your review has been published." },
+      close: { bn: "বন্ধ করুন", en: "Close" },
+    },
+    errors: {
+      ratingRequired: { bn: "অনুগ্রহ করে তারা দিয়ে রেটিং দিন।", en: "Please choose a star rating." },
+      nameRequired: { bn: "আপনার নাম লিখুন।", en: "Please enter your name." },
+      nameTooLong: { bn: "নাম সর্বোচ্চ ৫০ অক্ষরের হতে পারবে।", en: "Name can be at most 50 characters." },
+      commentTooShort: { bn: "মতামত কমপক্ষে ১০ অক্ষরের হতে হবে।", en: "Your review must be at least 10 characters." },
+      commentTooLong: { bn: "মতামত সর্বোচ্চ ৫০০ অক্ষরের হতে পারবে।", en: "Your review can be at most 500 characters." },
+      cooldown: {
+        bn: "আপনি সম্প্রতি একটি মতামত দিয়েছেন। অনুগ্রহ করে {minutes} মিনিট পর আবার চেষ্টা করুন।",
+        en: "You recently submitted a review. Please try again in {minutes} minute(s).",
+      },
+      rateLimited: {
+        bn: "এই মুহূর্তে অনেকে মতামত জমা দিচ্ছেন। অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।",
+        en: "Many reviews are being submitted right now. Please try again in a little while.",
+      },
+      duplicate: { bn: "এই মতামতটি ইতিমধ্যে জমা দেওয়া হয়েছে।", en: "This review has already been submitted." },
+      generic: {
+        bn: "মতামত জমা দেওয়া যায়নি। অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।",
+        en: "We couldn't submit your review. Please try again in a little while.",
+      },
+    },
+  },
+
   seo: {
     about: { title: { bn: "আমাদের সম্পর্কে", en: "About Us" }, description: { bn: "Net Express টঙ্গী, গাজীপুরের একটি আধুনিক, নির্ভরযোগ্য ইন্টারনেট সেবা প্রদানকারী প্রতিষ্ঠান।", en: "Net Express is a modern, reliable internet service provider in Tongi, Gazipur." } },
     contact: { title: { bn: "যোগাযোগ", en: "Contact" }, description: { bn: "Net Express এর সাথে যোগাযোগ করুন — ফোনে অথবা অফিসের ঠিকানায়।", en: "Get in touch with Net Express — by phone or at our office." } },
