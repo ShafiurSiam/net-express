@@ -12,6 +12,12 @@ export const social = {
   whatsapp: "https://wa.me/8801611160096",
 };
 
+// Footer developer credit: the developer's own WhatsApp (not a company contact).
+export const developer = {
+  name: "Shafiur Khan Siam",
+  whatsapp: "https://wa.me/8801729532524",
+};
+
 // The floating action button (bottom-right, all pages) links here.
 // Shape: { type: "whatsapp" | "messenger", url }. Switch `type` to change which
 // icon/label the button shows; `url` is where it links.

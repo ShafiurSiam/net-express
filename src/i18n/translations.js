@@ -34,6 +34,7 @@ export const translations = {
     supportPhoneLabel: { bn: "সাপোর্ট", en: "Support" },
     billingPhoneLabel: { bn: "বিলিং", en: "Billing" },
     copyright: { bn: "© {year} {name}। সর্বস্বত্ব সংরক্ষিত।", en: "© {year} {name}. All rights reserved." },
+    developedBy: { bn: "ডেভেলপ করেছেন", en: "Developed by" },
     faqLabel: { bn: "সচরাচর জিজ্ঞাসা", en: "FAQ" },
     termsLabel: { bn: "শর্তাবলী", en: "Terms" },
     privacyLabel: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" },

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, MapPin } from "lucide-react";
 import Container from "../common/Container.jsx";
 import { company } from "../../config/company.js";
-import { social } from "../../config/social.js";
+import { social, developer } from "../../config/social.js";
 import { footerLinks } from "../../data/navigation.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
 import { formatNumber } from "../../i18n/numerals.js";
@@ -70,6 +70,17 @@ const Footer = () => {
         <Container className="flex flex-col items-center justify-between gap-2 py-6 text-sm text-white/50 sm:flex-row">
           <p>
             {t("footer.copyright", { year: formatNumber(company.copyrightYear, language), name: company.name })}
+          </p>
+          <p>
+            {t("footer.developedBy")}{" "}
+            <a
+              href={developer.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-white/70 transition-colors hover:text-primary-red-light"
+            >
+              {developer.name}
+            </a>
           </p>
           <div className="flex items-center gap-4">
             <Link to="/terms" className="hover:text-white">{t("footer.termsLabel")}</Link>
