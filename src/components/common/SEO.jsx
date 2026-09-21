@@ -12,6 +12,16 @@ const setMeta = (attr, key, content) => {
   el.setAttribute("content", content);
 };
 
+const setCanonical = (href) => {
+  let el = document.head.querySelector('link[rel="canonical"]');
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", "canonical");
+    document.head.appendChild(el);
+  }
+  el.setAttribute("href", href);
+};
+
 /**
  * Lightweight per-page SEO: sets document title + meta description + Open Graph
  * tags on mount. Avoids pulling in react-helmet for a handful of tags.
@@ -31,6 +41,9 @@ const SEO = ({ title, description, path = "" }) => {
     setMeta("property", "og:image", `${site.url}${site.ogImage}`);
     setMeta("property", "og:url", url);
     setMeta("property", "og:type", "website");
+    setMeta("property", "og:site_name", site.titleSuffix);
+    setMeta("name", "application-name", site.titleSuffix);
+    setCanonical(url);
     setMeta("property", "og:locale", site.locale[language]);
     setMeta("name", "twitter:card", "summary_large_image");
     setMeta("name", "twitter:title", fullTitle);

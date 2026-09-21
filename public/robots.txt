@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://netexpress.example.com/sitemap.xml
+Sitemap: https://www.netexpressbd.net/sitemap.xml

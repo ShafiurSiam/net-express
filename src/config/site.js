@@ -16,7 +16,7 @@ export const site = {
     bn: "Net Express — দ্রুতগতির, নির্ভরযোগ্য ও সাশ্রয়ী মূল্যের ব্রডব্যান্ড ইন্টারনেট সংযোগ। আজই আপনার এলাকায় সংযোগ নিন।",
     en: "Net Express — fast, reliable, and affordable broadband internet connection. Get connected in your area today.",
   },
-  url: import.meta.env.VITE_SITE_URL || "https://netexpress.example.com",
+  url: import.meta.env.VITE_SITE_URL || "https://www.netexpressbd.net",
   ogImage: "/og-image.svg",
   locale: { bn: "bn_BD", en: "en_US" },
   themeColor: "#C8102E",

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://netexpress.example.com/</loc></url>
-  <url><loc>https://netexpress.example.com/about</loc></url>
-  <url><loc>https://netexpress.example.com/packages</loc></url>
+  <url><loc>https://www.netexpressbd.net/</loc></url>
+  <url><loc>https://www.netexpressbd.net/about</loc></url>
+  <url><loc>https://www.netexpressbd.net/packages</loc></url>
   <!-- /offers and /coverage temporarily removed while that content is prepared -->
-  <url><loc>https://netexpress.example.com/payment</loc></url>
-  <url><loc>https://netexpress.example.com/contact</loc></url>
-  <url><loc>https://netexpress.example.com/support</loc></url>
-  <url><loc>https://netexpress.example.com/speed-test</loc></url>
-  <url><loc>https://netexpress.example.com/terms</loc></url>
-  <url><loc>https://netexpress.example.com/privacy</loc></url>
+  <url><loc>https://www.netexpressbd.net/payment</loc></url>
+  <url><loc>https://www.netexpressbd.net/contact</loc></url>
+  <url><loc>https://www.netexpressbd.net/support</loc></url>
+  <url><loc>https://www.netexpressbd.net/speed-test</loc></url>
+  <url><loc>https://www.netexpressbd.net/terms</loc></url>
+  <url><loc>https://www.netexpressbd.net/privacy</loc></url>
 </urlset>
