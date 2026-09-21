@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import Button from "../common/Button.jsx";
 import { StarInput } from "./StarRating.jsx";
+import { ReviewNotice } from "./LegalNotice.jsx";
 import { reviewsConfig } from "../../config/reviews.js";
 import { getCooldownRemainingMs, markSubmitted, submitReview } from "../../utils/reviews.js";
 import { formatNumber } from "../../i18n/numerals.js";
@@ -195,6 +196,7 @@ const ReviewForm = ({ onSubmitted, onClose }) => {
           t("reviews.form.submit")
         )}
       </Button>
+      <ReviewNotice />
     </form>
   );
 };

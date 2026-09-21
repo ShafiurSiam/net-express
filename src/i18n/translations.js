@@ -36,7 +36,7 @@ export const translations = {
     copyright: { bn: "© {year} {name}। সর্বস্বত্ব সংরক্ষিত।", en: "© {year} {name}. All rights reserved." },
     developedBy: { bn: "ডেভেলপ করেছেন", en: "Developed by" },
     faqLabel: { bn: "সচরাচর জিজ্ঞাসা", en: "FAQ" },
-    termsLabel: { bn: "শর্তাবলী", en: "Terms" },
+    termsLabel: { bn: "শর্তাবলী", en: "Terms of Service" },
     privacyLabel: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" },
   },
 
@@ -253,11 +253,11 @@ export const translations = {
     offers: { title: { bn: "বিশেষ অফার", en: "Special Offers" }, description: { bn: "Net Express এর চলমান সকল বিশেষ অফার ও প্রমোশন দেখুন।", en: "See all of Net Express's current special offers and promotions." } },
     packages: { title: { bn: "ইন্টারনেট প্যাকেজ", en: "Internet Packages" }, description: { bn: "Net Express এর সকল ইন্টারনেট প্যাকেজ ও মূল্য তালিকা — বাসা ও ব্যবসার জন্য।", en: "All Net Express internet packages and pricing — for home and business." } },
     payment: { title: { bn: "বিল পরিশোধ", en: "Pay Bill" }, description: { bn: "বিকাশের মাধ্যমে Net Express এর ইন্টারনেট বিল পরিশোধ করুন।", en: "Pay your Net Express internet bill with bKash." } },
-    privacy: { title: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" }, description: { bn: "Net Express এর গোপনীয়তা নীতি।", en: "Net Express's privacy policy." } },
+    privacy: { title: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" }, description: { bn: "Net Express কোন ব্যক্তিগত তথ্য সংগ্রহ করে, কীভাবে ব্যবহার ও সংরক্ষণ করে এবং আপনার অধিকার কী।", en: "What personal information Net Express collects, how it is used and stored, and your rights." } },
     services: { title: { bn: "সেবাসমূহ", en: "Services" }, description: { bn: "নেট এক্সপ্রেসের অতিরিক্ত সেবাসমূহ — রিয়েল আইপি, রাউটার, মেশ Wi-Fi, সিসিটিভি ও ওয়েবসাইট ডেভেলপমেন্ট।", en: "Net Express's additional services — real IP, routers, mesh Wi-Fi, CCTV, and website development." } },
     speedTest: { title: { bn: "স্পিড টেস্ট", en: "Speed Test" }, description: { bn: "আপনার ইন্টারনেট সংযোগের গতি যাচাই করুন (ডেমো)।", en: "Check your internet connection speed (demo)." } },
     support: { title: { bn: "সহায়তা", en: "Support" }, description: { bn: "Net Express গ্রাহক সহায়তা কেন্দ্র — সচরাচর জিজ্ঞাসা ও যোগাযোগের তথ্য।", en: "Net Express customer support center — FAQs and contact information." } },
-    terms: { title: { bn: "শর্তাবলী", en: "Terms" }, description: { bn: "Net Express এর সেবা ব্যবহারের শর্তাবলী।", en: "Net Express's terms of service." } },
+    terms: { title: { bn: "সেবার শর্তাবলী", en: "Terms of Service" }, description: { bn: "Net Express এর ইন্টারনেট সেবা ও ওয়েবসাইট ব্যবহারের শর্তাবলী — বিলিং, গ্রহণযোগ্য ব্যবহার, রিভিউ ও আরও অনেক কিছু।", en: "Terms for using Net Express internet service and website — billing, acceptable use, reviews and more." } },
   },
 
   pageHeader: {
@@ -267,11 +267,11 @@ export const translations = {
     offers: { eyebrow: { bn: "অফার", en: "Offers" }, title: { bn: "চলমান বিশেষ অফারসমূহ", en: "Current Special Offers" }, subtitle: { bn: "সীমিত সময়ের জন্য উপলব্ধ চমৎকার সব সুবিধা।", en: "Great perks available for a limited time." } },
     packages: { eyebrow: { bn: "প্যাকেজ", en: "Packages" }, title: { bn: "ইন্টারনেট প্যাকেজ ও মূল্য তালিকা", en: "Internet Packages & Pricing" }, subtitle: { bn: "প্রয়োজন অনুযায়ী বেছে নিন সবচেয়ে উপযুক্ত প্যাকেজ।", en: "Choose the package that best fits your needs." } },
     payment: { eyebrow: { bn: "বিল পরিশোধ", en: "Pay Bill" }, title: { bn: "সহজে ও নিরাপদে বিল পরিশোধ করুন", en: "Pay Your Bill Easily & Securely" }, subtitle: { bn: "নিচের বাটনে ক্লিক করে বিকাশের মাধ্যমে বিল পরিশোধ করুন।", en: "Click the button below to pay your bill with bKash." } },
-    privacy: { eyebrow: { bn: "আইনি তথ্য", en: "Legal" }, title: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" }, subtitle: { bn: "এই পৃষ্ঠাটি একটি প্লেসহোল্ডার — চূড়ান্ত বিষয়বস্তু শীঘ্রই আপডেট করা হবে।", en: "This page is a placeholder — final content will be updated soon." } },
+    privacy: { eyebrow: { bn: "আইনি তথ্য", en: "Legal" }, title: { bn: "গোপনীয়তা নীতি", en: "Privacy Policy" }, subtitle: { bn: "আমরা কোন তথ্য সংগ্রহ করি, কেন করি এবং কীভাবে ব্যবহার করি — সহজ ভাষায়।", en: "What information we collect, why we collect it and how we use it — in plain language." } },
     services: { eyebrow: { bn: "সেবাসমূহ", en: "Services" }, title: { bn: "আমাদের সেবাসমূহ", en: "Our Services" }, subtitle: { bn: "আপনার প্রয়োজন অনুযায়ী নেট এক্সপ্রেসের অতিরিক্ত সেবাসমূহ দেখুন।", en: "Explore the additional services Net Express offers to complement your connection." } },
     speedTest: { eyebrow: { bn: "স্পিড টেস্ট", en: "Speed Test" }, title: { bn: "ইন্টারনেট স্পিড টেস্ট", en: "Internet Speed Test" }, subtitle: { bn: "আপনার সংযোগের ডাউনলোড, আপলোড ও পিং গতি যাচাই করুন।", en: "Check your connection's download, upload, and ping speed." } },
     support: { eyebrow: { bn: "সহায়তা", en: "Support" }, title: { bn: "আমরা আপনার পাশে আছি", en: "We're Here to Help" }, subtitle: { bn: "সাধারণ প্রশ্নের উত্তর খুঁজুন, অথবা সরাসরি আমাদের সাপোর্ট টিমের সাথে যোগাযোগ করুন।", en: "Find answers to common questions, or reach our support team directly." } },
-    terms: { eyebrow: { bn: "আইনি তথ্য", en: "Legal" }, title: { bn: "শর্তাবলী", en: "Terms" }, subtitle: { bn: "এই পৃষ্ঠাটি একটি প্লেসহোল্ডার — চূড়ান্ত বিষয়বস্তু শীঘ্রই আপডেট করা হবে।", en: "This page is a placeholder — final content will be updated soon." } },
+    terms: { eyebrow: { bn: "আইনি তথ্য", en: "Legal" }, title: { bn: "সেবার শর্তাবলী", en: "Terms of Service" }, subtitle: { bn: "আমাদের ইন্টারনেট সেবা ও এই ওয়েবসাইট ব্যবহারের নিয়মকানুন।", en: "The rules for using our internet service and this website." } },
   },
 
   // UI copy for the redesigned /packages page (breadcrumb, header buttons, tabs,
@@ -518,24 +518,29 @@ export const translations = {
     },
   },
 
-  terms: {
-    sections: [
-      { title: { bn: "১. সেবার শর্তাবলী", en: "1. Terms of Service" }, body: { bn: "{companyName} এর ইন্টারনেট সেবা ব্যবহারের মাধ্যমে গ্রাহক এই শর্তাবলীর সাথে সম্মত হচ্ছেন বলে ধরে নেওয়া হয়। এই পৃষ্ঠার বিষয়বস্তু একটি সাময়িক প্লেসহোল্ডার — চূড়ান্ত আইনি ভাষা একজন পেশাদার আইনজীবীর মাধ্যমে প্রস্তুত করা হবে।", en: "By using {companyName}'s internet service, the customer is deemed to agree to these terms. This page's content is a temporary placeholder — the final legal language will be prepared by a professional lawyer." } },
-      { title: { bn: "২. একাউন্ট ও সংযোগ", en: "2. Account & Connection" }, body: { bn: "গ্রাহককে নিবন্ধনের সময় সঠিক তথ্য প্রদান করতে হবে। ভুল বা অসম্পূর্ণ তথ্যের কারণে সংযোগ বিলম্বিত বা বাতিল হতে পারে।", en: "Customers must provide accurate information at the time of registration. Incorrect or incomplete information may delay or cancel the connection." } },
-      { title: { bn: "৩. বিল ও পরিশোধ", en: "3. Billing & Payment" }, body: { bn: "নির্ধারিত সময়ের মধ্যে মাসিক বিল পরিশোধ করতে হবে। বিল বকেয়া থাকলে সাময়িকভাবে সংযোগ বন্ধ রাখার অধিকার সংরক্ষণ করে কর্তৃপক্ষ।", en: "Monthly bills must be paid within the specified time. The company reserves the right to temporarily suspend the connection for overdue bills." } },
-      { title: { bn: "৪. ব্যবহারবিধি", en: "4. Acceptable Use" }, body: { bn: "অবৈধ বা ক্ষতিকর কার্যকলাপে ইন্টারনেট সংযোগ ব্যবহার করা যাবে না। এই নীতি লঙ্ঘন করলে সংযোগ স্থগিত করা হতে পারে।", en: "The internet connection must not be used for illegal or harmful activity. Violating this policy may result in suspension of the connection." } },
-      { title: { bn: "৫. সেবা বাতিল", en: "5. Service Cancellation" }, body: { bn: "গ্রাহক যেকোনো সময় লিখিত অনুরোধের মাধ্যমে সংযোগ বাতিল করতে পারবেন। প্রযোজ্য শর্ত অনুযায়ী অগ্রিম নোটিশ প্রয়োজন হতে পারে।", en: "Customers may cancel their connection at any time via written request. Advance notice may be required as per applicable terms." } },
-    ],
-  },
 
-  privacy: {
-    sections: [
-      { title: { bn: "১. তথ্য সংগ্রহ", en: "1. Information Collection" }, body: { bn: "{companyName} গ্রাহকসেবার উদ্দেশ্যে নাম, ফোন নম্বর, ঠিকানা ও প্যাকেজ সংক্রান্ত তথ্য সংগ্রহ করে। এই পৃষ্ঠার বিষয়বস্তু একটি সাময়িক প্লেসহোল্ডার — চূড়ান্ত নীতিমালা একজন পেশাদার আইনজীবীর মাধ্যমে প্রস্তুত করা হবে।", en: "{companyName} collects name, phone number, address, and package information for customer-service purposes. This page's content is a temporary placeholder — the final policy will be prepared by a professional lawyer." } },
-      { title: { bn: "২. তথ্যের ব্যবহার", en: "2. Use of Information" }, body: { bn: "সংগৃহীত তথ্য শুধুমাত্র সংযোগ স্থাপন, বিলিং ও গ্রাহকসেবার উদ্দেশ্যে ব্যবহৃত হয়। বিপণন উদ্দেশ্যে ব্যবহারের ক্ষেত্রে পূর্বানুমতি নেওয়া হবে।", en: "Collected information is used only for connection setup, billing, and customer service. Prior consent will be obtained for any marketing use." } },
-      { title: { bn: "৩. তথ্য সুরক্ষা", en: "3. Data Security" }, body: { bn: "গ্রাহকের ব্যক্তিগত তথ্য সুরক্ষিত রাখতে যথাযথ প্রযুক্তিগত ও প্রশাসনিক ব্যবস্থা গ্রহণ করা হয়।", en: "Appropriate technical and administrative measures are taken to keep customer personal information secure." } },
-      { title: { bn: "৪. তৃতীয় পক্ষের সাথে তথ্য শেয়ার", en: "4. Sharing With Third Parties" }, body: { bn: "আইনি প্রয়োজন ব্যতীত গ্রাহকের ব্যক্তিগত তথ্য কোনো তৃতীয় পক্ষের সাথে শেয়ার করা হয় না।", en: "Customer personal information is not shared with any third party except as legally required." } },
-      { title: { bn: "৫. যোগাযোগ", en: "5. Contact" }, body: { bn: "গোপনীয়তা নীতি সম্পর্কিত যেকোনো প্রশ্নের জন্য আমাদের সাপোর্ট টিমের সাথে যোগাযোগ করুন।", en: "Contact our support team with any questions about this privacy policy." } },
-    ],
+  // Shared UI strings for the /terms and /privacy pages and the consent notices
+  // on the forms. The document text itself lives in src/data/legal.js.
+  legal: {
+    lastUpdated: { bn: "সর্বশেষ হালনাগাদ", en: "Last updated" },
+    toc: { bn: "সূচিপত্র", en: "Contents" },
+    backHome: { bn: "হোমে ফিরে যান", en: "Back to home" },
+    consent: {
+      label: {
+        bn: "আমি <terms>শর্তাবলী</terms> ও <privacy>গোপনীয়তা নীতি</privacy> পড়েছি ও সম্মত আছি",
+        en: "I have read and agree to the <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>",
+      },
+      required: {
+        bn: "সম্মতি না দিলে অনুরোধ পাঠানো যাবে না — অনুগ্রহ করে টিক দিন।",
+        en: "You need to agree before sending the request — please tick the box.",
+      },
+    },
+    reviewNotice: {
+      text: {
+        bn: "রিভিউ সবার জন্য প্রকাশিত হয় — ব্যক্তিগত তথ্য লিখবেন না। দেখুন <terms>শর্তাবলী</terms>।",
+        en: "Reviews are public — don't include private information. See the <terms>Terms of Service</terms>.",
+      },
+    },
   },
 
   speedTest: {

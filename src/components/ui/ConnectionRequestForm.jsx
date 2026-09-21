@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import Button from "../common/Button.jsx";
+import { ConsentCheckbox } from "./LegalNotice.jsx";
 import { packages } from "../../data/packages.js";
 import { smePlans } from "../../data/smePlans.js";
 import { useLanguage } from "../../context/LanguageContext.jsx";
@@ -47,6 +48,8 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
+  const [agreed, setAgreed] = useState(false);
+  const [consentMissing, setConsentMissing] = useState(false);
   const { language, t } = useLanguage();
 
   const handleChange = (field) => (e) => {
@@ -55,6 +58,11 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Nothing is sent until the Terms/Privacy consent box is ticked.
+    if (!agreed) {
+      setConsentMissing(true);
+      return;
+    }
     setSubmitting(true);
     setError(false);
 
@@ -92,6 +100,8 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
           size="sm"
           onClick={() => {
             setForm({ ...emptyForm, packageId: initialPackageId });
+            setAgreed(false);
+            setConsentMissing(false);
             setSubmitted(false);
           }}
         >
@@ -166,6 +176,15 @@ const ConnectionRequestForm = ({ initialPackageId = "", onSubmitted }) => {
           </optgroup>
         </select>
       </Field>
+
+      <ConsentCheckbox
+        checked={agreed}
+        onChange={(checked) => {
+          setAgreed(checked);
+          if (checked) setConsentMissing(false);
+        }}
+        invalid={consentMissing}
+      />
 
       {error && (
         <p className="rounded-xl bg-primary-red/10 px-4 py-3 text-sm text-primary-red">
