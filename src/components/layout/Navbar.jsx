@@ -44,7 +44,7 @@ const Navbar = () => {
                 <NavLink
                   to={link.path}
                   className={({ isActive }) =>
-                    `relative rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                    `relative rounded-lg px-4 py-2 text-sm font-semibold transition-colors duration-200 ${
                       isActive
                         ? "text-primary-red"
                         : scrolled
@@ -86,7 +86,7 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <LanguageSwitch />
+            <LanguageSwitch compact />
             <Button to="/payment" size="sm" icon={Wallet} iconPosition="left">
               {t("common.payBill")}
             </Button>

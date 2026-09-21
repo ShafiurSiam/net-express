@@ -4,8 +4,10 @@ import { useLanguage } from "../../context/LanguageContext.jsx";
  * বাং | EN segmented pill toggle. Instant re-render via LanguageContext —
  * no page reload, choice persists to localStorage.
  */
-const LanguageSwitch = ({ className = "" }) => {
+const LanguageSwitch = ({ className = "", compact = false }) => {
   const { language, setLanguage, t } = useLanguage();
+  // compact (desktop navbar): slimmer ~34px pill; default keeps the mobile menu sizing.
+  const segment = compact ? "px-2.5 py-1" : "px-3 py-1.5";
 
   return (
     <div
@@ -17,7 +19,7 @@ const LanguageSwitch = ({ className = "" }) => {
         onClick={() => setLanguage("bn")}
         aria-pressed={language === "bn"}
         aria-label={t("languageSwitch.switchToBangla")}
-        className={`rounded-full px-3 py-1.5 transition-colors ${
+        className={`rounded-full ${segment} transition-colors ${
           language === "bn" ? "bg-primary-red text-white" : "text-text-secondary hover:text-primary-red"
         }`}
       >
@@ -28,7 +30,7 @@ const LanguageSwitch = ({ className = "" }) => {
         onClick={() => setLanguage("en")}
         aria-pressed={language === "en"}
         aria-label={t("languageSwitch.switchToEnglish")}
-        className={`rounded-full px-3 py-1.5 transition-colors ${
+        className={`rounded-full ${segment} transition-colors ${
           language === "en" ? "bg-primary-red text-white" : "text-text-secondary hover:text-primary-red"
         }`}
       >

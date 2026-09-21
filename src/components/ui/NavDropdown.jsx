@@ -95,7 +95,7 @@ const NavDropdown = ({ label, items, triggerClassName = "" }) => {
           }
           setOpen(true);
         }}
-        className={`flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 ${triggerClassName}`}
+        className={`flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-semibold transition-colors duration-200 ${triggerClassName}`}
       >
         {label}
         <ChevronDown
