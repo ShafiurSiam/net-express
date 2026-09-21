@@ -6,7 +6,7 @@ import AnimatedSection from "./AnimatedSection.jsx";
  */
 const PageHeader = ({ eyebrow, title, subtitle }) => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-surface to-white pb-14 pt-32 sm:pt-36">
+    <section className="relative overflow-hidden bg-gradient-to-b from-surface to-white page-top pb-14">
       <Container>
         <AnimatedSection className="flex max-w-2xl flex-col gap-4">
           {eyebrow && (

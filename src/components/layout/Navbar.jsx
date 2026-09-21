@@ -33,7 +33,7 @@ const Navbar = () => {
             : "bg-transparent"
         }`}
       >
-        <Container className="flex h-[72px] items-center justify-between py-3">
+        <Container className="flex h-[var(--nav-height)] items-center justify-between py-3">
           <Link to="/" className="shrink-0" aria-label={company.name}>
             <Logo />
           </Link>

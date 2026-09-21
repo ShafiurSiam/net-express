@@ -38,4 +38,16 @@
 :root {
   --rgb-primary-red: 200, 16, 46;
   --rgb-charcoal: 23, 21, 26;
+
+  /* Fixed-navbar height + the breathing room between the navbar and the first
+     content of every page. The navbar (Navbar.jsx) and the first section of
+     every page (.page-top in globals.css) both read these, so they can't drift. */
+  --nav-height: 72px;
+  --page-top-gap: 1.125rem; /* 18px on mobile */
+}
+
+@media (min-width: 640px) {
+  :root {
+    --page-top-gap: 1.75rem; /* 28px on tablet/desktop */
+  }
 }

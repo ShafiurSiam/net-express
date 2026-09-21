@@ -3,6 +3,12 @@
 @import "./variables.css";
 @import "./animations.css";
 
+/* Top padding for the first section of a page, which sits under the fixed
+   navbar: navbar height + a small gap (both defined in variables.css). */
+@utility page-top {
+  padding-top: calc(var(--nav-height) + var(--page-top-gap));
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
