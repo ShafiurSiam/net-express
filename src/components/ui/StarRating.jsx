@@ -11,27 +11,36 @@ const StarIcon = ({ size, className }) => (
 
 /**
  * Read-only stars. `value` may be fractional (e.g. an average of 4.3): a filled
- * row is clipped to the matching width over a grey row.
+ * row is clipped over a grey row. The clip width is computed from the star
+ * geometry (whole stars + gaps + the fraction of the next star) instead of a
+ * percentage of the container, so it stays correct even when a flex parent
+ * stretches the container wider than the five stars.
  */
-export const StarDisplay = ({ value, size = 18, label }) => (
-  <span role="img" aria-label={label} className="relative inline-flex">
-    <span className="inline-flex gap-0.5 text-border">
-      {STARS.map((n) => (
-        <StarIcon key={n} size={size} className="shrink-0" />
-      ))}
-    </span>
-    <span
-      className="absolute inset-y-0 left-0 overflow-hidden"
-      style={{ width: `${(Math.max(0, Math.min(5, value)) / 5) * 100}%` }}
-    >
-      <span className="inline-flex gap-0.5 text-primary-red">
+const STAR_GAP = "0.125rem"; // matches gap-0.5
+
+export const StarDisplay = ({ value, size = 18, label }) => {
+  const clamped = Math.max(0, Math.min(5, value));
+  const whole = Math.floor(clamped);
+  const fraction = clamped - whole;
+  const filledWidth = `calc(${whole} * (${size}px + ${STAR_GAP}) + ${fraction} * ${size}px)`;
+
+  return (
+    <span role="img" aria-label={label} className="relative inline-flex w-fit">
+      <span className="inline-flex gap-0.5 text-star-empty">
         {STARS.map((n) => (
           <StarIcon key={n} size={size} className="shrink-0" />
         ))}
       </span>
+      <span className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: filledWidth }}>
+        <span className="inline-flex gap-0.5 text-primary-red">
+          {STARS.map((n) => (
+            <StarIcon key={n} size={size} className="shrink-0" />
+          ))}
+        </span>
+      </span>
     </span>
-  </span>
-);
+  );
+};
 
 /**
  * Clickable 1-5 star input (a radio group: Tab to focus, arrow keys / Home / End
@@ -86,7 +95,7 @@ export const StarInput = ({ value, onChange, label, invalid = false, size = 36 }
           onClick={() => onChange(n)}
           onMouseEnter={() => setHover(n)}
           className={`rounded-md p-0.5 transition-transform hover:scale-110 ${
-            n <= shown ? "text-primary-red" : "text-border"
+            n <= shown ? "text-primary-red" : "text-star-empty"
           }`}
         >
           <StarIcon size={size} />

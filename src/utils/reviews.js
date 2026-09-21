@@ -2,6 +2,12 @@ import { reviewsConfig } from "../config/reviews.js";
 
 const isValidRating = (rating) => Number.isInteger(rating) && rating >= 1 && rating <= 5;
 
+// Strict rating parse for rows from the Sheet: a number or a numeric string only.
+// Anything else (null, "", true, arrays...) becomes NaN, which fails isValidRating,
+// so the review is hidden — a rating is never defaulted.
+const parseRating = (raw) =>
+  typeof raw === "number" || (typeof raw === "string" && raw.trim() !== "") ? Number(raw) : NaN;
+
 const commentFallbackOrder = { bn: ["bn", "en"], en: ["en", "bn"] };
 
 /**
@@ -41,7 +47,7 @@ export const fetchReviews = async (signal) => {
       .map((row, i) => ({
         id: `remote-${i}-${row?.timestamp ?? ""}`,
         name: typeof row?.name === "string" ? row.name : "",
-        rating: Number(row?.rating),
+        rating: parseRating(row?.rating),
         comment: typeof row?.comment === "string" ? row.comment : "",
       }))
       .filter(isCompleteReview);
